@@ -1,0 +1,294 @@
+/* Service area slider */
+.service-wrap.style3 {
+    .service-slider1 {
+        padding: 0 10px 0;
+
+        .swiper-slide {
+            &.swiper-slide-active,
+            &:hover {
+                .service-card {
+                    &.style3 {
+                        background-color: $theme-color;
+                        border-radius: 16px;
+                        background: linear-gradient(180deg, #3D4AFF 0%, #9931F6 100%);
+                        -webkit-border-radius: 16px;
+                        -moz-border-radius: 16px;
+                        -ms-border-radius: 16px;
+                        -o-border-radius: 16px;
+
+                        .card_content {
+                            h3 {
+                                a {
+                                    color: $white-color;
+
+                                    &:hover {
+                                        color: $theme-color2;
+                                    }
+                                }
+                            }
+
+                            .text {
+                                color: $white-color;
+                            }
+                        }
+
+                        .card_icon {
+                            transform: rotate(180deg);
+                            -webkit-transform: rotate(180deg);
+                            -moz-transform: rotate(180deg);
+                            -ms-transform: rotate(180deg);
+                            -o-transform: rotate(180deg);
+
+                            &:before {
+                                background-color: $white-color;
+                                opacity: 1;
+                            }
+                        }
+
+                        .link-wrap {
+                            a {
+                                color: $white-color;
+                            }
+                        }
+                    }
+                }
+            }
+            @include md{
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+/* Porfolio area slider */
+.project-wrap {
+    &.style1 {
+        .project-slider1 {
+            .gt-slider {
+                margin-right: -775px;
+                transition: all 0.4s ease-in-out;
+                -webkit-transition: all 0.4s ease-in-out;
+                -moz-transition: all 0.4s ease-in-out;
+                -ms-transition: all 0.4s ease-in-out;
+                -o-transition: all 0.4s ease-in-out;
+                .swiper-slide{ 
+                    display: flex;
+                    justify-content: center;
+                } 
+                @include sm{ 
+                 margin-right: 0px;
+                }
+            }
+        }
+    }
+
+    &.style2 {
+        margin-top: -230px;
+        .project-slider2 {
+            .gt-slider {
+                overflow: visible!important;
+                margin-right: -775px;
+                transition: all 0.4s ease-in-out;
+                -webkit-transition: all 0.4s ease-in-out;
+                -moz-transition: all 0.4s ease-in-out;
+                -ms-transition: all 0.4s ease-in-out;
+                -o-transition: all 0.4s ease-in-out;
+                .swiper-slide{ 
+                    display: flex;
+                    justify-content: center;
+                } 
+                @include sm{ 
+                 margin-right: 0px;
+                }
+            }
+        }
+    }
+}
+
+/* App Screenshots area slider */
+.app-screenshot-area {
+    position: relative;
+
+    .screenshots-slider1 {
+        padding: 0 0 50px;
+
+        .screenshot-thumb-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .slider-pagination {
+            position: absolute !important;
+            z-index: 10;
+            bottom: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.76);
+            transition: background-color 0.3s;
+            margin: 0 5px;
+            -webkit-transition: background-color 0.3s;
+            -moz-transition: background-color 0.3s;
+            -ms-transition: background-color 0.3s;
+            -o-transition: background-color 0.3s;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #fff;
+        }
+
+    }
+}
+
+/* Testimonial area slider */
+.testimonial-wrap.style3 {
+    position: relative;
+
+    .testimonial-slider3 {
+        padding: 0 0 50px;
+
+        .swiper-slide {            
+            margin-right: 24px!important;
+            @include md{
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+            }
+            &.swiper-slide-active {
+                .testimonial-card {
+                    &.style3 {
+                        background-color: $theme-color;
+
+                        .profile-box {
+                            .testi-content {
+                                .title {
+                                    color: $white-color;
+                                }
+
+                                .designation {
+                                    color: $white-color;
+                                }
+                            }
+                        }
+
+                        .text {
+                            color: $white-color;
+                        }
+
+                        .quote {
+                            .darkQuote {
+                                display: none;
+                            }
+
+                            .whiteQuote {
+                                display: block;
+                            }
+                        }
+
+                        .shape3_1 {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slider-pagination {
+            position: absolute !important;
+            z-index: 10;
+            top: 98%;
+            left: 50%;
+            transform: translate(-50%, -98%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 450px;
+            height: 20px;
+            background-color: #EBEDFF;
+            border-radius: 100px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            -ms-border-radius: 100px;
+            -o-border-radius: 100px;
+            transition: 0.4s ease-in-out;
+            -webkit-transition: 0.4s ease-in-out;
+            -moz-transition: 0.4s ease-in-out;
+            -ms-transition: 0.4s ease-in-out;
+            -o-transition: 0.4s ease-in-out;
+            -webkit-transform: translate(-50%, -98%);
+            -moz-transform: translate(-50%, -98%);
+            -ms-transform: translate(-50%, -98%);
+            -o-transform: translate(-50%, -98%);
+
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 20px;
+            flex-shrink: 0;
+            display: inline-block;
+            background-color: #EBEDFF;
+            transition: background-color 0.3s;
+            margin: 0 5px;
+            border-radius: 100px;
+            -webkit-transition: background-color 0.3s;
+            -moz-transition: background-color 0.3s;
+            -ms-transition: background-color 0.3s;
+            -o-transition: background-color 0.3s;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            -ms-border-radius: 100px;
+            -o-border-radius: 100px;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 150px;
+            height: 20px;
+            background-color: $theme-color;
+        }
+
+        @include xs {
+            .slider-pagination {
+                width: 280px;
+                height: 20px;
+
+            }
+
+            .swiper-pagination-bullet-active {
+                width: 100px;
+                height: 20px;
+            }
+
+        }
+    }
+}
+
+ 
+/* Team area slider */
+.team-wrap{
+    &.style2{
+       .team-slider1 {  
+         .swiper-slide{ 
+            margin-right: 25px!important;
+            @include md{
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+            }
+         }
+       }     
+    }
+}

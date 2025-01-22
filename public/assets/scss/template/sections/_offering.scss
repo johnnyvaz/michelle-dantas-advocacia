@@ -1,0 +1,120 @@
+/*----------------------------------------------
+    # Offering style here
+----------------------------------------------*/
+.offering-area {
+    position: relative;
+    z-index: 1;
+}
+
+.offering-wrap {
+    position: relative;
+
+    &.style1 {
+        padding: 120px 0 415px 0;
+    }
+}
+
+.offer-box-wrap {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    place-items: center;
+
+    @include lg {
+        grid-template-columns: repeat(5, 1fr);
+
+        .offer-box {
+            margin-bottom: 50px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    @include md {
+        grid-template-columns: repeat(3, 1fr);
+
+        .offer-box {
+
+            &:nth-child(4),
+            &:nth-child(5) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @include sm {
+        grid-template-columns: repeat(2, 1fr);
+
+        .offer-box {
+            &:nth-child(4) {
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    @include vxs {
+        grid-template-columns: repeat(1, 1fr);
+
+        .offer-box {
+            margin-bottom: 50px;
+
+            &:nth-child(5) {
+                margin-bottom: 50px;
+            }
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+.offer-box {
+    position: relative;
+
+    .content {
+        width: 170px;
+        height: 102px;
+        text-align: center;
+        border-radius: 8px;
+        border: 1px solid #525252;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+
+        .title {
+            margin-top: 39px;
+
+            a {
+                color: $white-color;
+                text-align: center;
+                font-family: "Plus Jakarta Sans", sans-serif;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 28px;
+                letter-spacing: -0.36px;
+
+                &:hover {
+                    color: $theme-color2;
+                }
+            }
+        }
+    }
+
+    .icon {
+        position: absolute;
+        top: -35px;
+        left: 50px;
+        display: inline-block;
+        padding: 18px;
+        background: linear-gradient(90deg, #384BFF 0%, #B42AF3 123.82%);
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+}

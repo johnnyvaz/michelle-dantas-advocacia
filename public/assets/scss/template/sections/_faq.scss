@@ -1,0 +1,119 @@
+/*----------------------------------------------
+    # Faq style here
+----------------------------------------------*/
+.faq-content {
+  .accordion-item {
+    border: 0;
+    background-color: $white-color;
+
+    .accordion-header {
+      .accordion-button {
+        font-weight: 600;
+        color: $theme-color;
+        letter-spacing: -0.2px;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: $gray-color;
+        padding: 25px 30px 0;
+        text-transform: capitalize;
+        font-size: 20px;
+        border: 1px solid $border-color;
+        border: 1px solid transparent;
+
+        &:after {
+          font-weight: 500;
+          transition: all 0.3s ease-in-out !important;
+          // background-image: url(/assets/img/icon/chevron-right.svg);
+          color: $theme-color2;
+        }
+
+        &:not(.collapsed):after {
+          // background-image: url(/assets/img/icon/chevron-down.svg);
+          font-weight: 500;
+          color: $theme-color2;
+          transform: rotate(0);
+        }
+
+        &.collapsed {
+          background-color: transparent;
+          border: 1px solid $border-color;
+          padding: 25px 30px;
+          color: $title-color;
+        }
+      }
+    }
+
+    .accordion-collapse {
+      border: none;
+
+      .accordion-body {
+        padding-right: 150px;
+        padding-left: 30px;
+        padding-top: 15px;
+        color: $body-color;
+        background-color: $theme-color;
+
+        @include xxl {
+          padding-right: 50px;
+        }
+
+        @include lg {
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+
+  &.style-2 {
+    margin-left: 50px;
+
+    @include xl {
+      margin-left: 20px;
+    }
+
+    @include lg {
+      margin-left: 0;
+    }
+  }
+
+  &.style-3 {
+    margin-top: 35px;
+
+    .accordion-item {
+      border: 0;
+      background-color: $white-color;
+      box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.06);
+
+      .accordion-header {
+        .accordion-button {
+          color: $title-color;
+          font-family: inherit;
+          text-align: left;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: inherit;
+          background-color: $white-color;
+          border: none;
+        }
+      }
+
+      .accordion-collapse {
+        .accordion-body {
+          background-color: $white-color;
+          padding-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+.faq-wrapper {
+  .faq-image {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

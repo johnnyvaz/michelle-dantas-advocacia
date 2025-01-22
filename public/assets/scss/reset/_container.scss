@@ -1,0 +1,83 @@
+@media (max-width: 1399px) {
+  :root {
+    --main-container: 1300px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: calc(var(--main-container) + var(--container-gutters));
+    padding-left: calc(var(--container-gutters) / 2);
+    padding-right: calc(var(--container-gutters) / 2);
+  }
+
+  .container-xxl.px-0,
+  .container-xl.px-0,
+  .container-lg.px-0,
+  .container-md.px-0,
+  .container-sm.px-0,
+  .container.px-0 {
+    max-width: var(--main-container);
+  }
+}
+
+
+@media only screen and (max-width: 1600px) {
+  .container-fluid.px-0 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .container-fluid.px-0 .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (min-width: 1600px) {
+
+  .header-top-section {
+    --main-container: 1520px;
+  }
+
+  .header-layout1,
+  .header-layout2 {
+    --main-container: 1520px;
+  }
+
+  .hero-1,
+  .hero-2,
+  .hero-3 {
+    --main-container: 1520px;
+  }
+
+
+  .testimonial-wrap {
+    &.style3 {
+      --main-container: 1410px;
+    }
+  }
+
+  .service-wrap {
+    &.style1 {
+      --main-container: 1520px;
+    }
+  }
+
+  .video-wrap {
+    &.style1 {
+      --main-container: 1520px;
+    }
+  }
+}
+
+
+.all-project-area {
+  --main-container: 1520px;
+}

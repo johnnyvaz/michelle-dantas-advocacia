@@ -1,0 +1,213 @@
+/*----------------------------------------------
+    # Pricing style here
+----------------------------------------------*/
+.pricing-wrap {
+    &.style1 {
+        position: relative;
+        z-index: 2;
+
+        .shape1_1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+    }
+
+    &.style3 {
+        position: relative;
+
+        .shape3_1 {
+            position: absolute;
+            bottom: 222px;
+            left: 0;
+            z-index: 1;
+        }
+
+        .shape3_2 {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            z-index: -1;
+        }
+    }
+}
+
+.pricing-card-wrap {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 30px;
+    z-index: 5;
+
+    @include lg {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include md {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.pricing-card {
+    &.style1 {
+        position: relative;
+        text-align: center;
+        max-width: 370px;
+        ;
+        border-radius: 16px;
+        border: 1px solid $border-color;
+        background: $white-color;
+        z-index: 2;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+
+        .pricing-card-header {
+            padding: 30px 80px;
+            text-align: center;
+            border-radius: 16px 16px 50px 50px;
+            -webkit-border-radius: 16px 16px 50px 50px;
+            -moz-border-radius: 16px 16px 50px 50px;
+            -ms-border-radius: 16px 16px 50px 50px;
+            -o-border-radius: 16px 16px 50px 50px;
+
+            &_badge {
+                padding: 18px 50px;
+                display: inline-block;
+                color: $title-color;
+                font-family: $title-font;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                text-transform: capitalize;
+                margin-bottom: 25px;
+                border-radius: 8px;
+                background: $white-color;
+                -webkit-border-radius: 8px;
+                -moz-border-radius: 8px;
+                -ms-border-radius: 8px;
+                -o-border-radius: 8px;
+            }
+
+            &_price {
+                color: $white-color;
+                text-align: center;
+                font-family: $title-font;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                text-transform: capitalize;
+                margin-bottom: 10px;
+            }
+
+            &_text {
+                color: $white-color;
+                text-align: center;
+                font-family: $title-font;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+        .shape1_2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 3;
+        }
+    }
+
+    &.style3 {
+        position: relative;
+        text-align: center;
+        max-width: 370px;
+        max-height: 800px;
+        border-radius: 16px;
+        background: $white-color;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+
+        .pricing-card-header {
+            padding: 40px 0px 0px 40px;
+            text-align: center;
+            border-radius: 16px 16px 50px 50px;
+            -webkit-border-radius: 16px 16px 50px 50px;
+            -moz-border-radius: 16px 16px 50px 50px;
+            -ms-border-radius: 16px 16px 50px 50px;
+            -o-border-radius: 16px 16px 50px 50px;
+
+            &_badge {
+                position: absolute;
+                top: 39px;
+                right: 0;
+
+                span {
+                    display: inline-block;
+                    padding: 16px 16px 16px 60px;
+                    color: $white-color;
+                    text-align: right;
+                    font-family: $title-font;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    text-transform: capitalize;
+                }
+            }
+
+            &_price {
+                color: $title-color;
+                text-align: start;
+                font-family: $title-font;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                text-transform: capitalize;
+            }
+
+            &_text {
+                color: $body-color;
+                text-align: start;
+                font-family: $title-font;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+
+        .text {
+            margin: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid $border-color;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(90deg, #384BFF 0%, #B42AF3 123.82%);
+            z-index: -1;
+            border-radius: 15px;
+        }
+    }
+
+    .btn-wrapper {
+        text-align: start;
+        margin-left: 40px;
+        margin-bottom: 36px;
+    }
+}

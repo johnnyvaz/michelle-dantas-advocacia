@@ -1,0 +1,17 @@
+
+
+.copyright-wrap {
+    padding: 20.5px 0;
+    border-top: 1px solid #444A56;
+    background-color: #252934;
+}
+.copyright-text {
+    margin: 0;
+    color: $white-color;
+    a {
+        color: $theme-color;
+        &:hover {
+            color: $white-color;
+        }
+    }
+}

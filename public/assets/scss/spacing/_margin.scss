@@ -1,0 +1,73 @@
+/*-- margin Left And Right --*/
+@for $i from 1 through $space-count {
+  .mx-#{5 * $i} {
+    margin-right: 5px *$i;
+    margin-left: 5px *$i;
+  }
+}
+
+/*-- margin Top And Bottom --*/
+@for $i from 1 through $space-count {
+  .my-#{5 * $i} {
+    margin-top: 5px *$i;
+    margin-bottom: 5px *$i;
+  }
+}
+
+/*-- margin Top --*/
+@for $i from 1 through $space-count {
+  .mt-#{5 * $i} {
+    margin-top: 5px *$i;
+  }
+}
+
+/*-- margin Bottom --*/
+@for $i from 1 through $space-count {
+  .mb-#{5 * $i} {
+    margin-bottom: 5px *$i;
+  }
+}
+
+/*-- margin Left --*/
+@for $i from 1 through $space-count {
+  .ml-#{5 * $i} {
+    margin-left: 5px *$i;
+  }
+}
+
+/*-- margin Right --*/
+@for $i from 1 through $space-count {
+  .mr-#{5 * $i} {
+    margin-right: 5px *$i;
+  }
+}
+
+.mb-200 {
+  margin-bottom: 160px;
+}
+.mt-n30{
+  margin-top: -30px;
+}
+.mt-n150 {
+  margin-top: -150px;
+}
+
+.mt-n116 {
+  margin-top: -116px;
+}
+
+.mt-n108 {
+  margin-top: -108px;
+}
+
+.mt-n110 {
+  margin-top: -110px;
+}
+
+.mb-n116 {
+  margin-bottom: -116px;
+}
+
+.mt-n355 {
+  margin-top: -355px;
+}

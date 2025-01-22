@@ -1,0 +1,76 @@
+ /*----------------------------------------------
+    # Download App style here
+----------------------------------------------*/
+ .dowload-wrap {
+     position: relative;
+
+     .shape1_1 {
+         position: absolute;
+         bottom: 80px;
+         left: 0;
+         z-index: 1;
+     }
+
+     .shape1_2 {
+         position: absolute;
+         bottom: 58px;
+         right: 0;
+         z-index: 1;
+     }
+
+     .shape1_3 {
+         position: absolute;
+         top: 0;
+         right: 22%;
+         z-index: -1;
+     }
+
+     .download-container-wrap {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         gap: 96px;
+
+         @include md {
+             grid-template-columns: repeat(1, 1fr);
+             .download-content{
+                order: 2;
+             }
+         }
+     }
+
+     .download-thumb-wrap {
+         position: relative;
+         z-index: 6;
+
+         .shape1_4 {
+             position: absolute;
+             top: 28px;
+             left: 115px;
+             z-index: 1;
+         }
+
+         .shape1_5 {
+             position: absolute;
+             bottom: -20px;
+             right: 10px;
+             z-index: 1;
+         }
+
+         .thumb1 {
+             position: relative;
+             z-index: 5;
+         }
+     }
+
+     .download-content {
+         .title-area {
+             .text {
+                 margin-bottom: 30px;
+             }
+         }
+
+         .fancy-box-wrapper {
+             gap: 30px;
+         }
+     }
+ }

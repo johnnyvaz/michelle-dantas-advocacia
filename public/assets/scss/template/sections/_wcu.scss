@@ -1,0 +1,220 @@
+/*----------------------------------------------
+    # why choose us style here
+----------------------------------------------*/
+.wcu-tab-wrap {
+  position: relative;
+
+  .shape1_1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .shape1_2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.wcu-tab-area ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: none;
+}
+
+.wcu-tab-area ul .nav-link {
+  position: relative;
+  font-family: var(--primary-font);
+  color: var(--theme-color-1);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 27px;
+  padding: 24px 20px 24px 24px;
+  background: #fff;
+  width: 298px;
+  border: none !important;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.wcu-tab-area ul .nav-link:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -35px;
+  width: 35px;
+  height: 60px;
+  background: #fff;
+  clip-path: polygon(100% 49%, 0 0, 0 100%);
+}
+
+.wcu-tab-area ul .nav-link .icon-box {
+  font-size: 50px;
+  color: var(--theme-color);
+}
+
+.wcu-tab-area ul .nav-link.active {
+  color: #fff;
+
+  img {
+    filter: invert(100%);
+  }
+
+  border-radius: 8px;
+  background: linear-gradient(90deg, #384bff 0%, #b42af3 123.82%);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.wcu-tab-area ul .nav-link.active:before {
+  background: #9931f6;
+}
+
+.wcu-tab-area ul .nav-link.active .icon-box {
+  color: #fff;
+}
+
+.wcu-tab-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 25px 0px rgba(98, 34, 204, 0.08);
+  background-color: $white-color;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+
+  .shape {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    z-index: 1;
+
+    img {
+    }
+  }
+
+  .wcu-thumb {
+    position: relative;
+    padding: 36px 0px 0 68px;
+
+    img {
+      position: relative;
+      z-index: 3;
+    }
+  }
+
+  .wcu-content {
+    padding: 36px 30px 36px 0;
+
+    @include sm {
+      padding: 0px 30px 56px 10px;
+    }
+
+    .title {
+      color: $title-color;
+      font-family: $title-font;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 46px;
+    }
+
+    .text {
+      color: $body-color;
+      font-family: $title-font;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;
+    }
+
+    .checklist {
+      margin-top: 20px;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        margin-left: 0;
+
+        li {
+          color: $title-color;
+          font-family: $title-font;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 26px;
+        }
+      }
+    }
+  }
+
+  @include sm {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.wcu-area .bg-shape-1 {
+  position: absolute;
+  bottom: -120px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+.wcu-area .bg-shape-2 {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.wcu-area .bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .service-tab-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wcu-tab-area {
+    margin-bottom: 50px;
+  }
+
+  .service-tab-content figure.image img {
+    width: 100%;
+  }
+}

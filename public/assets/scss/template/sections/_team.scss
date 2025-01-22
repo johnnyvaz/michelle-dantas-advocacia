@@ -1,0 +1,355 @@
+/*----------------------------------------------
+    # Team style here
+----------------------------------------------*/
+.team-card-wrapper {
+    &.style1 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+        @include lg {
+            grid-template-columns: repeat(2, 1fr);
+
+            .team-card {
+                &.style1 {
+                    margin-bottom: 100px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        @include sm {
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+        }
+
+    }
+}
+
+.team-wrap {
+    position: relative;
+
+    &.style1 {
+        .shape1_1 {
+            position: absolute;
+            top: -220px;
+            left: 0;
+        }
+
+        .shape1_2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &.style2 {
+        margin-bottom: -1.5em;
+
+        .shape1_1 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .shape1_2 {
+            position: absolute;
+            bottom: 25px;
+            right: 0;
+        }
+    }
+}
+
+.team-card {
+    &.style1 {
+        position: relative;
+        max-width: 370px;
+        height: 343px;
+        background-color: $smoke-color;
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        -o-border-radius: 50px;
+
+        .team-thumb {
+            position: relative;
+            bottom: 110px;
+            left: 39px;
+
+            img {
+                position: relative;
+                width: 264px;
+                height: 452px;
+                object-fit: cover;
+                z-index: 3;
+            }
+        }
+
+        .profile-box {
+            position: absolute;
+            display: inline-block;
+            bottom: 40px;
+            left: 30px;
+            border-radius: 80px;
+            background: $white-color;
+            box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+            z-index: 5;
+            -webkit-border-radius: 80px;
+            -moz-border-radius: 80px;
+            -ms-border-radius: 80px;
+            -o-border-radius: 80px;
+            transition: background 1s ease-in-out;
+            -webkit-transition: background 1s ease-in-out;
+            -moz-transition: background 1s ease-in-out;
+            -ms-transition: background 1s ease-in-out;
+            -o-transition: background 1s ease-in-out;
+
+            .title {
+                padding: 10px 80px 0;
+                text-align: center;
+                margin-bottom: 0;
+
+                a {
+                    color: $title-color;
+                    font-family: "Plus Jakarta Sans", sans-serif;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 32px;
+
+                }
+            }
+
+            .text {
+                padding: 0px 80px 10px;
+                color: $body-color;
+                text-align: center;
+                font-family: "Plus Jakarta Sans", sans-serif;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 32px;
+                text-transform: capitalize;
+            }
+
+            &:hover {
+                .title {
+                    >a {
+                        color: $theme-color2;
+                    }
+                }
+            }
+        }
+
+        .bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 370px;
+            height: 343px;
+            max-height: 0;
+            overflow: hidden;
+            object-fit: cover;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1;
+            transition: max-height 0.8s ease, opacity 1s ease, visibility 1s ease;
+            -webkit-transition: max-height 0.8s ease, opacity 1s ease, visibility 1s ease;
+            -moz-transition: max-height 0.8s ease, opacity 1s ease, visibility 1s ease;
+            -ms-transition: max-height 0.8s ease, opacity 1s ease, visibility 1s ease;
+            -o-transition: max-height 0.8s ease, opacity 1s ease, visibility 1s ease;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+        }
+
+        &:hover {
+            background-color: transparent;
+
+            .bg {
+                max-height: 100vh;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+    }
+
+    &.style2 {
+        width: 270px;
+        height: 366px;
+        border-radius: 16px;
+        background: $white-color;
+        border-bottom: 6px solid transparent;
+        box-shadow: 0px 4px 25px 0px rgba(98, 34, 204, 0.08);
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+        @include transition;
+
+        .team-thumb {
+            position: relative;
+            padding: 12px 12px 0px;
+            height: 241px;
+            border-radius: 16px;
+            -webkit-border-radius: 16px;
+            -moz-border-radius: 16px;
+            -ms-border-radius: 16px;
+            -o-border-radius: 16px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 16px;
+                -webkit-border-radius: 16px;
+                -moz-border-radius: 16px;
+                -ms-border-radius: 16px;
+                -o-border-radius: 16px;
+            }
+
+            .social-profile {
+                position: absolute;
+                right: 25px;
+                top: 25px;
+                height: 32px;
+                content: "";
+                -webkit-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+                z-index: 2;
+                display: inline-block;
+                overflow: hidden;
+                z-index: 5;
+
+                ul {
+                    padding-left: 0;
+                    transform: translateY(0px);
+                    transition: all 0.6s ease-in-out;
+                    opacity: 0;
+                    visibility: hidden;
+                    list-style-type: none;
+                    -webkit-transform: translateY(0px);
+                    -moz-transform: translateY(0px);
+                    -ms-transform: translateY(0px);
+                    -o-transform: translateY(0px);
+
+                    li {
+                        margin-bottom: 6px;
+
+                        a {
+                            width: 30px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            font-size: 13px;
+                            display: block;
+                            background-color: $theme-color;
+                            color: $white-color;
+                            -webkit-transition: all .4s ease-in-out;
+                            transition: all .4s ease-in-out;
+                            text-align: center;
+                            margin: 0 auto;
+                            border-radius: 50%;
+
+                            &:hover {
+                                background-color: $title-color;
+                                color: $white-color;
+                            }
+                        }
+                    }
+                }
+
+                .plus-btn {
+                    position: relative;
+                    z-index: 4;
+                    cursor: pointer;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+                    font-size: 13px;
+                    display: inline-block;
+                    background: $theme-color;
+                    color: $white-color;
+                    @include transition;
+                    border-radius: 50%;
+
+                    &:hover {
+                        background-color: $title-color;
+                        color: $white-color;
+                    }
+                }
+
+                &:hover {
+                    height: auto;
+
+                    ul {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(6px);
+                        -webkit-transform: translateY(6px);
+                        -moz-transform: translateY(6px);
+                        -ms-transform: translateY(6px);
+                        -o-transform: translateY(6px);
+                    }
+                }
+            }
+        }
+
+        .team-content {
+            padding: 20px 30px 30px;
+            position: relative;
+            z-index: 9;
+            @include transition;
+
+            h3 {
+                margin-bottom: 5px;
+
+                a {
+                    color: $title-color;
+                    text-align: center;
+                    font-family: $title-font;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 32px;
+                }
+            }
+
+            p {
+                color: $body-color;
+                text-align: center;
+                font-family: $title-font;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 32px;
+                text-transform: uppercase;
+            }
+        }
+
+        &:hover {
+            border-bottom: 6px solid $theme-color2;
+
+            .team-image {
+                position: relative;
+
+                .social-profile {
+                    .plus-btn {
+                        background-color: $title-color;
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}

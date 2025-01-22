@@ -1,0 +1,47 @@
+.scrolling-wrap {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    gap: 100px;
+
+    .textWrapper { 			
+		display: flex;
+		align-items: center;
+		gap: 100px;
+        animation: scroll 60s linear infinite; 
+        cursor: pointer;
+
+        .textWrapper-textslide {			
+			display: flex;
+			align-items: center;
+			gap: 20px;  
+			color: $title-color;
+            font-family: $title-font;
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 85px;  				
+    
+			img { 
+				width: 75px;   
+				height: auto; 
+				margin-right: 10px;
+				object-fit: contain;
+			}
+        }
+
+        .text-custom-storke {
+            -webkit-text-stroke: 1px $title-color;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &:hover {
+        .textWrapper {
+            animation-play-state: paused;
+        }
+    } 
+}
+
+ 
+ 

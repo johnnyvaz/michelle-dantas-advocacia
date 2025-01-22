@@ -1,0 +1,229 @@
+/*
+Theme Name: Techco
+Template URL: https://gramentheme.com/html/techco/
+Author: Gramentheme
+Author URI: https://themeforest.net/user/gramentheme
+Description: Techco-IT Solution & Technology Service Template
+Version: 1.0.0 
+*/
+
+/*=================================
+    CSS Index Here
+==================================*/
+/*
+
+01. Theme Base
+    1.1. Mixin 
+    1.2. Variable
+    1.3. Typography  
+02. Reset
+    2.1. Container
+    2.2. Grid
+    2.3. Input 
+    2.4. Mobile Menu
+03. Utilities
+    3.1. Preloader
+    3.2. Buttons
+    3.3. Titles
+    3.4. Common    
+    3.5. Animation
+    3.6. Nice select
+    3.7. Slider
+    3.8. Text Sliding 
+    3.9. Cursor Follower
+    
+04. Template Style
+    4.1. Widget
+    4.2. Header
+    4.3. Footer
+    4.4. Breadcumb 
+    4.5. Blog 
+    4.6. Hero Area 
+    4.7. Popup Search
+    4.8. Popup Side Menu   
+    4.9. Contact
+    4.10. About
+    4.11. Team
+    4.12. Testimonial
+    4.13. Counter
+    4.14. Blog 
+    4.15. Simple Sections 
+    4.16. Faq
+    4.17. Cta
+    4.18. Service
+    4.19. Pricing
+    4.20. Why choose Us 
+    4.21. Work Process
+    4.22. Project  
+    4.23. Download App
+    4.24. Offering 
+    4.25. Video
+    4.26. Screenshots
+    4.27. Skill
+    4.28. Contact
+
+05. Spacing 
+
+*/
+/*=================================
+    CSS Index End
+==================================*/
+
+
+/*=================================
+   01. Theme Base
+==================================*/
+/*------------------- 1.1. Mixin -------------------*/
+@import 'base/mixin';
+
+/*------------------- 1.2. Variable-------------------*/
+@import 'base/variable';
+
+/*------------------- 1.3. Typography -------------------*/
+@import 'base/typography';  
+
+
+/*=================================
+    02. Reset
+==================================*/
+/*------------------- 2.1. Container -------------------*/
+@import 'reset/container';
+
+/*------------------- 2.2. Grid -------------------*/
+@import 'reset/grid';
+
+/*------------------- 2.3. Input -------------------*/
+@import 'reset/input'; 
+
+/*------------------- 2.4. Mobile Menu -------------------*/
+@import 'reset/gtmenu';
+
+
+/*=================================
+    03. Utilities
+==================================*/
+/*------------------- 3.1. Preloader -------------------*/
+@import 'utilities/preloader';
+
+/*------------------- 3.2. Buttons -------------------*/
+@import 'utilities/btns';
+
+/*------------------- 3.3. Titles -------------------*/
+@import 'utilities/titles';
+
+/*------------------- 3.4. Common -------------------*/
+@import 'utilities/common';  
+
+/*------------------- 3.5. Animation -------------------*/
+@import 'utilities/animation';
+
+/*------------------- 3.6. Nice select -------------------*/
+@import 'utilities/nice-select';
+
+/*------------------- 3.7. Slider -------------------*/
+@import 'utilities/slider';
+
+/*------------------- 3.8. Text Sliding -------------------*/
+@import 'utilities/textslide'; 
+
+/*------------------- 3.9. Cursor Follower -------------------*/
+@import 'utilities/cursor-follower'; 
+
+
+/*=================================
+    04. Template Style
+==================================*/
+/*------------------- 4.1. Widget  -------------------*/ 
+@import 'template/widgets/widget-sidebar';
+@import 'template/widgets/widget-footer';
+
+/*------------------- 4.2. Header  -------------------*/
+@import 'template/headers/header';
+
+/*------------------- 4.3. Footer  -------------------*/
+@import 'template/footers/footer';
+
+/*------------------- 4.4. Breadcumb  -------------------*/
+@import 'template/breadcumb/breadcumb'; 
+
+/*------------------- 4.5. Blog  -------------------*/
+@import 'template/sections/blog';
+@import 'template/sections/blog-extra'; 
+
+/*------------------- 4.6. Hero Area  -------------------*/
+@import 'template/sections/hero';  
+
+/*------------------- 4.7. Popup Search  -------------------*/
+@import 'template/sections/popupsearch';
+
+/*------------------- 4.8. Popup Side Menu  -------------------*/
+@import 'template/sections/sidemenu';    
+
+/*------------------- 4.9. Contact  -------------------*/
+@import 'template/sections/contact';
+
+/*------------------- 4.10. About  -------------------*/
+@import 'template/sections/about';
+
+/*------------------- 4.11. Team  -------------------*/
+@import 'template/sections/team';
+@import 'template/sections/team-extra';
+
+/*------------------- 4.12. Testimonial  -------------------*/
+@import 'template/sections/testimonial';
+
+/*------------------- 4.13. Counter  -------------------*/
+@import 'template/sections/counter';
+
+/*------------------- 4.14. Blog  -------------------*/
+@import 'template/sections/blog-extra'; 
+
+/*------------------- 4.15. Simple Sections  -------------------*/
+@import 'template/sections/simple-sections'; 
+
+/*------------------- 4.16. Faq  -------------------*/
+@import 'template/sections/faq';
+
+/*------------------- 4.17. Cta  -------------------*/
+@import 'template/sections/cta';
+
+/*------------------- 4.18. Service  -------------------*/
+@import 'template/sections/service';
+@import 'template/sections/service-extra';
+
+/*------------------- 4.19. Pricing  -------------------*/
+@import 'template/sections/pricing';
+
+/*------------------- 4.20. Why choose Us  -------------------*/
+@import 'template/sections/wcu'; 
+
+/*------------------- 4.21. Work Process  -------------------*/
+@import 'template/sections/work-process';
+
+/*------------------- 4.22. Project  -------------------*/
+@import 'template/sections/project';  
+
+/*------------------- 4.23. Download App -------------------*/
+@import 'template/sections/download-app'; 
+
+/*------------------- 4.24. Offering  -------------------*/  
+
+@import 'template/sections/offering';
+
+/*------------------- 4.25. Video  -------------------*/
+@import 'template/sections/video';
+
+/*------------------- 4.26. Screenshots  -------------------*/
+@import 'template/sections/screenshots';
+
+/*------------------- 4.27. Skill  -------------------*/
+@import 'template/sections/skill';
+
+/*------------------- 4.28. Contact  -------------------*/
+@import 'template/sections/contact';
+
+
+/*=================================
+    05. Spacing
+==================================*/
+@import 'spacing/spacing';  

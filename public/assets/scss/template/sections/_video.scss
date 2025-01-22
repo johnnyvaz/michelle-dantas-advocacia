@@ -1,0 +1,36 @@
+/*----------------------------------------------
+    # Video style here
+----------------------------------------------*/
+.video-box-area {
+    position: relative;
+    z-index: 3;
+    padding: 355px 0 0;
+
+    .section-bg {
+        z-index: 4;
+    }
+
+    .video-box {
+        position: relative;
+        z-index: 5;
+        padding: 300px 0 270px;
+        margin-top: -355px;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            z-index: 6;
+        }
+    }
+}

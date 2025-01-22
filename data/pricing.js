@@ -1,0 +1,96 @@
+export const pricingPlans = [
+  {
+    badge: "Basic Plan",
+    price: "$49.00",
+    period: "Per Month",
+    backgroundImage: "url(/assets/img/bg/pricingCardThumbBg1_1.png)",
+    features: [
+      "Branding And Design Identity",
+      "Web Site Marketing Solutions",
+      "Free 15 GB Linux Hosting",
+      "24/7 System Monitoring",
+      "Unlimited Download Data",
+      "Branding and design Identity",
+    ],
+    buttonClass: "gt-btn style2 gt-btn-icon",
+    delay: ".3s",
+  },
+  {
+    badge: "Started Plan",
+    price: "$99.00",
+    period: "Per Month",
+    backgroundImage: "url(/assets/img/bg/pricingCardThumbBg1_1.png)",
+    features: [
+      "Branding And Design Identity",
+      "Web Site Marketing Solutions",
+      "Free 15 GB Linux Hosting",
+      "24/7 System Monitoring",
+      "Unlimited Download Data",
+      "Branding and design Identity",
+    ],
+    buttonClass: "gt-btn gt-btn-icon",
+    delay: ".6s",
+  },
+  {
+    badge: "Premium Plan",
+    price: "$149.00",
+    period: "Per Month",
+    backgroundImage: "url(/assets/img/bg/pricingCardThumbBg1_1.png)",
+    features: [
+      "Branding And Design Identity",
+      "Web Site Marketing Solutions",
+      "Free 15 GB Linux Hosting",
+      "24/7 System Monitoring",
+      "Unlimited Download Data",
+      "Branding and design Identity",
+    ],
+    buttonClass: "gt-btn style2 gt-btn-icon",
+    delay: ".9s",
+  },
+];
+
+export const pricingCards = [
+  {
+    price: "$49.00",
+    period: "Per Month",
+    badgeText: "Basic Plan",
+    buttonClass: "style3",
+    imageUrl: "/assets/img/shape/pricingBadgeShape.png",
+    features: [
+      "Branding And Design Identity",
+      "Web Site Marketing Solutions",
+      "Free 15 GB Linux Hosting",
+      "24/7 System Monitoring",
+      "Unlimited Download Data",
+    ],
+  },
+  {
+    price: "$9.00",
+    period: "Per Month",
+    badgeText: "Started Plan",
+    buttonClass: "style4",
+    imageUrl: "/assets/img/shape/pricingBadgeShape.png",
+    features: [
+      "Branding And Design Identity",
+      "Web Site Marketing Solutions",
+      "Free 15 GB Linux Hosting",
+      "24/7 System Monitoring",
+      "Unlimited Download Data",
+    ],
+  },
+  {
+    price: "$49.00",
+    period: "Per Month",
+    badgeText: "Basic Plan",
+    buttonClass: "style3",
+    imageUrl: "/assets/img/shape/pricingBadgeShape.png",
+    features: [
+      "Branding And Design Identity",
+      "Web Site Marketing Solutions",
+      "Free 15 GB Linux Hosting",
+      "24/7 System Monitoring",
+      "Unlimited Download Data",
+    ],
+  },
+  // Add more pricing cards here if needed
+];

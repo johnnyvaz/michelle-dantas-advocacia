@@ -1,0 +1,218 @@
+ 
+
+.fix {
+    overflow: hidden;
+} 
+
+.media-body {
+    flex: 1;
+}
+
+.badge {
+    position: absolute;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: inline-block;
+    text-align: center;
+    background-color: $theme-color;
+    color: $white-color;
+    padding: 0.2em 0.45em;
+    font-size: 0.6em;
+    border-radius: 50%;
+    top: 7px;
+    left: 12px;
+    font-weight: 400;
+    transition: 0.3s ease-in-out;
+}
+
+.as-social {
+    a {
+        display: inline-block;
+        @include equal-size(var(--icon-size, 40px));
+        line-height: var(--icon-size, 40px);
+        background-color: rgba(255, 255, 255, 0.1);
+        color: $white-color;
+        font-size: 16px;
+        text-align: center;
+        margin-right: 5px;
+        border-radius: 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: $theme-color;
+            color: $white-color;
+        }
+    }
+
+    &.style2 {
+        a {
+            --icon-size: 40px;
+            font-size: 14px;
+            background-color: transparent;
+            color: $white-color;
+            border: 1px solid;
+
+            &:hover {
+                border-color: $theme-color;
+                color: $white-color;
+                background-color: $theme-color;
+            }
+        }
+    }
+
+    &.color-theme {
+        a {
+            color: $body-color;
+            border-color: $theme-color;
+        }
+    }
+}
+ 
+
+/*******Magnific Image*******/
+.mfp-zoom-in .mfp-content {
+    opacity: 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+}
+
+.mfp-zoom-in.mfp-bg {
+    opacity: 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.mfp-zoom-in.mfp-ready .mfp-content {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.mfp-zoom-in.mfp-ready.mfp-bg {
+    opacity: 0.7;
+}
+
+.mfp-zoom-in.mfp-removing .mfp-content {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    opacity: 0;
+}
+
+.mfp-zoom-in.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+
+.mfp-figure:after {
+    background: transparent;
+    box-shadow: none;
+}
+
+ 
+
+
+.scroll-down {
+    transform: rotate(-90deg);
+    transform-origin: left;
+    position: absolute;
+    right: -25px;
+    bottom: 195px;
+    z-index: 1;
+}
+
+.scroll-down .hero-scroll-wrap {
+    color: $white-color;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.scroll-down .hero-scroll-wrap i {
+    font-size: 36px;
+    margin-bottom: -2px;
+}
+
+.scroll-down .hero-scroll-wrap:hover {
+    color: var(--theme-color2);
+}
+
+@media (max-width: 1500px) {
+    .scroll-down {
+        right: -34px;
+    }
+}
+
+@media (max-width: 1399px) {
+    .scroll-down {
+        right: -43px;
+    }
+
+    .scroll-down .hero-scroll-wrap i {
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 991px) {
+    .scroll-down {
+        display: none;
+    }
+}
+
+
+
+@each $bgcolorMap, $value in $bgcolorMap {
+    .bg-#{$bgcolorMap} {
+      background-color: #{$value} !important;
+    }
+  }
+  
+  .background-image,
+  [data-bg-src] {
+    @include background-content(no-repeat, cover, center center);
+  }
+  
+  .bg-fluid {
+    @include background-content(no-repeat, 100% 100%, center center);
+  }
+  
+  .bg-auto {
+    background-size: auto auto;
+  }
+  
+  .bg-top-center {
+    background-size: auto;
+    background-position: top center;
+  }
+  
+  .bg-repeat {
+    background-size: auto;
+    background-repeat: repeat;
+  }
+  
+  .bg-gradient{
+    background: linear-gradient(90deg, #384BFF 0%, #B42AF3 123.82%);
+  }
+
+  .section-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+}

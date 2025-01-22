@@ -1,0 +1,106 @@
+/*----------------------------------------------
+    # Skill style here
+----------------------------------------------*/
+.skill-wrap {
+  &.style1 {
+    position: relative;
+
+    .shape1_1 {
+      position: absolute;
+      bottom: 312px;
+      left: 0;
+    }
+
+    .shape1_2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+.skill-wrapper {
+  &.style1 {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+
+    .skill-thumb {
+      position: relative;
+
+      .shape1_3 {
+        position: absolute;
+        top: 28px;
+        left: 62px;
+        z-index: 1;
+      }
+
+      .shape1_4 {
+        position: absolute;
+        bottom: -80px;
+        right: 15px;
+        z-index: 1;
+      }
+
+      .thumb1 {
+        position: relative;
+        margin-left: 166px;
+        max-width: 386px;
+        height: 415px;
+        object-fit: cover;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        z-index: 3;
+
+        .thumb2 {
+          position: absolute;
+          border-radius: 8px;
+          border: 7px solid $border-color;
+          box-shadow: 0px 4px 25px 0px rgba(98, 34, 204, 0.08);
+          bottom: -70px;
+          left: -38%;
+          -webkit-border-radius: 8px;
+          -moz-border-radius: 8px;
+          -ms-border-radius: 8px;
+          -o-border-radius: 8px;
+          z-index: 3;
+        }
+      }
+    }
+
+    .skill-content {
+      .fancy-box-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 49px;
+        margin-bottom: 25px;
+      }
+      .progress-wrap {
+        .progress-container {
+          height: 12px;
+          .progress-bar {
+            height: 12px;
+          }
+        }
+      }
+    }
+
+    @include xl {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include sm {
+      .skill-content {
+        .fancy-box-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}

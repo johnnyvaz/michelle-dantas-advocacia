@@ -1,0 +1,507 @@
+/*----------------------------------------------
+    # Testimonial style here
+----------------------------------------------*/
+.testimonial-wrap {
+    &.style1 {
+        position: relative;
+        z-index: 4;
+
+        .section-bg {
+            bottom: -88px;
+        }
+
+        .title-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .title-area {
+                margin: 0;
+                max-width: 488px;
+            }
+
+            @include sm {
+                flex-direction: column;
+            }
+        }
+
+        .slider-arrow {
+            &.style2 {
+                position: absolute;
+                top: 63%;
+                right: 97.5%;
+                width: 56px;
+                height: 56px;
+                line-height: 36px;
+                text-align: center;
+                background-color: $title-color;
+                border: 1px solid $title-color;
+                z-index: 5;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+
+                &.slider-next {
+                    position: absolute;
+                    top: 63%;
+                    right: -3%;
+                    width: 56px;
+                    height: 56px;
+                    line-height: 36px;
+                    text-align: center;
+                    z-index: 5;
+                    background: linear-gradient(90deg, #384BFF 0%, #B42AF3 123.82%);
+                    border: 1px solid $theme-color;
+                    transition: all 0.4s ease;
+                    -webkit-transition: all 0.4s ease;
+                    -moz-transition: all 0.4s ease;
+                    -ms-transition: all 0.4s ease;
+                    -o-transition: all 0.4s ease;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    &.style2 {
+        position: relative;
+
+        .shape2_1 {
+            position: absolute;
+            top: 90px;
+            left: 0;
+        }
+
+        .shape2_2 {
+            position: absolute;
+            top: 90px;
+            right: 0;
+        }
+
+        .title-area {
+            max-width: 592px;
+        }
+    }
+
+    &.style3 {
+        .title-area {
+            max-width: 592px;
+        }
+    }
+}
+
+.testimonial-card-wrap {
+    &.style2 {
+
+        .testimonial-thumb {
+            position: relative;
+            max-width: 470px;
+        }
+
+        .slider-area {
+            .gt-slider {
+                margin-left: -80px;
+
+                .swiper-slide {
+                    transition: all 1s ease !important;
+                    -webkit-transition: all 1s ease !important;
+                    -moz-transition: all 1s ease !important;
+                    -ms-transition: all 1s ease !important;
+                    -o-transition: all 1s ease !important;
+                }
+
+                @include md {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .slider-arrow {
+            &.style2 {
+                position: absolute;
+                top: 94%;
+                right: 50.5%;
+                width: 56px;
+                height: 56px;
+                line-height: 36px;
+                text-align: center;
+                background: transparent;
+                border: 1px solid $theme-color;
+                z-index: 5;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+
+                i {
+                    color: $theme-color;
+                }
+
+                &:hover {
+                    background: linear-gradient(90deg, #384BFF 0%, #B42AF3 123.82%);
+                    border: none;
+
+                    i {
+                        color: $white-color;
+                    }
+                }
+
+                &.slider-next {
+                    position: absolute;
+                    top: 94%;
+                    right: 34%;
+                    width: 56px;
+                    height: 56px;
+                    line-height: 36px;
+                    text-align: center;
+                    z-index: 5;
+                    background: linear-gradient(90deg, #384BFF 0%, #B42AF3 123.82%);
+                    border: none;
+                    transition: all 0.4s ease;
+                    -webkit-transition: all 0.4s ease;
+                    -moz-transition: all 0.4s ease;
+                    -ms-transition: all 0.4s ease;
+                    -o-transition: all 0.4s ease;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+
+                    i {
+                        color: $white-color;
+                    }
+
+                    @include lg {
+                        top: 94%;
+                        right: 38%;
+                    }
+                }
+
+                @include lg {
+                    top: 94%;
+                    right: 60%;
+                }
+            }
+        }
+    }
+}
+
+.testimonial-card {
+    &.style1 {
+        position: relative;
+        border-radius: 16px;
+        border-left: 4px solid $theme-color;
+        background-color: $white-color;
+        box-shadow: 0px 4px 25px 0px rgba(98, 34, 204, 0.08);
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+
+        .profile-box {
+            display: flex;
+            gap: 20px;
+            padding-top: 40px;
+            padding-left: 40px;
+            padding-bottom: 20px;
+
+            .testi-thumb {
+                img {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                }
+            }
+
+            .testi-content {
+                .title {
+                    color: $title-color;
+                    font-family: $title-font;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 28px;
+                    letter-spacing: -0.4px;
+                    margin-bottom: 1px;
+                }
+
+                .designation {
+                    text-align: start;
+                    color: $body-color;
+                    font-family: $title-font;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px;
+                }
+            }
+        }
+
+        .text {
+            color: $body-color;
+            font-family: $title-font;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            padding-left: 40px;
+            padding-right: 30px;
+            padding-bottom: 34px;
+        }
+
+        .quote {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+
+        @include sm {
+            .profile-box {
+                padding-left: 10px;
+            }
+
+            .text {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .quote {
+                position: absolute;
+                top: 40px;
+                right: 10px;
+            }
+        }
+    }
+
+    &.style2 {
+        position: relative;
+        border-radius: 16px;
+        border-top: 4px solid $theme-color;
+        background-color: $white-color;
+        box-shadow: 0px 4px 25px 0px rgba(98, 34, 204, 0.08);
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+
+        .profile-box {
+            display: flex;
+            gap: 20px;
+            padding-top: 50px;
+            padding-left: 50px;
+            padding-bottom: 20px;
+
+            .testi-thumb {
+                img {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                }
+            }
+
+            .testi-content {
+                .title {
+                    color: $title-color;
+                    font-family: $title-font;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 28px;
+                    letter-spacing: -0.4px;
+                    margin-bottom: 1px;
+                }
+
+                .designation {
+                    text-align: start;
+                    color: $body-color;
+                    font-family: $title-font;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px;
+                }
+            }
+        }
+
+        .text {
+            color: $body-color;
+            font-family: $title-font;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 38px;
+            text-transform: capitalize;
+            padding-left: 50px;
+            padding-right: 40px;
+            padding-bottom: 50px;
+        }
+
+        .quote {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+
+        @include sm {
+            .profile-box {
+                padding-left: 10px;
+            }
+
+            .text {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .quote {
+                position: absolute;
+                top: 40px;
+                right: 10px;
+            }
+        }
+    }
+
+    &.style3 {
+        position: relative;
+        max-width: 450px;
+        border-radius: 16px;
+        background-color: $white-color;
+        border-radius: 12px;
+        box-shadow: 0px 4px 25px 0px rgba(98, 34, 204, 0.08);
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -ms-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+
+        .star-wrap {
+            padding-top: 40px;
+            padding-left: 40px;
+        }
+
+        .profile-box {
+            display: flex;
+            gap: 20px;
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-bottom: 20px;
+
+            .testi-thumb {
+                img {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                }
+            }
+
+            .testi-content {
+                .title {
+                    color: $title-color;
+                    font-family: $title-font;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 28px;
+                    letter-spacing: -0.4px;
+                    margin-bottom: 1px;
+                }
+
+                .designation {
+                    text-align: start;
+                    color: $body-color;
+                    font-family: $title-font;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px;
+                }
+
+                .star-wrap {
+                    display: flex;
+                    padding-left: 0;
+
+                    li {
+                        list-style-type: none;
+                    }
+                }
+            }
+        }
+
+        .text {
+            color: $body-color;
+            font-family: $title-font;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            position: absolute;
+            bottom: 37px;
+            right: 45px;
+
+            .darkQuote {
+                display: block;
+            }
+
+            .whiteQuote {
+                display: none;
+            }
+        }
+
+        .shape3_1 {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        @include sm {
+            .profile-box {
+                padding-left: 10px;
+            }
+
+            .text {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .quote {
+                position: absolute;
+                bottom: 17px;
+                right: 10px;
+            }
+        }
+    }
+}

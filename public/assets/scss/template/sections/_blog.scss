@@ -1,0 +1,556 @@
+/*----------------------------------------------
+    # Blog style here
+----------------------------------------------*/
+.blog-wrap {
+  &.style1 {
+    position: relative;
+
+    .shape1_1 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &.style2 {
+    position: relative;
+
+    .shape2_1 {
+      position: absolute;
+      top: 142px;
+      left: 0;
+    }
+
+    .shape2_2 {
+      position: absolute;
+      bottom: 50px;
+      right: 0;
+    }
+  }
+}
+
+.blog-card-wrap {
+  &.style1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 30px;
+
+    @include lg {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include md {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+  }
+
+  &.style2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 30px;
+
+    @include lg {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include md {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &.style3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+}
+
+.blog-card {
+  &.style1 {
+    position: relative;
+    padding: 24px;
+    max-width: 370px;
+    border-radius: 16px;
+    border: 1px solid $border-color;
+    background-color: $white-color;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+
+    .blog-card-body {
+
+      .btn-wrapper {
+        a {
+          color: $body-color;
+          font-family: $title-font;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 28px;
+          text-transform: capitalize;
+
+          &:hover {
+            color: $theme-color;
+          }
+        }
+
+        img,
+        i {
+          color: $body-color;
+          font-family: $title-font;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 28px;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    .calendar {
+      position: absolute;
+      top: 205px;
+      left: 44px;
+      border-radius: 10px;
+      background-color: $white-color;
+      box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
+
+      .date {
+        padding: 10px 18px;
+        color: $white-color;
+        text-align: center;
+        font-family: $title-font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+        border-radius: 10px;
+        background-color: $theme-color;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+      }
+
+      .month {
+        color: $body-color;
+        text-align: center;
+        font-family: $title-font;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+
+    &:hover {
+      .blog-card-thumb {
+        img {
+          transform: scale(1.23);
+          -webkit-transform: scale(1.23);
+          -moz-transform: scale(1.23);
+          -ms-transform: scale(1.23);
+          -o-transform: scale(1.23);
+        }
+      }
+    }
+  }
+
+  &.style2 {
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid #E3E3E3;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+
+    .blog-card-body {
+      padding: 0 30px 30px 30px;
+    }
+
+    .calendar {
+      position: absolute;
+      top: 36px;
+      left: 36px;
+      display: inline-flex;
+      padding: 10px 16px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #384BFF 0%, #B42AF3 123.82%);
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+
+      .date {
+        color: $white-color;
+        text-align: center;
+        font-family: $title-font;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px;
+      }
+
+      .month {
+        color: $white-color;
+        text-align: center;
+        font-family: $title-font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+      }
+    }
+
+    &:hover {
+      .blog-card-thumb {
+
+        img {
+          transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+          -o-transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  &.style3 {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    border-radius: 20px;
+    border: 1px solid #E3E3E3;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+
+    .blog-card-body {
+      padding-right: 30px;
+    }
+
+    .calendar {
+      position: absolute;
+      top: 36px;
+      left: 36px;
+      display: inline-flex;
+      padding: 10px 16px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #384BFF 0%, #B42AF3 123.82%);
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+
+      .date {
+        color: $white-color;
+        text-align: center;
+        font-family: $title-font;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px;
+      }
+
+      .month {
+        color: $white-color;
+        text-align: center;
+        font-family: $title-font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+      }
+    }
+
+    &:hover {
+      .blog-card-thumb {
+        &.style3 {
+          img {
+            transform: scale(1.23);
+            -webkit-transform: scale(1.23);
+            -moz-transform: scale(1.23);
+            -ms-transform: scale(1.23);
+            -o-transform: scale(1.23);
+          }
+        }
+      }
+    }
+
+    @include sm {
+      grid-template-columns: repeat(1, 1fr);
+
+      .blog-card-body {
+        padding: 0 30px 30px 30px;
+      }
+    }
+  }
+}
+
+
+.blog-card-thumb {
+  &.style1 {
+    overflow: hidden;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+
+    img {
+      width: 322px;
+      height: 216px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid $border-color;
+      -webkit-border-radius: 16px;
+      -moz-border-radius: 16px;
+      -ms-border-radius: 16px;
+      -o-border-radius: 16px;
+      transition: all 0.4s ease;
+      -webkit-transition: all 0.4s ease;
+      -moz-transition: all 0.4s ease;
+      -ms-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+
+    }
+  }
+
+  &.style2 {
+    overflow: hidden;
+    margin: 20px 20px 0 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+
+    img {
+      width: 530px;
+      height: 248px;
+      object-fit: cover;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      @include transition;
+
+      @include lg {
+        width: 902px;
+        height: 427px;
+        object-fit: cover;
+      }
+
+      @include md {
+        width: 650px;
+      }
+
+      @include sm {
+        width: 530px;
+      }
+
+    }
+  }
+
+  &.style3 {
+    overflow: hidden;
+    margin: 20px 30px 20px 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+
+    img {
+      width: 238px;
+      height: 236px;
+      object-fit: cover;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      @include transition;
+
+      @include lg {
+        width: 420px;
+        height: 410px;
+        object-fit: cover;
+      }
+
+      @include md {
+        width: 300px;
+      }
+
+    }
+
+    @include sm {
+      overflow: hidden;
+      margin: 20px 20px 0 20px;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+
+      img {
+        width: 530px;
+        height: 248px;
+        object-fit: cover;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        @include transition;
+      }
+    }
+  }
+}
+
+.blog-title {
+  &.style1 {
+    margin-bottom: 20px;
+
+    a {
+      color: $title-color;
+      font-family: $title-font;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 32px;
+      transition: all 0.4s ease;
+      -webkit-transition: all 0.4s ease;
+      -moz-transition: all 0.4s ease;
+      -ms-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+
+      &:hover {
+        color: $theme-color2;
+      }
+    }
+  }
+
+  &.style2 {
+    margin-bottom: 20px;
+
+    a {
+      color: $title-color;
+      font-family: $title-font;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 32px;
+      transition: all 0.4s ease;
+      -webkit-transition: all 0.4s ease;
+      -moz-transition: all 0.4s ease;
+      -ms-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+
+      &:hover {
+        color: $theme-color2;
+      }
+    }
+  }
+}
+
+.blog-text {
+  color: $body-color;
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin-top: -5px;
+  margin-bottom: 30px;
+}
+
+.tag-cloud {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 45px;
+  margin-bottom: 5px;
+
+  &.style2 {
+    margin-top: 25px;
+  }
+}
+
+.profile-wrapper {
+  &.style2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 133px;
+
+    .fancy-box {
+      &.style1 {
+        gap: 16px;
+
+        .fancy-box_icon {
+          padding: 0px;
+
+          img {
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+          }
+        }
+
+        .fancy-box_content {
+          span {
+            display: inline-block;
+            color: $theme-color;
+            font-family: $title-font;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+          }
+
+          h4 {
+            color: $title-color;
+            font-family: $title-font;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+
+    @include sm {
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+
+      .gt-btn {
+        width: 100%;
+      }
+    }
+  }
+}

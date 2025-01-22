@@ -1,0 +1,127 @@
+
+ /* Breadcumb Area ---------------------------------- */
+.breadcrumb-wrapper{
+	position: relative;
+	overflow: hidden;  
+	.breadcumb{
+		position: relative;
+		left: 0;
+		right: 0; 
+		top: 0;
+		padding: 180px 0 ;
+		@include md{
+			padding: 180px 0 70px;
+		}
+	}
+	.page-heading{
+		text-align: center;
+		z-index: 9;
+
+		@include xl{
+			padding: 140px 0;
+		}
+
+		@include lg{
+			padding: 120px 0;
+		}
+
+		@include md{
+			padding: 100px 0;
+		}
+
+		@include sm{
+			padding: 80px 0;
+		}
+
+		h1{
+			color: $white-color;
+			font-size: 65px;
+			position: relative;
+			z-index: 9;
+
+			@include lg{
+				font-size: 52px;
+			}
+
+			@include sm{
+				font-size: 42px;
+			}
+		}
+
+		.breadcrumb-items{
+            display: flex;
+            align-items: center; 
+			margin-top: 20px;
+			gap: 10px;
+			justify-content: center;
+			list-style-type: none;
+			padding-left: 0;
+
+			@include sm{
+				margin-top: 15px;
+			}
+			
+			li{
+				color: $white-color;
+				text-transform: capitalize;
+				font-weight: 600;
+	
+				a {
+					color: $white-color;				;
+					@include transition;
+	
+					&:hover{
+						color: $theme-color2;
+					}
+				}
+	
+				i{
+					color: $white-color;
+				}
+			}
+		}
+	}
+
+	.border-shape {
+		position: absolute;
+		top: 20px;
+		left: 0;
+	}
+
+	.line-shape {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0; 
+	}
+}
+
+
+.error-items {
+	text-align: center;
+ 
+
+	h2 {
+		color: $title-color; 
+		font-family: $title-font;
+		font-size: 60px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin-top: 50px;
+		span{
+			color: $theme-color;
+		}
+	}
+
+	p{
+		color: var(--paragraph-color, #726B7D);
+		text-align: center;
+		font-family: $title-font;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 24px; 
+		margin-bottom: 50px;
+	}
+}

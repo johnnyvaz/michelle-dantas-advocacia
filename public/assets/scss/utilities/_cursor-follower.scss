@@ -1,0 +1,42 @@
+.cursor-follower {
+  position: fixed;
+  background: $theme-color2;
+  border: 1px solid $theme-color2;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  z-index: 999999;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) background;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  transform: translate(2px, 2px);
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+}
+
+.slider-drag-cursor {
+  pointer-events: none;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  left: -2px;
+  height: 36px;
+  width: 36px;
+  transition: width 0.1s ease-in-out;
+  background: rgba(28, 45, 55, 0.7);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  border-radius: 100%;
+  color: var(--white-color);
+  display: none;
+  cursor: none;
+}
+.slider-drag-cursor.active {
+  display: block;
+}

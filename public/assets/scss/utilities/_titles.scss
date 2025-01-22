@@ -1,0 +1,50 @@
+ .title-wrap {
+     display: grid;
+     align-items: center;
+     grid-template-columns: repeat(2, 1fr);
+     justify-content: space-between;
+     .title-area {
+        max-width: 645px;
+        margin: 0;
+    }
+    @include sm{  
+      grid-template-columns: repeat(1, 1fr);
+    }
+ }
+
+ .title-area {
+     max-width: 645px; 
+
+     .subtitle {
+         text-align: center;
+         font-family: "Kumbh Sans", sans-serif;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 28px;
+         text-transform: uppercase;
+         background: linear-gradient(90deg, #384BFF 0%, #B42AF3 123.82%);
+         background-clip: text;
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         margin-bottom: 10px;
+     }
+
+     .title {
+         color: $title-color;
+         font-family: "Plus Jakarta Sans", sans-serif;
+         font-size: 40px;
+         font-style: normal;
+         font-weight: 800;
+         line-height: 50px;
+     }
+
+     .text {
+         color: $body-color;
+         font-family: "Plus Jakarta Sans", sans-serif;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 28px;
+     }
+ }
