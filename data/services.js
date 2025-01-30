@@ -53,7 +53,7 @@ export const services2 = [
   {
     id: 9,
     icon: "/assets/img/icon/serviceIcon1_1.png",
-    title: "Data Analytics",
+    title: "Data Marcos",
     description: "Data analytics involves examining raw data.",
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
     delay: ".2s",
