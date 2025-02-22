@@ -55,7 +55,7 @@ export default function Header1() {
                   </button>
                   <Link
                     scroll={false}
-                    href={`/contact`}
+                    href={`/contato`}
                     className="gt-btn gt-btn-icon"
                   >
                     GET IN TOUCH

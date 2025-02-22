@@ -5,7 +5,7 @@ export const menuItems = [
   },
   {
     title: "Sobre",
-    href: "/sobre",
+    href: "/#sobre",
   },
   {
     title: "Equipe",

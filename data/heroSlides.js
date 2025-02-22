@@ -1,7 +1,7 @@
 export const slidesData = [
   {
     id: 1,
-    bgSrc: "/assets/img/hero/hero-bg1_1.png", // imagem com tema jurídico, ex: tribunal ou reunião com advogado
+    bgSrc: "/assets/img/hero/hero-bg1_1--.png", // imagem com tema jurídico, ex: tribunal ou reunião com advogado
     titleIconSrc: "/assets/img/icon/titleIconWhite.png",
     subtitle: "EXCELÊNCIA EM CONSULTORIA JURÍDICA",
     title1: "Protegendo Seus Direitos",

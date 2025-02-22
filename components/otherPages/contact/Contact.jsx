@@ -74,9 +74,9 @@ export default function Contact() {
                         </svg>
                       </div>
                       <div className="content">
-                        <p>Call Us 7/24</p>
+                        <p>Entre em contato</p>
                         <h3>
-                          <a href="tel:+2085550112">+208-555-0112</a>
+                          <a href="tel:+5519992845413">19 992845413</a>
                         </h3>
                       </div>
                     </div>
@@ -136,8 +136,9 @@ export default function Contact() {
                         </svg>
                       </div>
                       <div className="content">
-                        <p>Location</p>
-                        <h3>4517 Washington ave.</h3>
+                        <p>Localização</p>
+                        <h3>R URUGUAI, 853 - Americana - Vila Frezzarim
+                        SP - Brasil - CEP: 13465-680</h3>
                       </div>
                     </div>
                   </div>
@@ -171,8 +172,8 @@ export default function Contact() {
                           width="28"
                           height="12"
                         />
-                      </span>{' '}
-                      Contact us{' '}
+                      </span>{" "}
+                      Fale conosco{" "}
                       <span>
                         <Image
                           alt="icon"
@@ -182,11 +183,15 @@ export default function Contact() {
                         />
                       </span>
                     </h5>
-                    <h2 className="title mb-50">Ready to Get Started?</h2>
+                    <h2 className="title mb-50">
+                      Pronto para Garantir Seus Direitos?
+                    </h2>
                     <p>
-                      Nullam varius, erat quis iaculis dictum, eros urna varius
-                      eros, ut blandit felis odio in turpis. Quisque rhoncus,
-                      eros in auctor ultrices,
+                      Confie na expertise da Michelle Dantas para transformar
+                      desafios jurídicos em vitórias. Nossa equipe oferece
+                      atendimento personalizado, clareza e soluções eficazes
+                      para proteger o que é seu. Entre em contato e inicie sua
+                      jornada rumo à justiça!
                     </p>
                   </div>
                   <form
@@ -200,13 +205,13 @@ export default function Contact() {
                         data-wow-delay=".3s"
                       >
                         <div className="form-clt">
-                          <span>Your name*</span>
+                          <span>Seu nome*</span>
                           <input
                             type="text"
                             name="name"
                             id="name"
                             required
-                            placeholder="Your Name"
+                            placeholder="Seu nome"
                           />
                         </div>
                       </div>
@@ -215,13 +220,13 @@ export default function Contact() {
                         data-wow-delay=".5s"
                       >
                         <div className="form-clt">
-                          <span>Your Email*</span>
+                          <span>Seu e-mail*</span>
                           <input
                             type="text"
                             name="email2"
                             id="email2"
                             required
-                            placeholder="Your Email"
+                            placeholder="Seu e-mail"
                           />
                         </div>
                       </div>
@@ -230,12 +235,12 @@ export default function Contact() {
                         data-wow-delay=".7s"
                       >
                         <div className="form-clt">
-                          <span>Write Message*</span>
+                          <span>Escreva sua mensagem*</span>
                           <textarea
                             name="message"
                             id="message"
                             required
-                            placeholder="Write Message"
+                            placeholder="escreva aqui sua mensagem"
                             defaultValue={""}
                           />
                         </div>
@@ -245,7 +250,7 @@ export default function Contact() {
                         data-wow-delay=".9s"
                       >
                         <button type="submit" className="gt-btn">
-                          Send Message
+                          Enviar
                           <i className="fa-solid fa-arrow-right-long ms-1" />
                         </button>
                       </div>

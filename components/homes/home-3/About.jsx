@@ -165,7 +165,7 @@ export default function About() {
             <div className="profile-wrapper">
               <Link
                 scroll={false}
-                href={`/contact`}
+                href={`/contato`}
                 className="gt-btn gt-btn-icon"
               >
                 GET IN TOUCH

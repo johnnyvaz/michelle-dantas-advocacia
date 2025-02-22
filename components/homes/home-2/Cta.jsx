@@ -62,7 +62,7 @@ export default function Cta() {
             <Link
               scroll={false}
               className="gt-btn style5 gt-btn-icon"
-              href={`/contact`}
+              href={`/contato`}
             >
               GET IN TOUCH
             </Link>

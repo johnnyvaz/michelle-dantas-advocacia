@@ -27,17 +27,19 @@ export default function Home1() {
       <main className="main position-relative" id="mains">
         <Hero />
         <Services />
-        <About />
+        {/* <About /> */}
         <Services2 />
-        <Offering />
-        <VideoBox />
-        <Team />
-        <Projects />
-        <Process />
-        <Facts />
-        <Pricing />
-        <Testimonials />
         <Blog />
+        {/* <Offering /> */}
+        {/* <VideoBox /> */}
+        <Facts />
+        <Team />
+        {/* <Projects /> */}
+        {/* <Process /> */}
+    
+        {/* <Pricing /> */}
+        <Testimonials />
+        
         <Cta />
       </main>
       <Footer1 />

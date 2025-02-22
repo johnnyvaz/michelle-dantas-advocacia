@@ -2,102 +2,102 @@ export const services = [
   {
     id: 1,
     imageSrc: "/assets/img/icon/serviceIcon1_1.png",
-    title: "Database Security",
-    description: "Database Security involves examining raw",
+    title: "Direito Cível",
+    description:
+      "Atuação especializada em demandas cíveis, garantindo a proteção dos seus direitos em conflitos contratuais e indenizatórios.",
   },
   {
     id: 2,
     imageSrc: "/assets/img/icon/serviceIcon1_2.png",
-    title: "IT Consultancy",
-    description: "IT Consultancy involves examining raw",
+    title: "Direito Trabalhista",
+    description:
+      "Defesa e orientação para empregados e empregadores, buscando soluções justas para questões trabalhistas.",
   },
   {
     id: 3,
     imageSrc: "/assets/img/icon/serviceIcon1_3.png",
-    title: "Cyber Security",
-    description: "Cyber Security involves examining raw",
+    title: "Plano de Saúde",
+    description:
+      "*****.",
   },
   {
     id: 4,
-    imageSrc: "/assets/img/icon/serviceIcon1_4.png",
-    title: "App Development",
-    description: "App Development involves examining raw",
-  },
-  {
-    id: 5,
     imageSrc: "/assets/img/icon/serviceIcon1_1.png",
-    title: "Database Security",
-    description: "Database Security involves examining raw",
+    title: "Direito Digital",
+    description:
+      "Recuperação de Redes sociais, garantindo segurança e privacidade online.",
   },
   {
     id: 6,
     imageSrc: "/assets/img/icon/serviceIcon1_2.png",
-    title: "IT Consultancy",
-    description: "IT Consultancy involves examining raw",
+    title: "Assessoria Jurídica",
+    description:
+      "Atendimento personalizado para orientações e soluções jurídicas com foco na eficiência e agilidade.",
   },
   {
     id: 7,
     imageSrc: "/assets/img/icon/serviceIcon1_3.png",
-    title: "Cyber Security",
-    description: "Cyber Security involves examining raw",
-  },
-  {
-    id: 8,
-    imageSrc: "/assets/img/icon/serviceIcon1_4.png",
-    title: "App Development",
-    description: "App Development involves examining raw",
-  },
+    title: "Consultoria Jurídica",
+    description:
+      "Análise especializada de casos para oferecer estratégias eficazes em diversas áreas do direito.",
+  }
 ];
 
 export const services2 = [
   {
     id: 9,
     icon: "/assets/img/icon/serviceIcon1_1.png",
-    title: "Data Marcos",
-    description: "Data analytics involves examining raw data.",
+    title: "Assessoria Cível",
+    description:
+      "Atuação especializada em litígios cíveis, protegendo os interesses dos nossos clientes com segurança.",
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
     delay: ".2s",
   },
   {
     id: 10,
     icon: "/assets/img/icon/serviceIcon1_2.png",
-    title: "UI/UX Design",
-    description: "UI/UX design is a crucial aspect of",
+    title: "Direito Trabalhista",
+    description:
+      "Soluções jurídicas para questões trabalhistas, defendendo os direitos de empregados e empregadores.",
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
     delay: ".4s",
   },
   {
     id: 11,
     icon: "/assets/img/icon/serviceIcon1_3.png",
-    title: "Cybersecurity",
-    description: "Cybersecurity is the practice of protecting",
+    title: "Plano de Saúde",
+    description:
+      "***",
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
     delay: ".6s",
   },
   {
-    id: 12,
-    icon: "/assets/img/icon/serviceIcon1_4.png",
-    title: "App development",
-    description: "App development is the process of",
+    id: 13,
+    icon: "/assets/img/icon/serviceIcon1_1.png",
+    title: "Recuperação de Redes Sociais",
+    description:
+      "*****.",
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
-    delay: ".8s",
+    delay: "1s",
   },
   {
     id: 13,
     icon: "/assets/img/icon/serviceIcon1_1.png",
-    title: "Dedicated Teams",
-    description: "Dedicated teams are a model of outsourcing",
+    title: "Recuperação de Redes Sociais",
+    description:
+      "*****.",
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
     delay: "1s",
-  },
+  }
 ];
 
 export const servicesStyle2 = [
   {
     id: 14,
     thumb: "/assets/img/service/serviceThumb2_1.png",
-    title: "Software Services",
-    description: "Software services encompass a wide range of",
+    title: "Consultoria Jurídica",
+    description:
+      "Oferecemos orientação estratégica e soluções eficazes para enfrentar os desafios do mundo jurídico.",
     icon: "/assets/img/icon/serviceIcon2_1.png",
     iconTwo: "/assets/img/icon/serviceIcon2_5.png",
     delay: ".3s",
@@ -105,8 +105,9 @@ export const servicesStyle2 = [
   {
     id: 15,
     thumb: "/assets/img/service/serviceThumb2_2.png",
-    title: "IT Consultancy",
-    description: "We provide new and emerging technologies",
+    title: "Defesa Trabalhista",
+    description:
+      "Representação especializada em questões trabalhistas, garantindo justiça e equidade para todas as partes.",
     icon: "/assets/img/icon/serviceIcon2_2.png",
     iconTwo: "/assets/img/icon/serviceIcon2_6.png",
     delay: ".6s",
@@ -114,8 +115,9 @@ export const servicesStyle2 = [
   {
     id: 16,
     thumb: "/assets/img/service/serviceThumb2_3.png",
-    title: "Web Development",
-    description: "Web development is the work involved in",
+    title: "Direito Digital",
+    description:
+      "Assessoria para lidar com os desafios legais do ambiente digital, protegendo seus dados e direitos.",
     icon: "/assets/img/icon/serviceIcon2_3.png",
     iconTwo: "/assets/img/icon/serviceIcon2_7.png",
     delay: ".8s",
@@ -123,8 +125,9 @@ export const servicesStyle2 = [
   {
     id: 17,
     thumb: "/assets/img/service/serviceThumb2_4.png",
-    title: "Database Security",
-    description: "Database security is the processes, tools",
+    title: "Mediação e Arbitragem",
+    description:
+      "Resolução de conflitos de forma ágil e eficaz, com métodos consensuais e extrajudiciais.",
     icon: "/assets/img/icon/serviceIcon2_4.png",
     iconTwo: "/assets/img/icon/serviceIcon2_8.png",
     delay: "1s",
@@ -135,25 +138,25 @@ export const services3 = [
   {
     id: 18,
     icon: "/assets/img/icon/serviceIcon4_1.png",
-    title: "Core Feature",
+    title: "Atuação Estratégica",
     description:
-      "The core features of a website can vary based on its purpose, audience, and goals. However, here",
+      "Nossa análise detalhada de cada caso permite formular a melhor abordagem para resolver seu desafio jurídico.",
     delay: ".2s",
   },
   {
     id: 19,
     icon: "/assets/img/icon/serviceIcon4_2.png",
-    title: "Easy Customizable",
+    title: "Atendimento Personalizado",
     description:
-      "One of the core features of this website is its easy customizability, which allows users to effortlessly",
+      "Cada cliente recebe um serviço exclusivo, adaptado às suas necessidades e particularidades.",
     delay: ".5s",
   },
   {
     id: 20,
     icon: "/assets/img/icon/serviceIcon4_3.png",
-    title: "Fast Support",
+    title: "Suporte Contínuo",
     description:
-      "One of the standout features of this website is its commitment to providing fast and reliable support",
+      "Acompanhamos você durante todo o processo jurídico, oferecendo orientação e segurança em cada etapa.",
     delay: ".8s",
   },
 ];
@@ -162,57 +165,57 @@ export const serviceItems = [
   {
     id: 21,
     imgSrc: "/assets/img/icon/serviceIcon1_1.png",
-    title: "Database Security",
-    text: "Database Security involves examining raw",
+    title: "Direito Cível",
+    text: "Atuação em conflitos cíveis com foco na proteção dos seus direitos.",
     delay: ".3s",
   },
   {
     id: 22,
     imgSrc: "/assets/img/icon/serviceIcon1_2.png",
-    title: "IT Consultancy",
-    text: "IT Consultancy involves examining raw",
+    title: "Direito Trabalhista",
+    text: "Defesa dos direitos trabalhistas para empregados e empregadores.",
     delay: ".6s",
   },
   {
     id: 23,
     imgSrc: "/assets/img/icon/serviceIcon1_3.png",
-    title: "Cyber Security",
-    text: "Cyber Security involves examining raw",
+    title: "Direito de Família",
+    text: "Assistência jurídica para questões familiares delicadas.",
     delay: ".9s",
   },
   {
     id: 24,
     imgSrc: "/assets/img/icon/serviceIcon1_4.png",
-    title: "App Development",
-    text: "App Development involves examining raw",
+    title: "Direito Previdenciário",
+    text: "Garantia dos seus benefícios previdenciários e direitos sociais.",
     delay: "1s",
   },
   {
     id: 25,
     imgSrc: "/assets/img/icon/serviceIcon1_6.png",
-    title: "UI/UX Design",
-    text: "UI/UX Design involves examining raw",
+    title: "Direito Digital",
+    text: "Proteção jurídica no ambiente digital e segurança dos seus dados.",
     delay: "1.3s",
   },
   {
     id: 26,
     imgSrc: "/assets/img/icon/serviceIcon1_7.png",
-    title: "IT Management",
-    text: "IT Management involves examining raw",
+    title: "Consultoria Jurídica",
+    text: "Orientação estratégica para resolver seus desafios legais.",
     delay: "1.7s",
   },
   {
     id: 27,
     imgSrc: "/assets/img/icon/serviceIcon1_8.png",
-    title: "Digital Marketing",
-    text: "Digital Marketing involves examining raw",
+    title: "Mediação e Arbitragem",
+    text: "Resolução de conflitos de forma rápida e extrajudicial.",
     delay: "1.8s",
   },
   {
     id: 28,
     imgSrc: "/assets/img/icon/serviceIcon1_9.png",
-    title: "Data Analysis",
-    text: "Data Analysis involves examining raw",
+    title: "Assessoria Jurídica",
+    text: "Atendimento personalizado para soluções jurídicas eficazes.",
     delay: "2s",
   },
 ];
@@ -223,8 +226,8 @@ export const serviceCards = [
     thumbSrc: "/assets/img/service/serviceThumb2_1.png",
     iconSrc: "/assets/img/icon/serviceIcon2_1.png",
     iconTwoSrc: "/assets/img/icon/serviceIcon2_5.png",
-    title: "Software Services",
-    text: "Software services encompass a wide range of",
+    title: "Consultoria Especializada",
+    text: "Oferecemos uma consultoria completa para enfrentar desafios cíveis e contratuais com segurança.",
     delay: ".3s",
     hasRipple: true,
   },
@@ -233,8 +236,8 @@ export const serviceCards = [
     thumbSrc: "/assets/img/service/serviceThumb2_2.png",
     iconSrc: "/assets/img/icon/serviceIcon2_2.png",
     iconTwoSrc: "/assets/img/icon/serviceIcon2_6.png",
-    title: "IT Consultancy",
-    text: "We provide new and emerging technologies",
+    title: "Defesa Trabalhista",
+    text: "Representação em questões trabalhistas, assegurando seus direitos e promovendo justiça.",
     delay: ".6s",
   },
   {
@@ -242,8 +245,8 @@ export const serviceCards = [
     thumbSrc: "/assets/img/service/serviceThumb2_3.png",
     iconSrc: "/assets/img/icon/serviceIcon2_3.png",
     iconTwoSrc: "/assets/img/icon/serviceIcon2_7.png",
-    title: "Web Development",
-    text: "Web development is the work involved in",
+    title: "Direito de Família",
+    text: "Assistência em casos familiares, com sensibilidade e compromisso com o bem-estar.",
     delay: ".9s",
   },
   {
@@ -251,8 +254,8 @@ export const serviceCards = [
     thumbSrc: "/assets/img/service/serviceThumb2_4.png",
     iconSrc: "/assets/img/icon/serviceIcon2_4.png",
     iconTwoSrc: "/assets/img/icon/serviceIcon2_8.png",
-    title: "Database Security",
-    text: "Database security is the processes, tools",
+    title: "Direito Previdenciário",
+    text: "Consultoria e ações para garantir seus benefícios e segurança social.",
     delay: "1.2s",
   },
   {
@@ -260,8 +263,8 @@ export const serviceCards = [
     thumbSrc: "/assets/img/service/serviceThumb2_5.png",
     iconSrc: "/assets/img/icon/serviceIcon2_9.png",
     iconTwoSrc: "/assets/img/icon/serviceIcon2_13.png",
-    title: "Digital Marketing",
-    text: "Software services encompass a wide range of",
+    title: "Direito Digital",
+    text: "Estratégias para proteger seus dados e direitos na era digital.",
     delay: "1.3s",
     hasRipple: true,
   },
@@ -270,8 +273,8 @@ export const serviceCards = [
     thumbSrc: "/assets/img/service/serviceThumb2_6.png",
     iconSrc: "/assets/img/icon/serviceIcon2_10.png",
     iconTwoSrc: "/assets/img/icon/serviceIcon2_14.png",
-    title: "Data Analysis",
-    text: "We provide new and emerging technologies",
+    title: "Consultoria Jurídica",
+    text: "Orientação e suporte para resolver desafios jurídicos com agilidade.",
     delay: "1.5s",
   },
   {
@@ -279,8 +282,8 @@ export const serviceCards = [
     thumbSrc: "/assets/img/service/serviceThumb2_7.png",
     iconSrc: "/assets/img/icon/serviceIcon2_11.png",
     iconTwoSrc: "/assets/img/icon/serviceIcon2_15.png",
-    title: "UI/UX Design",
-    text: "Web development is the work involved in",
+    title: "Mediação e Arbitragem",
+    text: "Resolução de conflitos por meio de métodos consensuais e extrajudiciais.",
     delay: "1.7s",
   },
   {
@@ -288,8 +291,8 @@ export const serviceCards = [
     thumbSrc: "/assets/img/service/serviceThumb2_8.png",
     iconSrc: "/assets/img/icon/serviceIcon2_12.png",
     iconTwoSrc: "/assets/img/icon/serviceIcon2_16.png",
-    title: "IT Management",
-    text: "Database security is the processes, tools",
+    title: "Atendimento Personalizado",
+    text: "Serviço jurídico que valoriza cada cliente, oferecendo soluções sob medida.",
     delay: "1.9s",
   },
 ];
@@ -304,16 +307,16 @@ export const allService = [
 ];
 
 export const sericeCategories = [
-  { label: "Database Security", active: false },
-  { label: "IT Consultancy", active: false },
-  { label: "App Development", active: true },
-  { label: "UI/UX Design", active: false },
-  { label: "Cyber Security", active: false },
+  { label: "Direito Cível", active: false },
+  { label: "Direito Trabalhista", active: false },
+  { label: "Direito de Família", active: true },
+  { label: "Direito Previdenciário", active: false },
+  { label: "Direito Digital", active: false },
 ];
 
 export const hours = [
-  { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Sun: 09.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Friday: Closed" },
-  { iconClass: "fa-regular fa-clock", text: "Emergency: 24 hours" },
+  { iconClass: "fa-regular fa-clock", text: "Seg - Sáb: 10:00 - 16:00" },
+  { iconClass: "fa-regular fa-clock", text: "Dom: 09:00 - 16:00" },
+  { iconClass: "fa-regular fa-clock", text: "Sexta: Fechado" },
+  { iconClass: "fa-regular fa-clock", text: "Emergência: 24 horas" },
 ];

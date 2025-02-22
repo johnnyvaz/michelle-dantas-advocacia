@@ -272,7 +272,7 @@ export default function Hero() {
                     <div className="btn-wrap">
                       <Link
                         scroll={false}
-                        href={`/contact`}
+                        href={`/contato`}
                         className="gt-btn gt-btn-icon"
                       >
                         EXPLORE MORE

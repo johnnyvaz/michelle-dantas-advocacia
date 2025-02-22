@@ -46,15 +46,15 @@ export default function Cta() {
             className="cta-title text-white wow fadeInUp"
             data-wow-delay=".3s"
           >
-            Stay Connected With Cutting Edge IT
+            Confie na Experiência que Transforma Conflitos em Vitórias
           </h3>
           <div className="btn-wrapper">
             <Link
               scroll={false}
               className="gt-btn style5 gt-btn-icon"
-              href={`/contact`}
+              href={`/contato`}
             >
-              GET IN TOUCH
+              FALE CONOSCO
             </Link>
           </div>
         </div>

@@ -49,7 +49,7 @@ export default function AboutCta() {
             <Link
               scroll={false}
               className="gt-btn gt-btn-icon"
-              href={`/contact`}
+              href={`/contato`}
             >
               GET IN TOUCH
             </Link>

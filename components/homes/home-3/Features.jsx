@@ -219,7 +219,7 @@ export default function Features() {
                           <Link
                             scroll={false}
                             className="gt-btn gt-btn-icon"
-                            href={`/contact`}
+                            href={`/contato`}
                           >
                             Explore More
                           </Link>
@@ -295,7 +295,7 @@ export default function Features() {
                           <Link
                             scroll={false}
                             className="gt-btn gt-btn-icon"
-                            href={`/contact`}
+                            href={`/contato`}
                           >
                             Explore More
                           </Link>
@@ -371,7 +371,7 @@ export default function Features() {
                           <Link
                             scroll={false}
                             className="gt-btn gt-btn-icon"
-                            href={`/contact`}
+                            href={`/contato`}
                           >
                             Explore More
                           </Link>
@@ -447,7 +447,7 @@ export default function Features() {
                           <Link
                             scroll={false}
                             className="gt-btn gt-btn-icon"
-                            href={`/contact`}
+                            href={`/contato`}
                           >
                             Explore More
                           </Link>
