@@ -257,13 +257,6 @@ export default function Contact() {
           </div>
         </div>
       </section>{" "}
-      <ModalVideo
-        channel="youtube"
-        youtube={{ mute: 0, autoplay: 0 }}
-        isOpen={isOpen}
-        videoId="f2Gzr8sAGB8"
-        onClose={() => setOpen(false)}
-      />
     </>
   );
 }

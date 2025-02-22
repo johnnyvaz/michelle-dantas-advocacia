@@ -3,20 +3,21 @@ import Header1 from "@/components/headers/Header1";
 import HeaderTop from "@/components/headers/HeaderTop";
 
 import Cta from "@/components/common/Cta";
-import ServiceDetails from "@/components/otherPages/service/ServiceDetails";
+import About from "@/components/homes/home-1/About";
+import Offering from "@/components/homes/home-1/Offering";
+import VideoBox from "@/components/homes/home-1/VideoBox";
+import Team from "@/components/homes/home-2/Team";
+import AboutCta from "@/components/otherPages/AboutCta";
+import Testimonials from "@/components/homes/home-2/Testimonials";
 import Link from "next/link";
-import { allService } from "@/data/services";
 export const metadata = {
-  title:
-    "Service Details|| Techbe-IT Solution & Technology Service Nextjs Template",
+  title: "About || Techbe-IT Solution & Technology Service Nextjs Template",
   description: "Techbe-IT Solution & Technology Service Nextjs Template",
 };
-export default function Page({ params }) {
-  const serviceItem =
-    allService.filter((elm) => elm.id == params.id)[0] || allService[0];
+export default function Page() {
   return (
     <>
-      <HeaderTop />
+      {/* <HeaderTop /> */}
       <Header1 />
       <main className="main position-relative" id="mains">
         <div className="breadcrumb-wrapper">
@@ -28,7 +29,7 @@ export default function Page({ params }) {
             <div className="container">
               <div className="page-heading">
                 <h1 className="wow fadeInUp" data-wow-delay=".3s">
-                  {serviceItem.title}
+                  About Us
                 </h1>
                 <ul
                   className="breadcrumb-items wow fadeInUp"
@@ -43,13 +44,20 @@ export default function Page({ params }) {
                   <li>
                     <i className="fas fa-chevrons-right" />
                   </li>
-                  <li>Services Details</li>
+                  <li>About Us</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <ServiceDetails serviceItem={serviceItem} />
+        <About />
+        <Offering />
+        <VideoBox />
+        <Team />
+        <AboutCta />
+        <Testimonials />
+        <div className="pb-300"></div>
+
         <Cta />
       </main>
       <Footer1 />

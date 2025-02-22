@@ -22,7 +22,7 @@ export const metadata = {
 export default function Home1() {
   return (
     <>
-      <HeaderTop />
+      {/* <HeaderTop /> */}
       <Header1 />
       <main className="main position-relative" id="mains">
         <Hero />
