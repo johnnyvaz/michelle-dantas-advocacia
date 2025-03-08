@@ -45,7 +45,7 @@
           -o-transition: 0.4s ease-in-out;
 
           &:hover {
-            background: linear-gradient(90deg, #384bff 0%, #b42af3 123.82%);
+            background: linear-gradient(90deg, #49211e 0%, #f8e955 123.82%);
             color: $white-color;
             border: 1px solid $theme-color;
           }
@@ -474,7 +474,7 @@
             -webkit-text-fill-color 1s;
 
           &:hover {
-            background: linear-gradient(90deg, #384bff 0%, #b42af3 123.82%);
+            background: linear-gradient(90deg, #49211e 0%, #f8e955 123.82%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -517,7 +517,7 @@
       left: 30px;
       padding: 15px;
       border-radius: 8px;
-      background: linear-gradient(90deg, #384bff 0%, #b42af3 123.82%);
+      background: linear-gradient(90deg, #49211e 0%, #f8e955 123.82%);
       box-shadow: 0px 4px 25px 0px rgba(56, 75, 255, 0.08);
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
