@@ -1,9 +1,9 @@
 export const teamMembers = [
   {
     id: 1,
-    imgSrc: "/assets/img/team/teamThumb2_1.png",
-    name: "Ben Stokes",
-    position: "Product Designer",
+    imgSrc: "/assets/img/team/michele.jpeg",
+    name: "Michelle Dantas",
+    position: "Advogada e Proprietária",
   },
   {
     id: 2,
@@ -51,28 +51,47 @@ export const teamMembers = [
 
 export const teamMembers2 = [
   {
-    id: 9,
-    imgSrc: "/assets/img/team/teamThumb1_1.png",
-    name: "Wade Warren",
-    role: "Warren Designer",
-    bgImage: "/assets/img/bg/teamThumbBg1_1.png",
+    id: 1,
+    imgSrc: "/assets/img/team/michelle.jpeg",
+    name: "Michelle Dantas",
+    role: "Advogada  Proprietária",
+    bgImage: "/assets/img/bg/teamThumbBg1_1-a.png",
     delay: ".3s",
   },
   {
-    id: 10,
-    imgSrc: "/assets/img/team/teamThumb1_2.png",
-    name: "Wade Warren",
-    role: "Warren Designer",
-    bgImage: "/assets/img/bg/teamThumbBg1_1.png",
+    id: 2,
+    imgSrc: "/assets/img/team/julia.jpeg",
+    name: "Júlia Rodrigues",
+    role: "Advogada",
+    bgImage: "/assets/img/bg/teamThumbBg1_1-a.png",
     delay: ".6s",
   },
   {
-    id: 11,
-    imgSrc: "/assets/img/team/teamThumb1_3.png",
-    name: "Albert Flores",
-    role: "Marketing",
-    bgImage: "/assets/img/bg/teamThumbBg1_1.png",
+    id: 3,
+    imgSrc: "/assets/img/team/izabela.jpeg",
+    name: "Izabela Aparecida",
+    role: "Advogada",
+    bgImage: "/assets/img/bg/teamThumbBg1_1-a.png",
     delay: ".9s",
+  }
+];
+
+export const teamMembers2b = [
+  {
+    id: 4,
+    imgSrc: "/assets/img/team/camilly.jpeg",
+    name: "Camilly Eduarda",
+    role: "Estagiária em Diretiro",
+    bgImage: "/assets/img/bg/teamThumbBg1_1-a.png",
+    delay: ".12s",
+  },
+  {
+    id: 5,
+    imgSrc: "/assets/img/team/barbara.jpeg",
+    name: "Bárbara Morelli",
+    role: "Estagiária em Diretiro",
+    bgImage: "/assets/img/bg/teamThumbBg1_1-a.png",
+    delay: ".15s",
   },
 ];
 
@@ -80,7 +99,7 @@ export const teamMembers3 = [
   {
     id: 12,
     imgSrc: "/assets/img/team/teamThumb1_1.png",
-    bgSrc: "/assets/img/bg/teamThumbBg1_1.png",
+    bgSrc: "/assets/img/bg/teamThumbBg1_1-a.png",
     name: "Darrell Steward",
     position: "President of Sales",
     delay: ".3s",
@@ -88,7 +107,7 @@ export const teamMembers3 = [
   {
     id: 13,
     imgSrc: "/assets/img/team/teamThumb1_2.png",
-    bgSrc: "/assets/img/bg/teamThumbBg1_1.png",
+    bgSrc: "/assets/img/bg/teamThumbBg1_1-a.png",
     name: "Wade Warren",
     position: "Warren Designer",
     delay: ".6s",
@@ -96,7 +115,7 @@ export const teamMembers3 = [
   {
     id: 14,
     imgSrc: "/assets/img/team/teamThumb1_3.png",
-    bgSrc: "/assets/img/bg/teamThumbBg1_1.png",
+    bgSrc: "/assets/img/bg/teamThumbBg1_1-a.png",
     name: "Albert Flores",
     position: "Marketing",
     delay: ".9s",
@@ -104,7 +123,7 @@ export const teamMembers3 = [
   {
     id: 15,
     imgSrc: "/assets/img/team/teamThumb1_4.png",
-    bgSrc: "/assets/img/bg/teamThumbBg1_1.png",
+    bgSrc: "/assets/img/bg/teamThumbBg1_1-a.png",
     name: "Kathryn Murphy",
     position: "Web Designer",
     delay: "1.2s",
@@ -112,7 +131,7 @@ export const teamMembers3 = [
   {
     id: 16,
     imgSrc: "/assets/img/team/teamThumb1_5.png",
-    bgSrc: "/assets/img/bg/teamThumbBg1_1.png",
+    bgSrc: "/assets/img/bg/teamThumbBg1_1-a.png",
     name: "Jenny Wilson",
     position: "Medical Assistant",
     delay: "1.4s",
@@ -120,7 +139,7 @@ export const teamMembers3 = [
   {
     id: 17,
     imgSrc: "/assets/img/team/teamThumb1_6.png",
-    bgSrc: "/assets/img/bg/teamThumbBg1_1.png",
+    bgSrc: "/assets/img/bg/teamThumbBg1_1-a.png",
     name: "Jane Cooper",
     position: "Nursing Assistant",
     delay: "1.5s",
