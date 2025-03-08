@@ -1,20 +1,20 @@
 export const counterBoxes = [
   {
     icon: "/assets/img/icon/counterIcon1_1.png",
-    number: 6561,
-    label: "Satisfied Clients",
+    number: 408,
+    label: "Processos trabalhistas",
     delay: ".3s",
   },
   {
     icon: "/assets/img/icon/counterIcon1_2.png",
-    number: 600,
-    label: "Finished Projects",
+    number: 700,
+    label: "Clientes atendidos",
     delay: ".6s",
   },
   {
     icon: "/assets/img/icon/counterIcon1_1.png",
     number: 250,
-    label: "Skilled Experts",
+    label: "Processos",
     delay: ".9s",
   },
   {

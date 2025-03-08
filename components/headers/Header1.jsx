@@ -16,7 +16,9 @@ export default function Header1() {
             <div className="row align-items-center justify-content-between">
               <div className="col-auto">
                 <div className="header-logo">
-                  <Link scroll={false} href={`/`}>
+                  <Link 
+                  // scroll={false} 
+                  href={`/`}>
                     <Image
                       src="/assets/img/logo-white.png"
                       width={199}
@@ -46,15 +48,9 @@ export default function Header1() {
               </div>
               <div className="col-auto d-none d-xl-block">
                 <div className="header-button">
-                  <button
-                    type="button"
-                    onClick={activePopupSearch}
-                    className="simple-icon searchBoxToggler"
-                  >
-                    <i className="far fa-search" />
-                  </button>
+        
                   <Link
-                    scroll={false}
+                    // scroll={false}
                     href={`/contato`}
                     className="gt-btn gt-btn-icon"
                   >

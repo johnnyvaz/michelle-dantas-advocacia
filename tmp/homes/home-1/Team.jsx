@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Team() {
   return (
-    <section className="team-area space fix">
+    <section id="equipe" className="team-area space fix">
       <div className="team-wrap style1">
         <div className="shape1_1">
           <Image
