@@ -9,14 +9,6 @@ export default function Team() {
       <br />
       <br />
       <div className="team-wrap style1">
-        <div className="shape1_1">
-          <Image
-            alt="shape"
-            src="/assets/img/shape/teamShape1_1.png"
-            width="440"
-            height="879"
-          />
-        </div>
         <div className="shape1_2 movingX d-xl-block d-none">
           <Image
             alt="shape"
@@ -53,7 +45,7 @@ export default function Team() {
               className="title text-center mb-200 wow fadeInUp"
               data-wow-delay=".6s"
             >
-              Conheça nossa equipe
+              Nossas Advogadas
             </h2>
           </div>
           <div className="row team-card-wrapper style1">
@@ -90,7 +82,14 @@ export default function Team() {
               </div>
             ))}
           </div>
+
           <br />
+          <h2
+              className="title text-center mb-200 wow fadeInUp"
+              data-wow-delay=".6s"
+            >
+              Nossas Estagiárias
+            </h2>
           <br />
           <br />
           <div className="row team-card-wrapper style1">
