@@ -2,6 +2,7 @@
 import { menuItems } from "@/data/menu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { smoothScroll } from "@/utils/smoothScroll";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -32,46 +33,42 @@ export default function Nav() {
     }
     return isActive;
   };
+
   return (
     <>
-      {menuItems.map((item, index) => (
+      {menuItems.map((menu, index) => (
         <li
           key={index}
-          className={item.subMenu ? "menu-item-has-children" : ""}
+          className={menu.subMenu ? "menu-item-has-children" : ""}
         >
           <Link
-            scroll={false}
-            className={`${isMenuActive(item) ? "menuActive" : ""}`}
-            href={item.href}
+            href={menu.href}
+            onClick={menu.href.startsWith("/#") ? smoothScroll : undefined}
           >
-            {item.title}
+            {menu.title}
           </Link>
-          {item.subMenu && (
+          {menu.subMenu && (
             <ul className="sub-menu">
-              {item.subMenu.map((subItem, subIndex) => (
+              {menu.subMenu.map((subMenu, subIndex) => (
                 <li
                   key={subIndex}
-                  className={subItem.subMenu ? "menu-item-has-children" : ""}
+                  className={subMenu.subMenu ? "menu-item-has-children" : ""}
                 >
                   <Link
-                    scroll={false}
-                    className={`${isMenuActive(subItem) ? "menuActive" : ""}`}
-                    href={subItem.href}
+                    href={subMenu.href}
+                    onClick={subMenu.href.startsWith("/#") ? smoothScroll : undefined}
                   >
-                    {subItem.title}
+                    {subMenu.title}
                   </Link>
-                  {subItem.subMenu && (
+                  {subMenu.subMenu && (
                     <ul className="sub-menu">
-                      {subItem.subMenu.map((subSubItem, subSubIndex) => (
+                      {subMenu.subMenu.map((subSubMenu, subSubIndex) => (
                         <li key={subSubIndex}>
                           <Link
-                            scroll={false}
-                            className={`${
-                              isMenuActive(subSubItem) ? "menuActive" : ""
-                            }`}
-                            href={subSubItem.href}
+                            href={subSubMenu.href}
+                            onClick={subSubMenu.href.startsWith("/#") ? smoothScroll : undefined}
                           >
-                            {subSubItem.title}
+                            {subSubMenu.title}
                           </Link>
                         </li>
                       ))}

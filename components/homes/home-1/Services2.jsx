@@ -6,6 +6,7 @@ import Image from "next/image";
 export default function Services2() {
   return (
     <section
+      id="sobre-escritorio"
       className="service-area space mt-1 fix"
       style={{ backgroundImage: `url(/assets/img/bg/serviceCardBg2_1.png)` }}
     >
@@ -37,7 +38,7 @@ export default function Services2() {
             className="title text-center mb-50 wow fadeInUp"
             data-wow-delay=".4s"
           >
-            Sobre o escritório (colocar ancora)
+            Sobre o escritório
           </h2>
         </div>
         <div className="service-card-wrapper style2">

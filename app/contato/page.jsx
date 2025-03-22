@@ -25,7 +25,7 @@ export default function Page() {
             <div className="container">
               <div className="page-heading">
                 <h1 className="wow fadeInUp" data-wow-delay=".3s">
-                  Contact
+                  Contato
                 </h1>
                 <ul
                   className="breadcrumb-items wow fadeInUp"
@@ -40,7 +40,7 @@ export default function Page() {
                   <li>
                     <i className="fas fa-chevrons-right" />
                   </li>
-                  <li>Contact</li>
+                  <li>Contato</li>
                 </ul>
               </div>
             </div>

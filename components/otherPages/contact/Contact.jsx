@@ -106,8 +106,8 @@ export default function Contact() {
                       <div className="content">
                         <p>Make a Quote</p>
                         <h3>
-                          <a href="mailto:infotech@gmail.com">
-                            Infotech@gmail.com
+                          <a href="mailto:contato@mdantas.adv.br">
+                            contato@mdantas.adv.br
                           </a>
                         </h3>
                       </div>
@@ -149,12 +149,12 @@ export default function Contact() {
                       width="540"
                       height="293"
                     />
-                    <a
+                    {/* <a
                       onClick={() => setOpen(true)}
                       className="play-btn popup-video"
                     >
                       <i className="fa-sharp fa-solid fa-play" />
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

@@ -88,13 +88,13 @@ export default function SiteMenu() {
               </Link>
             </div>
             <p className="text">
-              Rapidiously myocardinate cross-platform intellectual capital
-              model. Appropriately create interactive infrastructures
+              Michelle Dantas Advocacia - Excelência em advocacia com foco em resultados. 
+              Atendimento personalizado e compromisso com a ética profissional.
             </p>
           </div>
         </div>
         <div className="widget">
-          <h3 className="widget_title">Get In Touch</h3>
+          <h3 className="widget_title">Entre em Contato</h3>
           <div className="gt-widget-contact">
             <div className="info-box_text">
               <div className="icon">
@@ -106,8 +106,8 @@ export default function SiteMenu() {
                 />
               </div>
               <div className="details">
-                <p>789 Inner Lane, Holy park,</p>
-                <p>California, USA</p>
+                <p>R. Uruguai, 853 - Vila Frezzarim</p>
+                <p>Americana - SP, 13465-680</p>
               </div>
             </div>
             <div className="info-box_text">
@@ -121,13 +121,8 @@ export default function SiteMenu() {
               </div>
               <div className="details">
                 <p>
-                  <a href="tel:+0123456789" className="info-box_link">
-                    +01 234 567 890
-                  </a>
-                </p>
-                <p>
-                  <a href="tel:+09876543210" className="info-box_link">
-                    +09 876 543 210
+                  <a href="https://wa.me/5519992845413" className="info-box_link">
+                    (19) 99284-5413
                   </a>
                 </p>
               </div>
@@ -144,18 +139,10 @@ export default function SiteMenu() {
               <div className="details">
                 <p>
                   <a
-                    href="mailto:mailinfo00@techo.com"
+                    href="mailto:contato@mdantas.adv.br"
                     className="info-box_link"
                   >
-                    mailinfo00@techo.com
-                  </a>
-                </p>
-                <p>
-                  <a
-                    href="mailto:support24@techo.com"
-                    className="info-box_link"
-                  >
-                    support24@techo.com
+                    contato@mdantas.adv.br
                   </a>
                 </p>
               </div>
@@ -163,7 +150,7 @@ export default function SiteMenu() {
           </div>
         </div>
         <div className="widget newsletter-widget">
-          <h3 className="widget_title">Subscribe Now</h3>
+          <h3 className="widget_title">Inscreva-se</h3>
           <form ref={form} className="newsletter-form" onSubmit={sandMail}>
             <div className="form-group">
               <input

@@ -3,13 +3,17 @@ export const menuItems = [
     title: "Home",
     href: "/",
   },
+  // {
+  //   title: "Sobre",
+  //   href: "/#sobre",
+  // },
   {
-    title: "Sobre",
-    href: "/#sobre",
+    title: "Sobre o Escritório",
+    href: "/#sobre-escritorio",
   },
   {
     title: "Equipe",
-    href: "/#equipe",
+    href: "/equipe",
   },
   // {
   //   title: "Blog",

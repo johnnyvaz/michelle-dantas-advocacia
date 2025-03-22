@@ -80,13 +80,13 @@ export default function Footer1() {
                           src="/assets/img/logo-white.png"
                           width={199}
                           height={42}
-                          alt="Realar"
+                          alt="Michelle Dantas Advocacia"
                         />
                       </Link>
                     </div>
                     <p className="about-text">
-                      TechBe IT is a dynamic and innovative technology company
-                      dedicated to solutions.
+                      Michelle Dantas Advocacia - Excelência em advocacia com foco em resultados. 
+                      Atendimento personalizado e compromisso com a ética profissional.
                     </p>
                     <div className="gt-social style2">
                       {socialLinks2.map((link, index) => (
@@ -103,7 +103,7 @@ export default function Footer1() {
                   className="widget widget_nav_menu footer-widget wow fadeInUp"
                   data-wow-delay="1s"
                 >
-                  <h3 className="widget_title">Quick Links</h3>
+                  <h3 className="widget_title">Links Rápidos</h3>
                   <div className="menu-all-pages-container">
                     <ul className="menu">
                       {footerLinks.map((item, index) => (
@@ -123,66 +123,25 @@ export default function Footer1() {
                   className="widget footer-widget wow fadeInUp"
                   data-wow-delay="1.3s"
                 >
-                  <h3 className="widget_title">Recent Posts</h3>
-                  <div className="recent-post-wrap">
-                    {recentPosts.map((post) => (
-                      <div className="recent-post" key={post.id}>
-                        <div className="media-img">
-                          <Link
-                            scroll={false}
-                            href={`/blog-details/${post.id}`}
-                          >
-                            <Image
-                              src={post.imageUrl}
-                              width={78}
-                              height={79}
-                              alt="thumb"
-                            />
-                          </Link>
-                        </div>
-                        <div className="media-body">
-                          <div className="recent-post-meta">
-                            <Link
-                              scroll={false}
-                              href={`/blog-details/${post.id}`}
-                            >
-                              <i className="fa-regular fa-clock" />
-                              {post.date}
-                            </Link>
-                          </div>
-                          <h4 className="post-title">
-                            <Link
-                              scroll={false}
-                              className="text-inherit"
-                              href={`/blog-details/${post.id}`}
-                            >
-                              {post.title}
-                            </Link>
-                          </h4>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-md-6 col-12">
-                <div
-                  className="widget widget_nav_menu footer-widget wow fadeInUp"
-                  data-wow-delay="1.6s"
-                >
-                  <h3 className="widget_title">Contact Us</h3>
+                  <h3 className="widget_title">Contato</h3>
                   <div className="checklist">
                     <ul className="ps-0">
                       <li className="text-white">
                         <i className="fa-thin fa-envelope" />
                       </li>
-                      <li className="text-white">info@example.com</li>
+                      <li className="text-white">contato@mdantas.adv.br</li>
                     </ul>
                     <ul className="ps-0">
                       <li className="text-white">
                         <i className="fa-light fa-phone-volume" />
                       </li>
-                      <li className="text-white">+208-6666-0112</li>
+                      <li className="text-white">(19) 99284-5413</li>
+                    </ul>
+                    <ul className="ps-0">
+                      <li className="text-white">
+                        <i className="fa-light fa-location-dot" />
+                      </li>
+                      <li className="text-white">R. Uruguai, 853 - Vila Frezzarim, Americana - SP, 13465-680</li>
                     </ul>
                     <form
                       ref={form}
@@ -192,7 +151,7 @@ export default function Footer1() {
                       <input
                         type="email"
                         id="email"
-                        placeholder="Your email address"
+                        placeholder="Seu endereço de email"
                         required
                       />
                       <button type="submit" id="submitButton">
@@ -206,17 +165,39 @@ export default function Footer1() {
                           name="agree"
                           id="agreeCheckbox"
                         />
-                        <span className="checkmark" />I agree to the{" "}
+                        <span className="checkmark" />Eu concordo com a{" "}
                         <Link
                           scroll={false}
                           className="text-underline"
-                          href={`/about`}
+                          href={`/politica-privacidade`}
                         >
-                          Privacy Policy.
+                          Política de Privacidade.
                         </Link>
                       </label>
                       <br />
                     </form>
+                  </div>
+                </div>
+              </div>
+              <div className="col-xl-3 col-md-6 col-12">
+                <div
+                  className="widget footer-widget wow fadeInUp"
+                  data-wow-delay="1.6s"
+                >
+                  <h3 className="widget_title">CNPJ</h3>
+                  <div className="checklist">
+                    <ul className="ps-0">
+                      <li className="text-white">
+                        <i className="fa-light fa-building" />
+                      </li>
+                      <li className="text-white">51.721.550/0001-30</li>
+                    </ul>
+                    <ul className="ps-0">
+                      <li className="text-white">
+                        <i className="fa-light fa-file-signature" />
+                      </li>
+                      <li className="text-white">MICHELLE DANTAS SANCHES SOCIEDADE INDIVIDUAL DE ADVOCACIA</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -229,19 +210,19 @@ export default function Footer1() {
           <div className="copyright-layout">
             <div className="layout-text wow fadeInUp" data-wow-delay=".3s">
               <p className="copyright">
-                <i className="fal fa-copyright" /> All Copyright 2024 by
+                <i className="fal fa-copyright" /> Todos os direitos reservados 2024 por
                 <Link scroll={false} href={`/`}>
-                  Techbe
+                  Michelle Dantas Advocacia
                 </Link>
               </p>
             </div>
             <div className="layout-link wow fadeInUp" data-wow-delay=".6s">
               <div className="link-wrapper">
-                <Link scroll={false} href={`/home-3`}>
-                  Terms &amp; Condition{" "}
+                <Link scroll={false} href={`/termos-uso`}>
+                  Termos de Uso{" "}
                 </Link>
-                <Link scroll={false} href={`/home-3`}>
-                  Privacy Policy
+                <Link scroll={false} href={`/politica-privacidade`}>
+                  Política de Privacidade
                 </Link>
               </div>
             </div>
