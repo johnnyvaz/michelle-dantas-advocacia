@@ -80,15 +80,15 @@ export const services2 = [
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
     delay: "1s",
   },
-  {
-    id: 13,
-    icon: "/assets/img/icon/serviceIcon1_1.png",
-    title: "Recuperação de Redes Sociais",
-    description:
-      "*****.",
-    bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
-    delay: "1s",
-  }
+  // {
+  //   id: 13,
+  //   icon: "/assets/img/icon/serviceIcon1_1.png",
+  //   title: "Recuperação de Redes Sociais",
+  //   description:
+  //     "*****.",
+  //   bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
+  //   delay: "1s",
+  // }
 ];
 
 export const servicesStyle2 = [

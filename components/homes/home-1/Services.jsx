@@ -8,10 +8,10 @@ export default function Services() {
     <section className="service-area mb-15" id="service-area">
       <div className="service-wrap style1">
         <div className="container">
-          <div className="service-card-wrapper style1">
+          <div className="service-card-wrapper style1 d-flex justify-content-center flex-wrap">
             {services2.map((service, index) => (
               <div
-                className="service-card style1 wow fadeInUp"
+                className="service-card style1 wow fadeInUp col-lg-6 col-md-6 mb-30"
                 data-wow-delay={service.delay}
                 key={index}
               >

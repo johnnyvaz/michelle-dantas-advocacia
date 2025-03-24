@@ -12,7 +12,7 @@ export default function Services2() {
     >
       <div className="container">
         <div className="title-area mx-auto">
-          <h5
+          {/* <h5
             className="subtitle text-center wow fadeInUp"
             data-wow-delay=".2s"
           >
@@ -33,7 +33,7 @@ export default function Services2() {
                 height="12"
               />
             </span>
-          </h5>
+          </h5> */}
           <h2
             className="title text-center mb-50 wow fadeInUp"
             data-wow-delay=".4s"
