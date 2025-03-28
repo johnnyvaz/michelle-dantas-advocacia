@@ -62,7 +62,7 @@ export default function Hero() {
                       >
                         {slide.text}
                       </p>
-                      <Link
+                      {/* <Link
                         scroll={false}
                         href={`/contato`}
                         className="gt-btn gt-btn-icon"
@@ -70,7 +70,7 @@ export default function Hero() {
                         data-ani-delay="0.6s"
                       >
                         Contato
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
                 </div>

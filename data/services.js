@@ -48,8 +48,7 @@ export const services2 = [
     id: 9,
     icon: "/assets/img/icon/serviceIcon1_1.png",
     title: "Assessoria Cível",
-    description:
-      "Atuação especializada em litígios cíveis, protegendo os interesses dos nossos clientes com segurança.",
+    description: "Protegendo interesses em litígios cíveis.",
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
     delay: ".2s",
   },
@@ -57,8 +56,7 @@ export const services2 = [
     id: 10,
     icon: "/assets/img/icon/serviceIcon1_2.png",
     title: "Direito Trabalhista",
-    description:
-      "Soluções jurídicas para questões trabalhistas, defendendo os direitos de empregados e empregadores.",
+    description: "Defesa eficaz em direito trabalhista.",
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
     delay: ".4s",
   },
@@ -66,8 +64,7 @@ export const services2 = [
     id: 11,
     icon: "/assets/img/icon/serviceIcon1_3.png",
     title: "Plano de Saúde",
-    description:
-      "***",
+    description: "Acesso e proteção em planos de saúde.",
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
     delay: ".6s",
   },
@@ -75,20 +72,10 @@ export const services2 = [
     id: 13,
     icon: "/assets/img/icon/serviceIcon1_1.png",
     title: "Recuperação de Redes Sociais",
-    description:
-      "*****.",
+    description: "Recuperação segura de contas em redes sociais.",
     bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
     delay: "1s",
   },
-  // {
-  //   id: 13,
-  //   icon: "/assets/img/icon/serviceIcon1_1.png",
-  //   title: "Recuperação de Redes Sociais",
-  //   description:
-  //     "*****.",
-  //   bgImage: "/assets/img/bg/serviceCardThumbBg1_1.png",
-  //   delay: "1s",
-  // }
 ];
 
 export const servicesStyle2 = [

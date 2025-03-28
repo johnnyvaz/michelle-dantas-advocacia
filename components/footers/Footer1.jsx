@@ -46,7 +46,9 @@ export default function Footer1() {
   return (
     <footer
       className="footer-area"
-      style={{ backgroundImage: "url(/assets/img/bg/footerBg1.png)" }}
+      style={{
+        backgroundImage: "url(/assets/img/bg/footerBg1.png)",
+      }}
     >
       <div className="widget-area style1 pt-100 pb-80">
         <div className="shape2_1">

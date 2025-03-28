@@ -9,8 +9,8 @@ import Services2 from "@/components/homes/home-1/Services2";
 import Team from "@/components/homes/home-1/Team";
 import Testimonials from "@/components/homes/home-1/Testimonials";
 export const metadata = {
-  title: "Home 1 || Techbe-IT Solution & Technology Service Nextjs Template",
-  description: "Techbe-IT Solution & Technology Service Nextjs Template",
+  title: "Michelle Dantas Advocacia",
+  description: "",
 };
 export default function Home1() {
   return (

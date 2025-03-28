@@ -15,9 +15,9 @@ export default function Services() {
                 data-wow-delay={service.delay}
                 key={index}
               >
-                <div className="card_icon">
+                {/* <div className="card_icon">
                   <Image src={service.icon} width={40} height={40} alt="icon" />
-                </div>
+                </div> */}
                 <div className="card_content">
                   <h3>
                     <Link
