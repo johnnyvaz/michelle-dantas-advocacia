@@ -5,7 +5,7 @@ export const blogCards = [
     meta: [
       {
         icon: "/assets/img/icon/userIcon.png",
-        text: "By Admin",
+        text: "Marcos Vinícius",
       },
       {
         icon: "/assets/img/icon/tagIcon.png",
@@ -23,7 +23,7 @@ export const blogCards = [
     meta: [
       {
         icon: "/assets/img/icon/userIcon.png",
-        text: "By Admin",
+        text: "Marcos Vinícius",
       },
       {
         icon: "/assets/img/icon/tagIcon.png",
@@ -41,7 +41,7 @@ export const blogCards = [
     meta: [
       {
         icon: "/assets/img/icon/userIcon.png",
-        text: "By Admin",
+        text: "Marcos Vinícius",
       },
       {
         icon: "/assets/img/icon/tagIcon.png",

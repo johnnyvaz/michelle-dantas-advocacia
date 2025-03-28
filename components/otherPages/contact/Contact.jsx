@@ -165,23 +165,7 @@ export default function Contact() {
                 >
                   <div className="title-area">
                     <h5 className="subtitle text-start">
-                      <span>
-                        <Image
-                          alt="icon"
-                          src="/assets/img/icon/titleIcon.png"
-                          width="28"
-                          height="12"
-                        />
-                      </span>{" "}
-                      Fale conosco{" "}
-                      <span>
-                        <Image
-                          alt="icon"
-                          src="/assets/img/icon/titleIcon.png"
-                          width="28"
-                          height="12"
-                        />
-                      </span>
+                      Fale conosco
                     </h5>
                     <h2 className="title mb-50">
                       Pronto para Garantir Seus Direitos?

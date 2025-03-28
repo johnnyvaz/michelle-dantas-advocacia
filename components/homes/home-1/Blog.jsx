@@ -8,14 +8,14 @@ export default function Blog() {
     <section className="blog-area fix">
       <div
         className="blog-wrap style1 space-top pb-425"
-        style={{ backgroundImage: "url(/assets/img/bg/blogBg1_1.png)" }}
+        style={{ backgroundImage: "url(/assets/img/bg/testimonialBg1_1.png)" }}
       >
         <div className="shape1_1 movingX d-xl-block d-none">
           <Image
             alt="shape"
             width="358"
             height="393"
-            src="/assets/img/shape/blogShape1_1.png"
+            src="/assets/img/bg/testimonialBg1_1.png"
           />
         </div>
         <div className="container">
@@ -24,29 +24,13 @@ export default function Blog() {
               className="subtitle text-center wow fadeInUp"
               data-wow-delay=".3s"
             >
-              <span>
-                <Image
-                  alt="icon"
-                  width="28"
-                  height="12"
-                  src="/assets/img/icon/titleIcon.png"
-                />
-              </span>{' '}
-              News &amp; Article{' '}
-              <span className="ms-1">
-                <Image
-                  alt="icon"
-                  width="28"
-                  height="12"
-                  src="/assets/img/icon/titleIcon.png"
-                />
-              </span>
+            Notícias &amp; Blog
             </h5>
             <h2
               className="title text-center mb-50 wow fadeInUp"
               data-wow-delay=".3s"
             >
-              Read our latest insights
+              Notícias e Informações Importantes
             </h2>
           </div>
           <div className="blog-card-wrap style1">
@@ -87,7 +71,7 @@ export default function Blog() {
                   </h3>
                   <div className="btn-wrapper">
                     <Link scroll={false} href={`/blog-details/${card.id}`}>
-                      Read More
+                      Leia Mais
                       <Image
                         alt="icon"
                         width="16"

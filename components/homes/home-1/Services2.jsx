@@ -35,7 +35,7 @@ export default function Services2() {
             </span>
           </h5> */}
           <h2
-            className="title text-center mb-50 wow fadeInUp"
+            className="title text-center mb-50 wow fadeInUp text-white"
             data-wow-delay=".4s"
           >
             Sobre o escritório
@@ -64,14 +64,14 @@ export default function Services2() {
                   </Link>
                 </h3>
                 <p className="service-content_text">{service.description}</p>
-                <Link
+                {/* <Link
                   scroll={false}
                   className="link"
                   href={`/service-details/${service.id}`}
                 >
                   Read More
                   <i className="fa-sharp fa-light fa-arrow-right-long" />
-                </Link>
+                </Link> */}
               </div>
               <div className="service-icon">
                 <Image src={service.icon} width={40} height={40} alt="icon" />
