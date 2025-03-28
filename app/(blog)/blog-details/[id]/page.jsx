@@ -16,7 +16,7 @@ export default function Page({ params }) {
     allBlogs.filter((elm) => elm.id == params.id)[0] || allBlogs[0];
   return (
     <>
-      <HeaderTop />
+      {/* <HeaderTop /> */}
       <Header1 />
       <main className="main position-relative" id="mains">
         <div className="breadcrumb-wrapper">

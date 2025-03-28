@@ -13,7 +13,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <HeaderTop />
+      {/* <HeaderTop /> */}
       <Header1 />
       <main className="main position-relative" id="mains">
         <div className="breadcrumb-wrapper">
