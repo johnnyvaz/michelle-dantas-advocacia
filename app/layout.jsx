@@ -8,15 +8,17 @@ import CursorFollor from "@/components/common/CursorFollor";
 import { usePathname } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import PopupSearch from "@/components/headers/PopupSearch";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Script from 'next/script';
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const path = usePathname();
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // Import the script only on the client side
-      import("bootstrap/dist/js/bootstrap.esm").then(() => {
-        // Module is imported, you can access any exported functionality if
-      });
+      import("bootstrap/dist/js/bootstrap.esm");
     }
   }, []);
 
@@ -32,6 +34,7 @@ export default function RootLayout({ children }) {
       }
     });
   }, []);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -46,14 +49,32 @@ export default function RootLayout({ children }) {
   }, [path]);
 
   return (
-    <html lang="en" className="bg-white">
+    <html lang="pt-BR" className="bg-white">
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
           rel="stylesheet"
         />
+        <Script id="chatwoot" strategy="afterInteractive">
+          {`
+            (function(d,t) {
+              var BASE_URL="https://mdantas.cod2d.com.br";
+              var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+              g.src=BASE_URL+"/packs/js/sdk.js";
+              g.defer = true;
+              g.async = true;
+              s.parentNode.insertBefore(g,s);
+              g.onload=function(){
+                window.chatwootSDK.run({
+                  websiteToken: 'BayffjTGqx77qea5kphPDhan',
+                  baseUrl: BASE_URL
+                })
+              }
+            })(document,"script");
+          `}
+        </Script>
       </head>
-      <body>
+      <body className={inter.className}>
         <SiteMenu />
         <MobileNav />
         <PopupSearch />
