@@ -20,10 +20,10 @@ export default function Home1() {
         <Hero />
         <Services />
         <Services2 />
-        <Blog />
+        {/* <Blog />  */}
         <Facts />
         {/* <Team /> */}
-        <Testimonials />
+        {/* <Testimonials /> ajustar */}
         {/* <Cta /> */}
       </main>
       <Footer1 />

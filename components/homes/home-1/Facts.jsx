@@ -6,6 +6,12 @@ import Counter from "@/components/common/Counter";
 export default function Facts() {
   return (
     <div className="counter-area mt-n150 mb-n116 fix">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br /><br /><br />
       <div className="container">
         <div className="counter-wrap">
           {counterBoxes.map((box, index) => (
