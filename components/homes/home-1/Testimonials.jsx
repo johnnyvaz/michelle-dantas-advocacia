@@ -1,157 +1,54 @@
 "use client";
+import React from "react";
 import { testimonialsData } from "@/data/testimonials";
 import { Navigation } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
+import { FaQuoteLeft } from "react-icons/fa";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function Testimonials() {
+const Testimonials = () => {
   return (
-    <section className="testimonial-area space fix">
+    <section className="testimonial-area mt-120 mb-120">
       <div className="container">
-        <div className="testimonial-wrap style1">
-          <div className="section-bg">
-            <Image
-              alt="bg"
-              src="/assets/img/bg/testimonialBg1_1.png"
-              width="1280"
-              height="580"
-            />
-          </div>
-          <div className="title-wrap mb-50">
-            <div className="title-area text-start">
-              <h6 className="text-start wow fadeInUp" data-wow-delay=".3s">
-                <span className="me-1">
-                  <Image
-                    alt="icon"
-                    src="/assets/img/icon/titleIcon.png"
-                    width="28"
-                    height="12"
-                  />
-                </span>{' '}
-                Testimonials{' '}
-                <span className="ms-1">
-                  <Image
-                    alt="icon"
-                    src="/assets/img/icon/titleIcon.png"
-                    width="28"
-                    height="12"
-                  />
-                </span>
-              </h6>
-              <h2
-                className="title text-start wow fadeInUp"
-                data-wow-delay=".6s"
-              >
-                What Happy Clients Says About Us?
-              </h2>
-            </div>
-            <div className="btn-wrapper">
-              <Link
-                scroll={false}
-                className="gt-btn gt-btn-icon"
-                href={`/testimonial`}
-              >
-                See All Testimonials
-              </Link>
+        <div className="row justify-content-center">
+          <div className="col-lg-8">
+            <div className="section-title text-center mb-70">
+              <span className="sub-title">Depoimentos</span>
+              <h2 className="title">O que nossos clientes dizem</h2>
             </div>
           </div>
-          <div className="slider-area testimonial-slider1">
-            <Swiper
-              loop={true}
-              spaceBetween={30}
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                },
-                576: {
-                  slidesPerView: 1,
-                  centeredSlides: true,
-                },
-                768: {
-                  slidesPerView: 1,
-                },
-                992: {
-                  slidesPerView: 2,
-                },
-                1200: {
-                  slidesPerView: 2,
-                },
-              }}
-              modules={[Navigation]}
-              navigation={{
-                prevEl: ".snbp2",
-                nextEl: ".snbn2",
-              }}
-              className="gt-slider"
-              id="testimonialSlider1"
-            >
-              {testimonialsData.map((testimonial) => (
-                <SwiperSlide key={testimonial.id}>
-                  <div className="testimonial-card style1">
-                    <div className="profile-box">
-                      <div className="testi-thumb">
-                        <Image
-                          src={testimonial.imgSrc}
-                          width={100}
-                          height={100}
-                          alt="thumb"
-                        />
-                      </div>
-                      <div className="testi-content">
-                        <h3 className="title">{testimonial.name}</h3>
-                        <div className="designation">
-                          {testimonial.designation}
-                        </div>
-                        <ul className="star-wrap">
-                          {Array(5)
-                            .fill()
-                            .map((_, index) => (
-                              <li key={index}>
-                                <Image
-                                  alt="icon"
-                                  src="/assets/img/icon/starIcon.png"
-                                  width="20"
-                                  height="20"
-                                />
-                              </li>
-                            ))}
-                        </ul>
-                      </div>
-                    </div>
-                    <p className="text">{testimonial.text}</p>
-                    <div className="quote">
-                      <Image
-                        alt="icon"
-                        src="/assets/img/icon/quoteIcon.png"
-                        width="50"
-                        height="37"
-                      />
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-lg-10">
+            <div className="testimonial-item bg-white p-5 rounded-lg shadow-lg wow fadeInUp">
+              <div className="testimonial-content position-relative">
+                <div className="testimonial-icon position-absolute" style={{ top: "-30px", left: "30px", fontSize: "3rem", color: "#d4a853" }}>
+                  <FaQuoteLeft /><br />
+                </div>
+                <div className="testimonial-text mt-4" style={{ fontSize: "1.1rem", lineHeight: "1.8", color: "#555" }}>
+                  <p className="mb-4">
+                    Agradeço imensamente à Dra. Michelle e toda sua equipe pela sua enorme prestatividade, respondendo rapidamente a todas as minhas dúvidas e preocupações. Além disso, ela soube me explicar, de maneira simples e objetiva, todos os aspectos legais envolvidos, o que me deu muita confiança.
+                  </p>
+                  <p className="mb-4">
+                    O comprometimento da Dra. com a minha causa foi evidente. Ela me orientou de forma ética, profissional e sempre com o objetivo de alcançar o melhor resultado possível. Graças ao seu trabalho, estou conseguindo resolver minha situação de maneira satisfatória e com total segurança jurídica.
+                  </p>
+                  <p className="mb-4">
+                    Recomendo com toda a certeza a Dra. Michelle a qualquer pessoa que precise de uma profissional altamente qualificada e humana, que realmente se importa com o bem-estar de seus clientes.
+                  </p>
+                </div>
+                <div className="testimonial-author text-end mt-4">
+                  <h5 className="mb-1" style={{ color: "#333" }}>Cliente Satisfeito</h5>
+                  <p className="text-muted">Americana - SP</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <button className="slider-arrow snbp2 style2 d-lg-block d-none">
-            <Image
-              alt="img"
-              src="/assets/img/icon/arrowLeft.png"
-              width="20"
-              height="20"
-            />
-          </button>
-          <button className="slider-arrow  snbn2 style2 slider-next d-lg-block d-none">
-            <Image
-              alt="img"
-              src="/assets/img/icon/arrowRight.png"
-              width="20"
-              height="20"
-            />
-          </button>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Testimonials;
