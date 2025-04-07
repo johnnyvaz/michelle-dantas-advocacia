@@ -25,6 +25,17 @@ export const menuItems = [
   //   ],
   // },
   {
+    title: "Serviços",
+    href: "#",
+    subMenu: [
+      { title: "Direito Cível", href: "/service/direito-civel" },
+      { title: "Direito Trabalhista", href: "/service/direito-trabalhista" },
+      { title: "Direito de Família", href: "/service/direito-familia" },
+      { title: "Direito Previdenciário", href: "/service/direito-previdenciario" },
+      { title: "Direito Digital", href: "/service/direito-digital" },
+    ],
+  },
+  {
     title: "Contato",
     href: "/contato",
   },

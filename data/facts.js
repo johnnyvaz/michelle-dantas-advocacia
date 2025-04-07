@@ -16,11 +16,5 @@ export const counterBoxes = [
     number: 250,
     label: "Processos",
     delay: ".9s",
-  },
-  {
-    icon: "/assets/img/icon/counterIcon1_1.png",
-    number: 5900,
-    label: "Media Posts",
-    delay: "1s",
-  },
+  }
 ];

@@ -302,8 +302,5 @@ export const sericeCategories = [
 ];
 
 export const hours = [
-  { iconClass: "fa-regular fa-clock", text: "Seg - Sáb: 10:00 - 16:00" },
-  { iconClass: "fa-regular fa-clock", text: "Dom: 09:00 - 16:00" },
-  { iconClass: "fa-regular fa-clock", text: "Sexta: Fechado" },
-  { iconClass: "fa-regular fa-clock", text: "Emergência: 24 horas" },
+  { iconClass: "fa-regular fa-clock", text: "Segunda a Sexta: 09:00 - 17:00" }
 ];

@@ -79,7 +79,7 @@ export default function Hero() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <button data-slider-prev="#heroSlide1" className="slider-arrow style2">
+      {/* <button data-slider-prev="#heroSlide1" className="slider-arrow style2">
         <Image
           alt="img"
           src="/assets/img/icon/arrowLeft.png"
@@ -97,7 +97,7 @@ export default function Hero() {
           width="20"
           height="20"
         />
-      </button>
+      </button> */}
       <div className="scroll-down">
         <a href="#service-area" className="hero-scroll-wrap">
           <i className="fal fa-long-arrow-left" />

@@ -45,7 +45,7 @@ export default function ServiceDetails({ serviceItem }) {
                     data-wow-delay=".8s"
                   >
                     <div className="wid-title">
-                      <h3>Opening Hours</h3>
+                      <h3>Horário de Atendimento</h3>
                     </div>
                     <div className="opening-category">
                       <ul>
@@ -71,9 +71,9 @@ export default function ServiceDetails({ serviceItem }) {
                       <div className="icon">
                         <i className="fa-solid fa-phone" />
                       </div>
-                      <h4>Need Help? Call Here</h4>
+                      <h4>Entre em contato</h4>
                       <h5>
-                        <a href="tel:+2085550112">+208-555-0112</a>
+                        <a href="tel:+5519992845413">(19) 99284-5413</a>
                       </h5>
                     </div>
                   </div>
@@ -94,19 +94,19 @@ export default function ServiceDetails({ serviceItem }) {
                       {serviceItem.title}
                     </h3>
                     <p className="mt-3 wow fadeInUp" data-wow-delay=".9s">
-                      The is ipsum dolor sit amet consectetur adipiscing elit.
-                      Fusce is eleifend porta arcu In hac habitasse the platea
-                      thelorem turpoi dictumst. In lacus libero faucibus
-                      malesuada sagittis placerat eros sed istincidunt augue ac
-                      ante rutrum sed the is sodales augue consequat.
+                      A Assessoria Cível é voltada à prevenção e resolução de
+                      conflitos que envolvem direitos e obrigações entre pessoas
+                      físicas e jurídicas, como contratos, indenizações,
+                      responsabilidade civil e disputas patrimoniais.
                     </p>
                     <p className="mt-3 wow fadeInUp" data-wow-delay="1.2s">
-                      lacus sed pretium pretium justo. Integer is vitae
-                      venenatis lorem. Maecenas lacinia turpis the in nunc quam
-                      hendrerit scelerisque at finibus enim sagittis. Aliquam
-                      erat is volutpat nam nec purus at is orci volutpat semper
-                      vel id turpis In a malesuada arcu ac hendrerit.
+                      Atuamos de forma estratégica, com foco na resolução
+                      eficiente e segura dos litígios, buscando soluções
+                      judiciais e extrajudiciais que melhor atendam aos
+                      interesses de nossos clientes, sempre com transparência,
+                      ética e agilidade.
                     </p>
+
                     <div
                       className="details-video-items wow fadeInUp"
                       data-wow-delay="1.3s"
@@ -126,34 +126,35 @@ export default function ServiceDetails({ serviceItem }) {
                         </a>
                       </div>
                       <div className="content">
-                        <h4>Benefits With Our Service</h4>
+                        <h4>Principais Benefícios</h4>
                         <p>
-                          Fusce is eleifend porta arcu In hac <br />
-                          habitasse the platea thelorem
+                          Com a nossa assessoria, você tem respaldo técnico{" "}
+                          <br />e jurídico em todas as etapas do processo.
                         </p>
                         <ul className="list ps-0">
                           <li>
                             <i className="fa-regular fa-circle-check" />
-                            Branding and design Identity
+                            Redução de riscos e litígios futuros
                           </li>
                           <li>
                             <i className="fa-regular fa-circle-check" />
-                            Web site Marketing Solutions
+                            Orientação estratégica e personalizada
                           </li>
                           <li>
                             <i className="fa-regular fa-circle-check" />
-                            unlimited Download Data
+                            Atuação ágil na defesa dos seus direitos
                           </li>
                         </ul>
                       </div>
                     </div>
+
                     <p className="mb-40 wow fadeInUp" data-wow-delay="1.5s">
-                      Consectetur adipisicing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore of magna aliqua. Ut enim ad
-                      minim veniam, made of owl the quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea dolor commodo
-                      consequat. Duis aute irure and dolor in reprehenderit.
+                      Nosso compromisso é garantir que cada cliente se sinta
+                      amparado, compreenda os caminhos legais disponíveis e
+                      tenha total segurança nas decisões tomadas ao longo do
+                      processo.
                     </p>
+
                     <div
                       className="image-area wow fadeInUp"
                       data-wow-delay="1.6s"
@@ -181,34 +182,28 @@ export default function ServiceDetails({ serviceItem }) {
                         </div>
                       </div>
                     </div>
-                    <h3 className="wow fadeInUp" data-wow-delay="1.8s">
-                      Most Comment Question?
+
+                    {/* <h3 className="wow fadeInUp" data-wow-delay="1.8s">
+                      Dúvidas Frequentes
                     </h3>
                     <p className="mt-25 wow fadeInUp" data-wow-delay="1.9s">
-                      The is ipsum dolor sit amet consectetur adipiscing elit.
-                      Fusce is eleifend porta arcu In hac habitasse the platea
-                      thelorem turpoi dictumst. In lacus libero faucibus
-                      malesuada.
-                    </p>
+                      Muitas pessoas desconhecem seus direitos nas relações
+                      cíveis. Por isso, é fundamental contar com um
+                      acompanhamento jurídico de confiança que oriente desde a
+                      negociação até o fim do processo.
+                    </p> */}
                   </div>
-                  <div className="faq-content style-3">
+                  {/* <div className="faq-content style-3">
                     <div className="faq-accordion">
                       <Faq1 />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <ModalVideo
-        channel="youtube"
-        youtube={{ mute: 0, autoplay: 0 }}
-        isOpen={isOpen}
-        videoId="f2Gzr8sAGB8"
-        onClose={() => setOpen(false)}
-      />
     </>
   );
 }
