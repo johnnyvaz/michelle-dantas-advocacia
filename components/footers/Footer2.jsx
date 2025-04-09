@@ -116,7 +116,7 @@ export default function Footer2() {
                         <div className="media-img">
                           <Link
                             scroll={false}
-                            href={`/blog-details/${post.id}`}
+                            href={`/blog-details/${post.slug}`}
                           >
                             <Image
                               src={post.imageUrl}
@@ -130,7 +130,7 @@ export default function Footer2() {
                           <div className="recent-post-meta">
                             <Link
                               scroll={false}
-                              href={`/blog-details/${post.id}`}
+                              href={`/blog-details/${post.slug}`}
                             >
                               <i className="fa-regular fa-clock" />
                               {post.date}
@@ -140,7 +140,7 @@ export default function Footer2() {
                             <Link
                               scroll={false}
                               className="text-inherit"
-                              href={`/blog-details/${post.id}`}
+                              href={`/blog-details/${post.slug}`}
                             >
                               {post.title}
                             </Link>

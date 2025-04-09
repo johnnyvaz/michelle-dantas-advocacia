@@ -48,7 +48,7 @@ export default function Sidebar() {
           data-wow-delay=".6s"
         >
           <div className="wid-title">
-            <h3>Recent Post</h3>
+            <h3>Recente</h3>
           </div>
           <div className="recent-post-area">
             {recentItems.map((item, index) => (

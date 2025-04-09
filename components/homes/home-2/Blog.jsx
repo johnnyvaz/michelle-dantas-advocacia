@@ -95,7 +95,7 @@ export default function Blog() {
                     </div>
                   </div>
                   <h3 className="blog-title style2">
-                    <Link scroll={false} href={`/blog-details/${post.id}`}>
+                    <Link scroll={false} href={`/blog-details/${post.slug}`}>
                       {post.title}
                     </Link>
                   </h3>
@@ -117,7 +117,7 @@ export default function Blog() {
                     </div>
                     <Link
                       scroll={false}
-                      href={`/blog-details/${post.id}`}
+                      href={`/blog-details/${post.slug}`}
                       className="gt-btn gt-btn-icon"
                     >
                       Read More
@@ -174,7 +174,7 @@ export default function Blog() {
                       </div>
                     </div>
                     <h3 className="blog-title style2">
-                      <Link scroll={false} href={`/blog-details/${post.id}`}>
+                      <Link scroll={false} href={`/blog-details/${post.slug}`}>
                         {post.title}
                       </Link>
                     </h3>

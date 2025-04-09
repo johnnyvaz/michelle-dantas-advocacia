@@ -1,22 +1,24 @@
 import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
-import HeaderTop from "@/components/headers/HeaderTop";
-
 import Cta from "@/components/common/Cta";
-import BlogDetails from "@/components/otherPages/blog/BlogDetails";
 import Link from "next/link";
-import { allBlogs } from "@/data/blogs";
+import BlogDetails from "@/components/otherPages/blog/BlogDetails";
+import { getPostBySlug } from "@/utlis/blog";
+
 export const metadata = {
-  title:
-    "Blog Details || Techbe-IT Solution & Technology Service Nextjs Template",
-  description: "Techbe-IT Solution & Technology Service Nextjs Template",
+  title: "Michelle Dantas Advocacia",
+  description: "",
 };
+
 export default function Page({ params }) {
-  const blogItem =
-    allBlogs.filter((elm) => elm.id == params.id)[0] || allBlogs[0];
+  const blogItem = getPostBySlug(params.slug);
+
+  if (!blogItem) {
+    return <div>Post não encontrado</div>;
+  }
+
   return (
     <>
-      {/* <HeaderTop /> */}
       <Header1 />
       <main className="main position-relative" id="mains">
         <div className="breadcrumb-wrapper">
@@ -30,14 +32,10 @@ export default function Page({ params }) {
                 <h1 className="wow fadeInUp" data-wow-delay=".3s">
                   {blogItem.title}
                 </h1>
-                <ul
-                  className="breadcrumb-items wow fadeInUp"
-                  data-wow-delay=".5s"
-                >
+                <ul className="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                   <li>
                     <Link scroll={false} href={`/`}>
-                      {" "}
-                      Home{" "}
+                      Home
                     </Link>
                   </li>
                   <li>
