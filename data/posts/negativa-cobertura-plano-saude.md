@@ -1,0 +1,24 @@
+---
+id: 2
+slug: negativa-cobertura-plano-saude
+title: "Direitos do Consumidor: Como Proceder em Caso de Negativa de Cobertura pelo Plano de Saúde"
+author: Michelle Dantas
+date: 2024-04-09
+category: Direito do Consumidor
+tags:
+  - Plano de Saúde
+  - Negativa de Cobertura
+  - Consumidor
+cover: /assets/img/blog/negativa-cobertura.png
+excerpt: Entenda quais são seus direitos e quais medidas tomar caso seu plano de saúde negue cobertura a procedimentos ou tratamentos.
+---
+
+## A negativa de cobertura
+
+ por parte dos planos de saúde é uma situação recorrente enfrentada por muitos consumidores.
+
+Nesses casos, é importante verificar se o procedimento negado está previsto no rol de coberturas obrigatórias da ANS e buscar orientação jurídica para avaliar a possibilidade de ação judicial.
+
+> Decisões judiciais têm, frequentemente, determinado a obrigatoriedade de cobertura por parte das operadoras, especialmente quando há recomendação médica.
+
+Entre em contato com um advogado especialista na área e garanta seus direitos!

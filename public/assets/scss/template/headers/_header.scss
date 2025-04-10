@@ -700,6 +700,7 @@
 
   .menu-area {
     .header-logo {
+      position: relative;
       padding-top: 15px;
       padding-bottom: 15px;
 
@@ -714,7 +715,11 @@
         position: absolute;
         content: "";
         top: 0;
-        left: 0;
+        
+
+        left: 50%;
+        transform: translateX(-50%);
+
         width: 457px;
         height: 109px;
         background: linear-gradient(90deg, #f8e955 0%, #49211e 83.46%);

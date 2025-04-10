@@ -1,13 +1,4 @@
-import fs from "fs";
-import path from "path";
 
-const postsDir = path.join(process.cwd(), "data/posts");
+// app/api/posts/getAllPosts.js
+export { getAllMarkdownPosts as getAllPosts } from "@/utils/blogMarkdown";
 
-export function getAllPosts() {
-  const files = fs.readdirSync(postsDir);
-  return files.map((filename) => {
-    const filePath = path.join(postsDir, filename);
-    const jsonData = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    return jsonData;
-  });
-}

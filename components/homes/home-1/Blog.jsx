@@ -30,7 +30,7 @@ export default async function Blog() {
           </div>
 
           <div className="blog-card-wrap style1">
-            {posts.map((post, index) => (
+            {posts.map((post) => (
               <div
                 className="blog-card style1 img-shine wow fadeInUp"
                 data-wow-delay={post.delay || `.3s`}
