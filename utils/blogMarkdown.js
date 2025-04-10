@@ -1,4 +1,4 @@
-// utils/blogMarkdown.js
+
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -46,3 +46,4 @@ export function getAllSlugs() {
 
 // app/api/posts/getAllPosts.js
 export { getAllMarkdownPosts as getAllPosts };
+

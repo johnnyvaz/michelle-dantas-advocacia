@@ -25,7 +25,7 @@ export default function Home1() {
         <Testimonials />
         {/* <Team /> */}
         <Facts />
-        {/* <Cta /> */}
+        <Cta />
       </main>
       <Footer1 />
     </>

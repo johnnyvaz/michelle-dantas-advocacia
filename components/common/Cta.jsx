@@ -5,19 +5,18 @@ import Image from "next/image";
 export default function Cta() {
   return (
     <section
-      className="cta-area mt-n150 mb-n116 wow fadeInUp"
-      data-wow-delay=".6s"
-    >
+      className="counter-area py-80 bg-gradient-to-r from-[#4c2c18] to-[#b89238] 
+    text-white text-center">
       <div className="container">
         <div className="cta-wrap style1">
-          <div className="shape1_1 rotate360 d-none d-xl-block">
+          {/* <div className="shape1_1 rotate360 d-none d-xl-block">
             <img
               alt="shape"
               width={80}
               height="80"
               src="/assets/img/shape/ctaShape1_1.png"
             />
-          </div>
+          </div> */}
           <div className="shape1_2 d-none d-xl-block">
             <Image
               alt="shape"
