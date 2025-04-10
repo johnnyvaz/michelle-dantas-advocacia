@@ -129,6 +129,7 @@
 .gt-header {
   position: relative;
   z-index: 41;
+  border-top: none !important;
 
   .icon-btn {
     border-radius: 99px;
@@ -701,6 +702,7 @@
   .menu-area {
     .header-logo {
       position: relative;
+      // margin-left: -0.8rem;
       padding-top: 15px;
       padding-bottom: 15px;
 
@@ -717,17 +719,17 @@
         top: 0;
         
 
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0%;
+        transform: translateX(-25%);
 
         width: 457px;
-        height: 109px;
+        height: 130px;
         background: linear-gradient(90deg, #f8e955 0%, #49211e 83.46%);
         clip-path: polygon(
           0px 0px,
           421.5px 0px,
-          457px 109px,
-          0px 109px,
+          457px 129px, // Ajuste do ponto inferior direito
+          0 129px, // Ajuste do ponto inferior esquerdo
           0px 0px
         );
         z-index: 1;
@@ -769,14 +771,14 @@
         width: 250px;
         height: 150px;
         transform: rotate(-0.375deg);
-        background: $theme-color;
-        clip-path: polygon(
-          0px 0px,
-          17.8104px -0.00791562px,
-          52.0001px 109px,
-          34.0001px 109px,
-          0px 0px
-        );
+        // background: $theme-color;
+        // clip-path: polygon(
+        //   0px 0px,
+        //   17.8104px -0.00791562px,
+        //   52.0001px 109px,
+        //   34.0001px 109px,
+        //   0px 0px
+        // );
         -webkit-transform: rotate(-0.375deg);
         -moz-transform: rotate(-0.375deg);
         -ms-transform: rotate(-0.375deg);

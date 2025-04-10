@@ -8,28 +8,27 @@ import { activePopupSearch } from "@/utlis/togglePopupSearch";
 
 export default function Header1() {
   return (
-    <header className="gt-header header-layout1">
+    <header className="gt-header header-layout1 border-t-0 pt-0">
       <div className="sticky-wrapper">
-        {/* Main Menu Area */}
         <div className="menu-area">
           <div className="container">
             <div className="row align-items-center justify-content-between">
-              <div className="col-auto">
+              <div className="col-auto pl-0 -ml-2">
                 <div className="header-logo">
-                  <Link 
-                  // scroll={false} 
-                  href={`/`}>
+                  <Link href="/">
                     <Image
                       src="/assets/img/logo-white.png"
-                      width={199}
-                      height={42}
-                      alt="techo"
+                      width={220}
+                      height={46}
+                      alt="Logo"
+                      className="mt-1"
                     />
                   </Link>
                 </div>
               </div>
+              
               <div className="col-auto">
-                <nav className="main-menu d-none d-xl-inline-block">
+                <nav className="main-menu d-none d-xl-inline-block text-xl">
                   <ul>
                     <Nav />
                   </ul>
@@ -46,13 +45,12 @@ export default function Header1() {
                   </button>
                 </div>
               </div>
+
               <div className="col-auto d-none d-xl-block">
                 <div className="header-button">
-        
                   <Link
-                    // scroll={false}
-                    href={`/contato`}
-                    className="gt-btn gt-btn-icon"
+                    href="/contato"
+                    className="gt-btn gt-btn-icon text-xl py-2 px-4"
                   >
                     CONTATO
                   </Link>
