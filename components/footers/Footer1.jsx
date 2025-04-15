@@ -145,7 +145,7 @@ export default function Footer1() {
                       </li>
                       <li className="text-white">R. Uruguai, 853 - Vila Frezzarim, Americana - SP, 13465-680</li>
                     </ul>
-                    <form
+                    {/* <form
                       ref={form}
                       onSubmit={sandMail}
                       className="email-input-container"
@@ -159,8 +159,8 @@ export default function Footer1() {
                       <button type="submit" id="submitButton">
                         <i className="fa-regular fa-arrow-right-long" />
                       </button>
-                    </form>
-                    <form id="termsForm">
+                    </form> */}
+                    {/* <form id="termsForm">
                       <label className="custom-checkbox">
                         <input
                           type="checkbox"
@@ -177,7 +177,7 @@ export default function Footer1() {
                         </Link>
                       </label>
                       <br />
-                    </form>
+                    </form> */}
                   </div>
                 </div>
               </div>
@@ -212,7 +212,7 @@ export default function Footer1() {
           <div className="copyright-layout">
             <div className="layout-text wow fadeInUp" data-wow-delay=".3s">
               <p className="copyright">
-                <i className="fal fa-copyright" /> Todos os direitos reservados 2024 por
+                <i className="fal fa-copyright" /> Todos os direitos reservados {new Date().getFullYear()} por
                 <Link scroll={false} href={`/`}>
                   Michelle Dantas Advocacia
                 </Link>
