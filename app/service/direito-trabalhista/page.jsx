@@ -44,7 +44,6 @@ export default function ServicesDireitoTrabalhista() {
                                                     <li><a href="#">Direito Cível</a></li>
                                                     <li><a href="#">Direito Trabalhista</a></li>
                                                     <li><a href="#">Direito de Família</a></li>
-                                                    <li><a href="#">Direito Previdenciário</a></li>
                                                     <li><a href="#">Direito Digital</a></li>
                                                 </ul>
                                             </div>

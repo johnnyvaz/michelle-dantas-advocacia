@@ -10,41 +10,41 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Testimonials = () => {
   return (
-    <section className="testimonial-area mt-120 mb-120">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
-            <div className="section-title text-center mb-70">
-              <span className="sub-title">Depoimentos</span>
-              <h2 className="title">O que nossos clientes dizem</h2>
-            </div>
-          </div>
+    <section className="py-20 md:py-28 bg-neutral-50">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <span className="text-[#8B0000] font-semibold text-sm uppercase tracking-wider">Depoimentos</span>
+          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-neutral-900">O que nossos clientes dizem</h2>
         </div>
-        <div className="row justify-content-center">
-          <div className="col-lg-10">
-            <div className="testimonial-item bg-white p-5 rounded-lg shadow-lg wow fadeInUp">
-              <div className="testimonial-content position-relative">
-                <div className="testimonial-icon position-absolute" style={{ top: "-30px", left: "30px", fontSize: "3rem", color: "#d4a853" }}>
-                  <FaQuoteLeft /><br />
+        <div className="max-w-4xl mx-auto">
+          <Swiper
+            modules={[Navigation]}
+            navigation={true}
+            spaceBetween={30}
+            slidesPerView={1}
+            className="testimonial-slider"
+          >
+            {testimonialsData.map((testimonial) => (
+              <SwiperSlide key={testimonial.id}>
+                <div className="group bg-white rounded-xl shadow-md p-8 md:p-10 relative border border-neutral-100 transition-all duration-300 hover:shadow-xl">
+                  <div className="absolute -top-4 left-8 text-4xl text-[#D4A853] transition-transform group-hover:-translate-y-1">
+                    <FaQuoteLeft />
+                  </div>
+                  <div className="mt-8 space-y-4 text-neutral-600 text-lg leading-relaxed">
+                    {testimonial.text.split('\n\n').map((paragraph, index) => (
+                      <p key={index} className="transition-colors group-hover:text-neutral-700">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                  <div className="mt-10 text-right">
+                    <h5 className="text-xl font-semibold text-neutral-900 group-hover:text-[#8B0000] transition-colors">{testimonial.name}</h5>
+                    <p className="text-neutral-500 group-hover:text-neutral-600 transition-colors">{testimonial.location}</p>
+                  </div>
                 </div>
-                <div className="testimonial-text mt-4" style={{ fontSize: "1.1rem", lineHeight: "1.8", color: "#555" }}>
-                  <p className="mb-4">
-                    Agradeço imensamente à Dra. Michelle e toda sua equipe pela sua enorme prestatividade, respondendo rapidamente a todas as minhas dúvidas e preocupações. Além disso, ela soube me explicar, de maneira simples e objetiva, todos os aspectos legais envolvidos, o que me deu muita confiança.
-                  </p>
-                  <p className="mb-4">
-                    O comprometimento da Dra. com a minha causa foi evidente. Ela me orientou de forma ética, profissional e sempre com o objetivo de alcançar o melhor resultado possível. Graças ao seu trabalho, estou conseguindo resolver minha situação de maneira satisfatória e com total segurança jurídica.
-                  </p>
-                  <p className="mb-4">
-                    Recomendo com toda a certeza a Dra. Michelle a qualquer pessoa que precise de uma profissional altamente qualificada e humana, que realmente se importa com o bem-estar de seus clientes.
-                  </p>
-                </div>
-                <div className="testimonial-author text-end mt-4">
-                  <h5 className="mb-1" style={{ color: "#333" }}>Cliente Satisfeito</h5>
-                  <p className="text-muted">Americana - SP</p>
-                </div>
-              </div>
-            </div>
-          </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

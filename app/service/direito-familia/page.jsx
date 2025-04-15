@@ -61,9 +61,6 @@ export default function ServicesDireitoFamilia() {
                                                         <a href="#">Direito de Família</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Direito Previdenciário</a>
-                                                    </li>
-                                                    <li>
                                                         <a href="#">Direito Digital</a>
                                                     </li>
                                                 </ul>

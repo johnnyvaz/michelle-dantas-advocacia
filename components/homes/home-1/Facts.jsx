@@ -5,8 +5,7 @@ import Counter from "@/components/common/Counter";
 
 export default function Facts() {
   return (
-    <div className="counter-area py-80 bg-gradient-to-r from-[#4c2c18] to-[#b89238] 
-    text-white text-center">
+    <div className="counter-area py-80 bg-gradient-to-r from-[#4c2c18] to-[#b89238] text-white text-center">
       <div className="container">
         {/* Alterado para grid com colunas responsivas e alinhamento centralizado */}
         <div className="counter-wrap grid grid-cols-1 md:grid-cols-3 justify-items-center gap-10">

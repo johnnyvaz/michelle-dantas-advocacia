@@ -109,16 +109,16 @@ export const servicesStyle2 = [
     iconTwo: "/assets/img/icon/serviceIcon2_7.png",
     delay: ".8s",
   },
-  {
-    id: 17,
-    thumb: "/assets/img/service/serviceThumb2_4.png",
-    title: "Mediação e Arbitragem",
-    description:
-      "Resolução de conflitos de forma ágil e eficaz, com métodos consensuais e extrajudiciais.",
-    icon: "/assets/img/icon/serviceIcon2_4.png",
-    iconTwo: "/assets/img/icon/serviceIcon2_8.png",
-    delay: "1s",
-  },
+  // {
+  //   id: 17,
+  //   thumb: "/assets/img/service/serviceThumb2_4.png",
+  //   title: "Mediação e Arbitragem",
+  //   description:
+  //     "Resolução de conflitos de forma ágil e eficaz, com métodos consensuais e extrajudiciais.",
+  //   icon: "/assets/img/icon/serviceIcon2_4.png",
+  //   iconTwo: "/assets/img/icon/serviceIcon2_8.png",
+  //   delay: "1s",
+  // },
 ];
 
 export const services3 = [
@@ -171,13 +171,6 @@ export const serviceItems = [
     delay: ".9s",
   },
   {
-    id: 24,
-    imgSrc: "/assets/img/icon/serviceIcon1_4.png",
-    title: "Direito Previdenciário",
-    text: "Garantia dos seus benefícios previdenciários e direitos sociais.",
-    delay: "1s",
-  },
-  {
     id: 25,
     imgSrc: "/assets/img/icon/serviceIcon1_6.png",
     title: "Direito Digital",
@@ -191,13 +184,13 @@ export const serviceItems = [
     text: "Orientação estratégica para resolver seus desafios legais.",
     delay: "1.7s",
   },
-  {
-    id: 27,
-    imgSrc: "/assets/img/icon/serviceIcon1_8.png",
-    title: "Mediação e Arbitragem",
-    text: "Resolução de conflitos de forma rápida e extrajudicial.",
-    delay: "1.8s",
-  },
+  // {
+  //   id: 27,
+  //   imgSrc: "/assets/img/icon/serviceIcon1_8.png",
+  //   title: "Mediação e Arbitragem",
+  //   text: "Resolução de conflitos de forma rápida e extrajudicial.",
+  //   delay: "1.8s",
+  // },
   {
     id: 28,
     imgSrc: "/assets/img/icon/serviceIcon1_9.png",
@@ -237,15 +230,6 @@ export const serviceCards = [
     delay: ".9s",
   },
   {
-    id: 32,
-    thumbSrc: "/assets/img/service/serviceThumb2_4.png",
-    iconSrc: "/assets/img/icon/serviceIcon2_4.png",
-    iconTwoSrc: "/assets/img/icon/serviceIcon2_8.png",
-    title: "Direito Previdenciário",
-    text: "Consultoria e ações para garantir seus benefícios e segurança social.",
-    delay: "1.2s",
-  },
-  {
     id: 33,
     thumbSrc: "/assets/img/service/serviceThumb2_5.png",
     iconSrc: "/assets/img/icon/serviceIcon2_9.png",
@@ -264,15 +248,15 @@ export const serviceCards = [
     text: "Orientação e suporte para resolver desafios jurídicos com agilidade.",
     delay: "1.5s",
   },
-  {
-    id: 35,
-    thumbSrc: "/assets/img/service/serviceThumb2_7.png",
-    iconSrc: "/assets/img/icon/serviceIcon2_11.png",
-    iconTwoSrc: "/assets/img/icon/serviceIcon2_15.png",
-    title: "Mediação e Arbitragem",
-    text: "Resolução de conflitos por meio de métodos consensuais e extrajudiciais.",
-    delay: "1.7s",
-  },
+  // {
+  //   id: 35,
+  //   thumbSrc: "/assets/img/service/serviceThumb2_7.png",
+  //   iconSrc: "/assets/img/icon/serviceIcon2_11.png",
+  //   iconTwoSrc: "/assets/img/icon/serviceIcon2_15.png",
+  //   title: "Mediação e Arbitragem",
+  //   text: "Resolução de conflitos por meio de métodos consensuais e extrajudiciais.",
+  //   delay: "1.7s",
+  // },
   {
     id: 36,
     thumbSrc: "/assets/img/service/serviceThumb2_8.png",
@@ -297,7 +281,6 @@ export const sericeCategories = [
   { label: "Direito Cível", active: false },
   { label: "Direito Trabalhista", active: false },
   { label: "Direito de Família", active: true },
-  { label: "Direito Previdenciário", active: false },
   { label: "Direito Digital", active: false },
 ];
 
