@@ -101,7 +101,7 @@ export default function Hero() {
       <div className="scroll-down">
         <a href="#service-area" className="hero-scroll-wrap">
           <i className="fal fa-long-arrow-left" />
-          Scroll
+          Rolar
         </a>
       </div>
     </section>

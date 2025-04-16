@@ -109,16 +109,16 @@ export const servicesStyle2 = [
     iconTwo: "/assets/img/icon/serviceIcon2_7.png",
     delay: ".8s",
   },
-  // {
-  //   id: 17,
-  //   thumb: "/assets/img/service/serviceThumb2_4.png",
-  //   title: "Mediação e Arbitragem",
-  //   description:
-  //     "Resolução de conflitos de forma ágil e eficaz, com métodos consensuais e extrajudiciais.",
-  //   icon: "/assets/img/icon/serviceIcon2_4.png",
-  //   iconTwo: "/assets/img/icon/serviceIcon2_8.png",
-  //   delay: "1s",
-  // },
+  {
+    id: 17,
+    thumb: "/assets/img/service/serviceThumb2_4.png",
+    title: "Planos de Saúde",
+    description:
+      "Atuando na defesa dos seus direitos contra negativas de cobertura e reajustes abusivos de planos de saúde.",
+    icon: "/assets/img/icon/serviceIcon2_4.png",
+    iconTwo: "/assets/img/icon/serviceIcon2_8.png",
+    delay: "1s",
+  },
 ];
 
 export const services3 = [

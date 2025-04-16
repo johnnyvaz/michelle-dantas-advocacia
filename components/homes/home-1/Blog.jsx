@@ -22,10 +22,10 @@ export default async function Blog() {
         <div className="container">
           <div className="title-area mx-auto">
             <h5 className="subtitle text-center wow fadeInUp" data-wow-delay=".3s">
-              Notícias &amp; Blog
+            NOTÍCIAS E INFORMAÇÕES
             </h5>
             <h2 className="title text-center mb-50 wow fadeInUp" data-wow-delay=".3s">
-              Notícias e Informações Importantes
+              Blog
             </h2>
           </div>
 

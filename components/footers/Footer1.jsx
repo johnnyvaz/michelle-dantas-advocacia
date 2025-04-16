@@ -212,20 +212,27 @@ export default function Footer1() {
           <div className="copyright-layout">
             <div className="layout-text wow fadeInUp" data-wow-delay=".3s">
               <p className="copyright">
-                <i className="fal fa-copyright" /> Todos os direitos reservados {new Date().getFullYear()} por
-                <Link scroll={false} href={`/`}>
+                <i className="fal fa-copyright" /> Todos os direitos reservados {new Date().getFullYear()} por <Link scroll={false} href={`/`}>
                   Michelle Dantas Advocacia
                 </Link>
               </p>
             </div>
-            <div className="layout-link wow fadeInUp" data-wow-delay=".6s">
-              <div className="link-wrapper">
-                <Link scroll={false} href={`/termos-uso`}>
-                  Termos de Uso{" "}
-                </Link>
-                <Link scroll={false} href={`/politica-privacidade`}>
-                  Política de Privacidade
-                </Link>
+            <div className="layout-link wow fadeInUp" data-wow-delay=".6s" style={{ pointerEvents: 'auto' }}>
+              <div className="link-wrapper" style={{ position: 'relative', zIndex: 10 }}>
+                <a 
+                  href="https://johnnyvaz.com.br" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="external-link"
+                  style={{ 
+                    pointerEvents: 'auto',
+                    cursor: 'pointer',
+                    display: 'inline-block',
+                    position: 'relative'
+                  }}
+                >
+                  Desenvolvido por Johnny Vaz
+                </a>
               </div>
             </div>
           </div>
