@@ -1,8 +1,11 @@
+'use client';
+
 import { depoimentosData } from "@/data/testimonials";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 export default function Depoimentos() {
+  const [expandedCards, setExpandedCards] = useState({});
   return (
     <section
       id="sobre-escritorio"
@@ -24,22 +27,38 @@ export default function Depoimentos() {
             Dos nossos clientes
           </h2>
         </div>
-        <div className="service-card-wrapper style2">
-          {depoimentosData.map((depoimento, index) => (
-            <div
-              className="service-card style2 wow fadeInUp"
-              data-wow-delay={`0.${index + 2}s`}
-              key={index}
-            >
-              <div className="service-content">
-                <h3 className="service-content_title text-white">
-                  {depoimento.name}
-                  <span className="text-sm block mt-2 text-gray-300">{depoimento.location}</span>
-                </h3>
-                <p className="service-content_text mt-4">{depoimento.text}</p>
+        <div className="service-card-wrapper style2 flex justify-center gap-8">
+          {depoimentosData.slice(0, 2).map((depoimento, index) => {
+            const isExpanded = expandedCards[index];
+            const truncatedText = depoimento.text.slice(0, 200);
+            const needsReadMore = depoimento.text.length > 200;
+
+            return (
+              <div
+                className="service-card style2 wow fadeInUp max-w-md"
+                data-wow-delay={`0.${index + 2}s`}
+                key={index}
+              >
+                <div className="service-content">
+                  <h3 className="service-content_title text-black text-2xl font-bold mb-2">
+                    {depoimento.name}
+                  </h3>
+                  <p className="service-content_text mt-4">
+                    {isExpanded ? depoimento.text : truncatedText}
+                    {needsReadMore && (
+                      <button
+                        onClick={() => setExpandedCards(prev => ({ ...prev, [index]: !prev[index] }))}
+                        className="text-primary-500 hover:text-primary-600 ml-2 font-semibold"
+                      >
+                        {isExpanded ? 'Ler menos' : 'Leia mais...'}
+                      </button>
+                    )}
+                  </p>
+                  <div className="mt-4 text-gray-300 text-sm">{depoimento.location}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
