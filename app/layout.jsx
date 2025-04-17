@@ -10,12 +10,13 @@ import { ToastContainer } from "react-toastify";
 import PopupSearch from "@/components/headers/PopupSearch";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Script from 'next/script';
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const path = usePathname();
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       import("bootstrap/dist/js/bootstrap.esm");
@@ -24,27 +25,22 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     window.addEventListener("scroll", function () {
-      var topPos = window.scrollY || document.documentElement.scrollTop;
-      var stickyWrapper = document.querySelector(".sticky-wrapper");
+      const topPos = window.scrollY || document.documentElement.scrollTop;
+      const stickyWrapper = document.querySelector(".sticky-wrapper");
 
       if (topPos > 500) {
-        stickyWrapper.classList.add("sticky");
+        stickyWrapper?.classList.add("sticky");
       } else {
-        stickyWrapper.classList.remove("sticky");
+        stickyWrapper?.classList.remove("sticky");
       }
     });
   }, []);
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
+    window.scrollTo({ top: 0, behavior: "instant" });
+
     const { WOW } = require("wowjs");
-    const wow = new WOW({
-      mobile: false,
-      live: false,
-    });
+    const wow = new WOW({ mobile: false, live: false });
     wow.init();
   }, [path]);
 
@@ -55,6 +51,8 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
           rel="stylesheet"
         />
+
+        {/* Script do Chatwoot */}
         <Script id="chatwoot" strategy="afterInteractive">
           {`
             (function(d,t) {
@@ -68,12 +66,15 @@ export default function RootLayout({ children }) {
                 window.chatwootSDK.run({
                   websiteToken: 'BayffjTGqx77qea5kphPDhan',
                   baseUrl: BASE_URL
-                })
+                });
               }
             })(document,"script");
           `}
         </Script>
+
+
       </head>
+
       <body className={inter.className}>
         <SiteMenu />
         <MobileNav />
@@ -92,6 +93,8 @@ export default function RootLayout({ children }) {
         {children}
         <CursorFollor />
         <ScrollTop />
+
+
       </body>
     </html>
   );
