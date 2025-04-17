@@ -1,5 +1,5 @@
 "use client";
-import { teamMembers } from "@/data/team";
+import { teamMembers2, teamMembers2b } from "@/data/team";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import Image from "next/image";
@@ -39,7 +39,7 @@ export default function Team() {
                   height="12"
                 />
               </span>{' '}
-              OUR TEAM MEMBER{' '}
+              NOSSA EQUIPE{' '}
               <span>
                 <Image
                   alt="icon"
@@ -53,7 +53,7 @@ export default function Team() {
               className="title text-center mb-50 wow fadeInUp"
               data-wow-delay=".6s"
             >
-              See Our Skilled Expert Team
+              Conheça Nossa Equipe Especializada
             </h2>
           </div>
           <div className="slider-area">
@@ -69,7 +69,7 @@ export default function Team() {
               spaceBetween={30}
               className="swiper gt-slider team-slider pb-4 px-1"
             >
-              {teamMembers.map((member, index) => (
+              {[...teamMembers2, ...teamMembers2b].map((member, index) => (
                 <SwiperSlide className="swiper-slide mr-0" key={index}>
                   <div className="team-card style2">
                     <div className="team-thumb">
@@ -111,7 +111,7 @@ export default function Team() {
                           {member.name}
                         </Link>
                       </h3>
-                      <p>{member.position}</p>
+                      <p>{member.role}</p>
                     </div>
                   </div>
                 </SwiperSlide>
