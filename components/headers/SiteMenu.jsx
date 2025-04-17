@@ -150,7 +150,7 @@ export default function SiteMenu() {
           </div>
         </div>
         <div className="widget newsletter-widget">
-          <h3 className="widget_title">Inscreva-se</h3>
+          {/* <h3 className="widget_title">Inscreva-se</h3>
           <form ref={form} className="newsletter-form" onSubmit={sandMail}>
             <div className="form-group">
               <input
@@ -163,7 +163,7 @@ export default function SiteMenu() {
                 <i className="far fa-paper-plane text-theme" />
               </button>
             </div>
-          </form>
+          </form> */}
           <div className="gt-social mt-4">
             {socialLinks.map((link, index) => (
               <a href={link.href} key={index}>

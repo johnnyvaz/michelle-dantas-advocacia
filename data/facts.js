@@ -16,5 +16,11 @@ export const counterBoxes = [
     number: 250,
     label: "Processos",
     delay: ".9s",
+  },
+  {
+    icon: "/assets/img/icon/counterIcon1_2.png",
+    number: 13,
+    label: "Anos de Experiência",
+    delay: ".12s",
   }
 ];
