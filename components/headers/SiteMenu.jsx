@@ -120,12 +120,8 @@ export default function SiteMenu() {
                 />
               </div>
               <div className="details">
-                <p>
-                  <a href="https://wa.me/5519992845413" className="info-box_link">
-                    (19) 99284-5413
-                  </a>
-                  <p><a href="tel:+551934065788">(19) 3406-5788</a></p>
-                </p>
+                <p><a href="https://wa.me/5519992845413" className="info-box_link">(19) 99284-5413</a></p>
+                <p>(19) 3406-5788</p>
               </div>
             </div>
             <div className="info-box_text">

@@ -28,13 +28,13 @@ export default function Depoimentos() {
           </h2>
         </div>
         <div className="service-card-wrapper style2 flex justify-center gap-8">
-          {depoimentosData.slice(0, 2).map((depoimento, index) => {
+          {depoimentosData.slice(0, 4).map((depoimento, index) => {
             const isExpanded = expandedCards[index];
             const truncatedText = depoimento.text.slice(0, 200);
             const needsReadMore = depoimento.text.length > 200;
 
             return (
-              <div
+              <div 
                 className="service-card style2 wow fadeInUp max-w-md"
                 data-wow-delay={`0.${index + 2}s`}
                 key={index}

@@ -38,11 +38,14 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-
-    const { WOW } = require("wowjs");
-    const wow = new WOW({ mobile: false, live: false });
-    wow.init();
+  
+    import("wowjs").then((module) => {
+      const WOW = module.default;
+      const wow = new WOW({ mobile: false, live: false });
+      wow.init();
+    });
   }, [path]);
+  
 
   return (
     <html lang="pt-BR" className="bg-white">
