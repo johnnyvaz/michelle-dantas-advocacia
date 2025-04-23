@@ -75,9 +75,8 @@ export default function Contact() {
                       </div>
                       <div className="content">
                         <p>Entre em contato</p>
-                        <h3>
-                          <a href="tel:+5519992845413">19 992845413</a>
-                        </h3>
+                        <h3><a href="tel:+5519992845413">19 992845413</a></h3>
+                        <h3><a href="tel:+551934065788">19 34065788</a></h3>
                       </div>
                     </div>
                     <div className="contact-info-items">

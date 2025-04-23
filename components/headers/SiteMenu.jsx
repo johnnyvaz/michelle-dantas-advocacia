@@ -124,6 +124,7 @@ export default function SiteMenu() {
                   <a href="https://wa.me/5519992845413" className="info-box_link">
                     (19) 99284-5413
                   </a>
+                  <p><a href="tel:+551934065788">(19) 3406-5788</a></p>
                 </p>
               </div>
             </div>

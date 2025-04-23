@@ -72,6 +72,7 @@ export default function ServicesDireitoDigital() {
                                                 </div>
                                                 <h4>Entre em contato</h4>
                                                 <h5><a href="tel:+5519992845413">(19) 99284-5413</a></h5>
+                                                <h5><a href="tel:+551934065788">(19) 3406-5788</a></h5>
                                             </div>
                                         </div>
                                     </div>
