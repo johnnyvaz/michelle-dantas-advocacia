@@ -8,7 +8,7 @@ import Offering from "@/components/homes/home-1/Offering";
 import VideoBox from "@/components/homes/home-1/VideoBox";
 import Team from "@/components/homes/home-2/Team";
 import AboutCta from "@/components/otherPages/AboutCta";
-import Testimonials from "@/components/homes/home-2/Testimonials";
+// import Testimonials from "@/components/homes/home-2/Testimonials";
 import Link from "next/link";
 export const metadata = {
   title: "About || Techbe-IT Solution & Technology Service Nextjs Template",
@@ -55,7 +55,6 @@ export default function Page() {
         <VideoBox />
         <Team />
         <AboutCta />
-        <Testimonials />
         <div className="pb-300"></div>
 
         <Cta />
