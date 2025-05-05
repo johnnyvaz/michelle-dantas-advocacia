@@ -9,7 +9,7 @@ tags:
   - Planejamento Sucessório
   - Patrimônio
   - Família
-cover: /assets/img/blog/planejamento-sucessorio.png
+cover: /assets/img/blog/sucessao-familiar2.png
 excerpt: "O planejamento sucessório é essencial para assegurar a continuidade e proteção do patrimônio familiar. Saiba como realizá-lo de forma eficaz."
 ---
 

@@ -83,7 +83,7 @@ export default function ServicesDireitoTrabalhista() {
                                         <div className="details-image">
                                             <Image
                                                 alt="img"
-                                                src="/assets/img/service/serviceThumb3_1.png"
+                                                src="/assets/img/hero/direito-trabalhista.png"
                                                 width="770"
                                                 height="470"
                                             />
@@ -100,17 +100,6 @@ export default function ServicesDireitoTrabalhista() {
                                             </p>
 
                                             <div className="details-video-items wow fadeInUp" data-wow-delay="1.3s">
-                                                <div className="video-thumb">
-                                                    <Image
-                                                        alt="img"
-                                                        src="/assets/img/service/serviceThumb3_2.png"
-                                                        width="405"
-                                                        height="257"
-                                                    />
-                                                    <a className="play-btn popup-video" onClick={(e) => e.preventDefault()}>
-                                                        <i className="fa-sharp fa-solid fa-play" />
-                                                    </a>
-                                                </div>
                                                 <div className="content">
                                                     <h4>Principais Benefícios</h4>
                                                     <p>

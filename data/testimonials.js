@@ -13,14 +13,14 @@ export const depoimentosData = [
   },
   {
     id: 3,
-    name: "Carlos Henrique",
-    location: "Campinas - SP",
-    text: `Minha experiência com a Dra. Michelle foi excelente desde o primeiro atendimento. Sempre muito atenciosa, explicou todos os detalhes do processo com clareza e me manteve informado sobre cada etapa. Senti confiança e segurança em todas as orientações recebidas. Recomendo de olhos fechados!`,
+    name: "André Pires",
+    location: "-",
+    text: `Gostaria de expressar meu reconhecimento e gratidão ao escritório de Advocacia Michelle Dantas pela excelência no atendimento e pela competência técnica demonstrada em todos os serviços prestados. Desde o primeiro contato, a equipe mostrou-se altamente profissional, tenciosa e comprometida com a busca pelas melhores soluções jurídicas, sempre com ética, agilidade e profundo conhecimento das leis. A dedicação e a capacidade de interpretar as necessidades específicas de cada caso fazem da Advocacia Michelle Dantas uma referência de confiança. Recomendo seus serviços com entusiasmo a todos que buscam assessoria jurídica de qualidade`,
   },
   {
     id: 4,
-    name: "Juliana Martins",
-    location: "Piracicaba - SP",
-    text: `A Dra. Michelle demonstrou extremo profissionalismo e empatia durante todo o meu caso. Resolveu meu problema de forma rápida e eficiente, sempre disponível para tirar dúvidas e me tranquilizar. Sou muito grata pelo excelente trabalho e dedicação. Indico para todos que buscam um atendimento humano e de qualidade!`,
+    name: "Erica Bruscagin",
+    location: "-",
+    text: `Dra. Michelle, Gostaria de expressar minha satisfação pelo trabalho que você realizou. Seu profissionalismo, sua dedicação a competência, seu conhecimento e ética, são muito importantes e, com certeza, fazem a diferença. para o sucesso do caso."`,
   }
 ];
