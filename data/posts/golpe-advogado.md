@@ -1,6 +1,6 @@
 ---
 id: 2
-slug: golpe-do-advogado
+slug: golpe-advogado
 title: "Golpe do Advogado: Como se Proteger de Falsas Ações Judiciais"
 author: Michelle Dantas
 date: 2024-04-09
