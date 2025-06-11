@@ -10,7 +10,7 @@ tags:
   - Falsos Advogados
   - Segurança
   - Consumidor
-cover: /assets/img/blog/golpe-advogado.png
+cover: /assets/img/blog/58.33 Kb.jpg
 excerpt: Saiba como identificar e se proteger do golpe do falso advogado, que tenta extorquir dinheiro alegando processos inexistentes ou urgências falsas.
 ---
 
