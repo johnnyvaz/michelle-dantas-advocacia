@@ -1,6 +1,6 @@
 ---
 id: 2
-slug: novas-regras-ans-notificacao-inadimplencia
+slug: novas-regras-ans
 title: "Novas Regras da ANS para Notificação por Inadimplência"
 author: Michelle Dantas
 date: 2025-08-12
