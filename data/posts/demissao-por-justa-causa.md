@@ -9,7 +9,7 @@ tags:
   - Direito do Trabalho
   - Demissão
   - Justa Causa
-cover: /assets/img/blog/demissao-justa-causa.png
+cover: /assets/img/blog/demissao-trabalho.jpg
 excerpt: Entenda em quais situações a demissão por justa causa pode ser aplicada e quais são os direitos do trabalhador nesse cenário.
 ---
 
