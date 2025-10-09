@@ -10,7 +10,7 @@ tags:
   - STJ
   - Consumidor
   - Responsabilidade Objetiva
-cover: /assets/img/blog/golpe-falsa-central.png
+cover: /assets/img/blog/telemarketing-escritorio.jpg
 excerpt: Entenda a decisão do STJ que determinou a responsabilidade do banco por prejuízos causados a cliente vítima do golpe da falsa central.
 ---
 
