@@ -1,7 +1,7 @@
 ---
 id: 2
 slug: demissao-por-justa-causa-o-que-e-e-quando-pode-acontecer
-title: "Demissão por justa causa: o que é e quando pode acontecer?"
+title: "Demissão por justa causa: o que é e quando pode acontecer"
 author: Michelle Dantas
 date: 2024-04-09
 category: Direito Trabalhista
