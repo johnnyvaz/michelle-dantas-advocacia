@@ -10,7 +10,7 @@ tags:
   - Direito do Trabalhador
   - CLT
   - Rescisão Contratual
-cover: /assets/img/blog/demissao.jpg
+cover: /assets/img/blog/demitido.jpg
 excerpt: Entenda o que caracteriza a demissão por justa causa, quais faltas podem motivá-la e quando o trabalhador pode contestar a decisão na Justiça.
 ---
 
