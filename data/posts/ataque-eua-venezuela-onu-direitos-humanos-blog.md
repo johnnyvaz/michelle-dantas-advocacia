@@ -1,9 +1,9 @@
 ---
 id: 2
-slug: ataque-eua-venezuela-onu-direitos-humanos
+slug: ataque-eua-venezuela-onu-direitos-humanos-blog
 title: "Ataque dos EUA à Venezuela: ONU alerta sobre violação de direitos humanos"
 author: Michelle Dantas
-date: 2026-06-01
+date: 2024-01-06
 category: Direito Internacional
 tags:
   - Direitos Humanos
