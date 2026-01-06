@@ -10,7 +10,7 @@ tags:
   - ONU
   - Venezuela
   - Direito Internacional
-cover: /assets/img/blog/onu - img.webp
+cover: /assets/img/blog/martelo-justiça.jpg
 excerpt: A ONU manifesta preocupação com possíveis violações de direitos humanos após ataque dos Estados Unidos à Venezuela e alerta para os impactos sobre a população civil.
 ---
 
