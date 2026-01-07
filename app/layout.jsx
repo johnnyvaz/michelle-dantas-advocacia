@@ -55,6 +55,11 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
           rel="stylesheet"
         />
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/assets/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="/assets/css/animate.css" />
+        <link rel="stylesheet" href="/assets/css/magnific-popup.min.css" />
+        <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
 
         {/* Script do Chatwoot */}
         <Script id="chatwoot" strategy="afterInteractive">
