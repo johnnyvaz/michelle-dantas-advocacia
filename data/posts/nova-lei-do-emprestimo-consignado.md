@@ -3,7 +3,7 @@ id: 2
 slug: nova-lei-do-emprestimo-consignado
 title: "Nova Lei do Empréstimo Consignado: o que muda para o consumidor"
 author: Michelle Dantas
-date: 2026-01-15
+date: 2026-01-14
 category: Direito do Consumidor
 tags:
   - Empréstimo Consignado
