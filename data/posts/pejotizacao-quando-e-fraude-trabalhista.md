@@ -1,32 +1,57 @@
-**-- id:** 2
-**slug:** pejotizacao-quando-e-fraude-trabalhista
-**title:** "Pejotização: quando é fraude trabalhista?"
-**author:** Michelle Dantas
-**date:** 2026-01-28
-**category:** Direito do Consumidor
-**tags:**
-
-* Pejotização
-* Direito do Trabalho
-* Vínculo Empregatício
-* Fraude Trabalhista
-  **cover:** /assets/img/blog/trabalho.jpg
-  **excerpt:** Entenda quando a contratação como PJ é legal e em quais situações pode ser considerada fraude trabalhista, garantindo direitos da CLT ao trabalhador.
-
+---
+id: 2
+slug: pejotizacao-quando-e-fraude-trabalhista
+title: "Pejotização: quando é fraude trabalhista?"
+author: Michelle Dantas
+date: 2026-02-09
+category: Direito do Trabalho
+tags:
+  - Pejotização
+  - Fraude Trabalhista
+  - Vínculo Empregatício
+  - CLT
+  - Direitos do Trabalhador
+cover: /assets/img/blog/trabalho.jpg
+excerpt: Entenda quando a contratação como PJ pode ser considerada fraude trabalhista e quais direitos o trabalhador pode exigir na Justiça.
 ---
 
-## A pejotização ocorre quando o trabalhador é contratado como pessoa jurídica (PJ), mas, na prática, exerce suas atividades como um empregado comum. Embora a contratação via PJ seja permitida em alguns casos, ela se torna fraude trabalhista quando é usada para mascarar uma verdadeira relação de emprego.
+## A pejotização ocorre quando o trabalhador é contratado como pessoa jurídica, mas, na prática, exerce atividades típicas de um empregado CLT.
 
-De acordo com a legislação trabalhista, existe vínculo empregatício quando estão presentes quatro requisitos: **subordinação**, **habitualidade**, **pessoalidade** e **onerosidade**. Se esses elementos estiverem configurados, pouco importa o contrato firmado: a relação deve ser reconhecida como CLT.
+Essa prática é comum em diversos setores, porém **nem sempre é legal**. A Justiça do Trabalho analisa a **realidade da prestação de serviços**, e não apenas o contrato assinado.
 
-A pejotização costuma ser considerada fraude quando o trabalhador:
+### ⚠️ Quando a pejotização é considerada fraude?
 
-* Cumpre jornada fixa e controlada
-* Recebe ordens diretas e está subordinado a superiores
-* Não pode se fazer substituir por outra pessoa
-* Trabalha de forma contínua e exclusiva para a empresa
-* Recebe remuneração mensal fixa
+A contratação como PJ pode ser considerada fraudulenta quando estão presentes os requisitos do vínculo empregatício, previstos no artigo 3º da CLT:
 
-Nessas situações, a Justiça do Trabalho tem reconhecido o vínculo empregatício e garantido ao trabalhador todos os direitos previstos na CLT, como férias, 13º salário, FGTS, horas extras e verbas rescisórias.
+- **Subordinação** (ordens diretas, controle de atividades);
+- **Pessoalidade** (não pode ser substituído por outra pessoa);
+- **Habitualidade** (trabalho contínuo, com rotina fixa);
+- **Onerosidade** (pagamento mensal ou periódico).
 
-> Os tribunais têm reforçado que a forma do contrato não pode se sobrepor à realidade dos fatos. Quando comprovada a pejotização fraudulenta, o trabalhador tem direito à reparação e ao reconhecimento do vínculo. Buscar orientação jurídica especializada é fundamental para avaliar cada caso e garantir seus direitos.
+Quando esses elementos existem, o contrato PJ pode ser **desconsiderado**, com reconhecimento do vínculo de emprego.
+
+### ⚖️ O que diz a Justiça do Trabalho?
+
+O entendimento predominante é claro:  
+> **A realidade dos fatos prevalece sobre a forma do contrato.**
+
+Assim, mesmo que exista um CNPJ, emissão de notas fiscais ou contrato de prestação de serviços, o vínculo CLT pode ser reconhecido judicialmente.
+
+### 📌 Quais direitos podem ser garantidos?
+
+Em caso de reconhecimento do vínculo, o trabalhador pode ter direito a:
+
+- Registro em carteira (CLT);
+- FGTS + multa de 40%;
+- Férias + 1/3 constitucional;
+- 13º salário;
+- Horas extras e adicionais;
+- Verbas rescisórias.
+
+### 🧭 O que fazer em caso de pejotização irregular?
+
+Reunir provas é essencial: conversas, e-mails, controle de jornada, recibos de pagamento e testemunhas podem fazer toda a diferença.
+
+👉 **Buscar orientação jurídica especializada é o caminho mais seguro para avaliar cada caso.**
+
+Se você foi contratado como PJ, mas atua como empregado, seus direitos podem estar sendo violados. Informe-se e proteja-se.
