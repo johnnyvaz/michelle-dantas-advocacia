@@ -10,7 +10,6 @@ tags:
   - Direito
   - Alcheimer
   - Medicamento
-  - Tratamento
 cover: /assets/img/blog/saúde.jpg
 excerpt: A divulgação do preço do lecanemabe (Leqembi), medicamento indicado para casos iniciais de Alzheimer, trouxe novamente à tona uma discussão importante: como será o acesso a esse tratamento no Brasil.
 ---
@@ -63,3 +62,6 @@ Por isso, pedidos relacionados ao lecanemabe tendem a exigir relatórios médico
 > A chegada do lecanemabe representa uma novidade relevante no tratamento do Alzheimer em fase inicial, mas o alto custo e os critérios específicos para uso indicam que o tema ainda deve gerar muitas discussões sobre acesso, cobertura e fornecimento.
 
 Mais do que nunca, cada situação precisará ser analisada de forma cuidadosa, considerando as características do paciente, a orientação médica e as regras atualmente vigentes.
+
+
+Este conteúdo possui finalidade exclusivamente informativa e educativa. Não constitui recomendação médica, não promove medicamento específico, não substitui avaliação por profissional de saúde e não representa promessa de resultado em eventual discussão administrativa ou judicial. Cada caso deve ser analisado individualmente por profissionais de confiança.
