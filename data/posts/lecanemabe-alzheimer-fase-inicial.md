@@ -2,7 +2,7 @@
 id: 2
 slug: lecanemabe-alzheimer-fase-inicial
 title: "Lecanemabe para Alzheimer em fase inicial: desafios jurídicos e regulatórios de acesso"
-author: Michelle Dantas
+author: Direito e Saúde
 date: 2026-05-13
 category: Direito da Saúde
 tags:
@@ -12,7 +12,7 @@ tags:
   - Direito à Saúde
   - Anvisa
   - Plano de Saúde
-cover: /assets/img/blog/lecanemabe-alzheimer.png
+cover: /assets/img/blog/saúde.jpg
 excerpt: Entenda os desafios jurídicos e regulatórios envolvendo o acesso ao lecanemabe, novo medicamento indicado para Alzheimer em fase inicial.
 ---
 
