@@ -1,6 +1,6 @@
 ---
 id: 2
-slug: /direito-e-saude/novo-medicamento-para-alzheimer
+slug: direito-e-saude/novo-medicamento-para-alzheimer
 title: "Novo medicamento para Alzheimer em fase inicial chama atenção pela complexidade do tratamento e pelos desafios de acesso"
 author: Michelle Dantas
 date: 2024-05-11
