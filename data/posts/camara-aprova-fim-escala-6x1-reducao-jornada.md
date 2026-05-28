@@ -11,7 +11,7 @@ tags:
   - Direito Trabalhista
   - CLT
   - Trabalhador
-cover: /assets/img/blog/camera-federal.jpeg
+cover: /assets/img/blog/câmera-federal-1.jpeg
 excerpt: Entenda o que muda com a proposta aprovada pela Câmara que prevê o fim da escala 6x1 e a redução da jornada semanal para 40 horas.
 ---
 
