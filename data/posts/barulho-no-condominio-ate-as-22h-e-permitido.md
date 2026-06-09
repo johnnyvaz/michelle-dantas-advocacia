@@ -11,7 +11,7 @@ tags:
   - Barulho
   - Perturbação do Sossego
   - Direito Civil
-cover: /assets/img/blog/condomínios.jpg
+cover: /assets/img/blog/cond e predios.jpg
 excerpt: Descubra se existe realmente uma autorização para fazer barulho até as 22h e quais são os direitos dos moradores em casos de perturbação do sossego.
 ---
 
