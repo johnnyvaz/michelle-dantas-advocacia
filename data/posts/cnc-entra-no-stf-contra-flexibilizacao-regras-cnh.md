@@ -11,7 +11,7 @@ tags:
   - Trânsito
   - Direito do Consumidor
   - Segurança Viária
-cover: /assets/img/blog/Fecha-justiça.jpg
+cover: /assets/img/blog/martelo-justiça.jpg
 excerpt: Entenda a discussão levada ao STF sobre a flexibilização das regras da CNH e os possíveis impactos para motoristas e para a segurança no trânsito.
 ---
 
