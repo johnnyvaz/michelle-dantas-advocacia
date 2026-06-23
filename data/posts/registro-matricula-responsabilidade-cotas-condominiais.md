@@ -11,7 +11,7 @@ tags:
   - Compra e Venda de Imóvel
   - Cotas Condominiais
   - Registro de Imóveis
-cover: /assets/img/blog/condomínio.jpg
+cover: /assets/img/blog/cond e predios.jpg
 excerpt: Entenda por que o registro da propriedade pode tornar o comprador responsável por débitos condominiais, inclusive anteriores à entrega das chaves.
 ---
 
