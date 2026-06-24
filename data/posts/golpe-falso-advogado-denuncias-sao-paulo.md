@@ -1,7 +1,7 @@
 ---
 id: 2
 slug: golpe-falso-advogado-denuncias-sao-paulo
-title: "Golpe do falso advogado soma mais de 1.520 denúncias em São Paulo"
+title: "Golpe do falso advogado soma mais de 1520 denúncias em São Paulo"
 author: Michelle Dantas
 date: 2026-06-22
 category: Direito do Consumidor
