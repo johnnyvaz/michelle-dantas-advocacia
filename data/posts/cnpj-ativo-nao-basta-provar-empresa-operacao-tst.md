@@ -11,7 +11,7 @@ tags:
   - Empresa
   - CNPJ
   - Processo Trabalhista
-cover: /assets/img/blog/Fecha-justiça.jpg
+cover: /assets/img/blog/novas-regras.jpg
 excerpt: O Tribunal Superior do Trabalho decidiu que a simples existência de um CNPJ ativo não é suficiente para comprovar que uma empresa está efetivamente em funcionamento. Entenda os impactos dessa decisão.
 ---
 
