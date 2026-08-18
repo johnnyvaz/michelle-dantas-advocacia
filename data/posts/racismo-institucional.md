@@ -1,6 +1,6 @@
 ---
 id: 2
-slug: racismo-institucional-empresa-condenada-cortar-cabelo
+slug: racismo-institucional
 title: "Racismo institucional: empresa é condenada por obrigar trabalhador a cortar o cabelo"
 author: Michelle Dantas
 date: 2026-08-16
