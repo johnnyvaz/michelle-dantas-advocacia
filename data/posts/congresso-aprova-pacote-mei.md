@@ -11,7 +11,6 @@ tags:
   - Direito do Consumidor
   - Empreendedorismo
   - Dívidas
-  - Prospera MEI
 cover: /assets/img/blog/assinatura.webp
 excerpt: Novo pacote para microempreendedores individuais amplia o limite de faturamento, permite a contratação de até dois empregados e prevê o perdão de dívidas tributárias federais. Entenda as regras e quando as mudanças começam a valer.
 ---
