@@ -1,9 +1,9 @@
 ---
 id: 2
-slug: congresso-aprova-pacote-mei-teto-140-mil-perdao-dividas
+slug: congresso-aprova-pacote-mei
 title: "Congresso aprova pacote do MEI com teto de até R$ 140 mil, dois empregados e perdão de dívidas federais"
 author: Michelle Dantas
-date: 2026-10-27
+date: 2026-10-25
 category: Direito do Consumidor
 tags:
   - MEI
