@@ -24,24 +24,11 @@ export function getAllMarkdownPosts() {
 }
 
 export function getPostBySlug(slug) {
-  const filePath = path.join(postsDir, `${slug}.md`);
-  if (!fs.existsSync(filePath)) return null;
-
-  const fileContent = fs.readFileSync(filePath, "utf8");
-  const { data, content } = matter(fileContent);
-
-  return {
-    ...data,
-    content,
-    slug: data.slug || slug,
-  };
+  return getAllMarkdownPosts().find((post) => post.slug === slug) || null;
 }
 
 export function getAllSlugs() {
-  return fs
-    .readdirSync(postsDir)
-    .filter((f) => f.endsWith(".md"))
-    .map((file) => file.replace(/\.md$/, ""));
+  return getAllMarkdownPosts().map((post) => post.slug);
 }
 
 // app/api/posts/getAllPosts.js

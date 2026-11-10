@@ -7,15 +7,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 export async function generateMetadata({ params }) {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   return {
     title: `${post?.title || "Post"} | Michelle Dantas`,
     description: post?.excerpt || "",
   };
 }
 
-export default function Page({ params }) {
-  const post = getPostBySlug(params.slug);
+export default async function Page({ params }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) return <div>Post não encontrado.</div>;
 
