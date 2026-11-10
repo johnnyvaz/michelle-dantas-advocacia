@@ -3,7 +3,7 @@ id: 2
 slug: reforma-tributaria-muda-regras-renda-aluguel-pessoa-fisica-juridica
 title: "Reforma tributária muda regras para renda com aluguel; veja como fica para pessoas físicas e jurídicas"
 author: Michelle Dantas
-date: 2026-11-10
+date: 2026-11-09
 category: Direito Tributário
 tags:
   - Reforma Tributária
