@@ -12,7 +12,8 @@ tags:
   - CBS
   - Pessoa Física
   - Pessoa Jurídica
-cover: /assets/img/blog/assinatura.webp
+cover: /assets/img/blog/contrato-assinatura.jpg
+
 excerpt: A Reforma Tributária estabelece novas regras para a tributação de aluguéis. Entenda quando pessoas físicas e jurídicas estarão sujeitas ao IBS e à CBS e quais benefícios estão previstos.
 ---
 
