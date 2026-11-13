@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "extensions": {
+    "ph3a-quality": {
+      "version": "1.0.0",
+      "source": "local",
+      "manifest_hash": "sha256:730cd5b0be59a8a305339e4d77a302a1eb71559a04a476d8d90bf2a2ff3997cb",
+      "enabled": true,
+      "priority": 20,
+      "registered_commands": {},
+      "registered_skills": [],
+      "installed_at": "2026-06-17T00:00:00+00:00"
+    },
+    "git": {
+      "version": "1.0.1",
+      "source": {
+        "kind": "catalog",
+        "catalog": "default"
+      },
+      "manifest_hash": "sha256:698cc7089602db44622de39730555db4999cda94ab47195bcfe18f41d08b430a",
+      "enabled": true,
+      "priority": 10,
+      "registered_commands": {
+        "claude": [
+          "speckit.git.feature",
+          "speckit.git.validate",
+          "speckit.git.remote",
+          "speckit.git.initialize",
+          "speckit.git.commit"
+        ]
+      },
+      "registered_skills": [],
+      "installed_at": "2026-05-27T01:00:51.705195+00:00"
+    },
+    "agent-context": {
+      "version": "1.0.2",
+      "source": {
+        "kind": "catalog",
+        "catalog": "default"
+      },
+      "manifest_hash": "sha256:270100175bb742c37b8d549f2233c5b79114869dac754883dbecac2a4813beef",
+      "enabled": true,
+      "priority": 10,
+      "registered_commands": {
+        "claude": [
+          "speckit.agent-context.update"
+        ]
+      },
+      "registered_skills": [],
+      "installed_at": "2026-06-17T10:47:32.834741+00:00"
+    }
+  }
+}

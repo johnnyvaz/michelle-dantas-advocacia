@@ -1,0 +1,18 @@
+{
+  "_comment": "Copie este arquivo para a RAIZ do projeto como 'sonar-ado.config.json' e preencha. O arquivo real é gitignored. A skill /sonarqube-open-ticket lê estes campos (ou as variáveis ADO_* equivalentes).",
+  "_exemplo_datacob": {
+    "org": "https://dev.azure.com/ph3a",
+    "project": "General",
+    "areaPath": "General\\DataCob",
+    "sprintAreaName": "DataCob",
+    "projectLabel": "DataCob V4",
+    "tags": "sonarqube"
+  },
+
+  "org": "https://dev.azure.com/<sua-org>",
+  "project": "<nome-do-projeto-ADO>",
+  "areaPath": "<Projeto>\\<Area>",
+  "sprintAreaName": "<no-do-no-de-sprint>",
+  "projectLabel": "<rotulo-amigavel-do-produto>",
+  "tags": "sonarqube"
+}

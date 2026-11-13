@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raio-X de Qualidade — Site Michelle Dantas Advocacia</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--tx:#1d1d1b;--mut:#6b6b66;--borda:#e4e4df;--verde:#1f9d55;--amarelo:#c98a00;--vermelho:#d0342c;--cinza:#9a9a94;--acento:#2563eb}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--card:#1e1e1c;--tx:#f1f1ee;--mut:#a3a39d;--borda:#33332f;--acento:#7aa2ff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141413;--card:#1e1e1c;--tx:#f1f1ee;--mut:#a3a39d;--borda:#33332f;--acento:#7aa2ff;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,sans-serif;padding:24px 16px}
+main{max-width:960px;margin:0 auto}h1{font-size:1.6rem;margin:0}h2{font-size:1.1rem;margin:0}
+.topo{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin:16px 0 24px}
+.nota{font-size:4rem;font-weight:800;line-height:1;width:96px;height:96px;display:grid;place-items:center;border-radius:20px;background:var(--card);border:1px solid var(--borda)}
+.n-A,.n-B{color:var(--verde)}.n-C{color:var(--amarelo)}.n-D,.n-E{color:var(--vermelho)}
+.riscos{flex:1;min-width:260px}.riscos ol{margin:6px 0 0;padding-left:20px}
+.card,.tema{background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:16px;margin-bottom:16px}
+.tema header{display:flex;justify-content:space-between;align-items:center}
+.trilho{height:6px;background:var(--borda);border-radius:3px;margin:10px 0 6px}.trilho div{height:100%;background:var(--acento);border-radius:3px}
+.metrica{border-top:1px solid var(--borda);padding:8px 0}.metrica summary{display:flex;gap:10px;align-items:center;cursor:pointer;flex-wrap:wrap}
+.chip{font-size:.8rem;white-space:nowrap}.tit{flex:1;min-width:180px}.val{font-weight:700;white-space:nowrap}.val small{font-weight:400;color:var(--mut);margin-left:6px}
+.perg{color:var(--mut);margin:8px 0 2px;font-style:italic}.metrica ul{margin:6px 0;padding-left:18px;max-height:260px;overflow:auto}
+.metrica li span{color:var(--mut)}code{font-size:.85em}.vazio,.mais{color:var(--mut)}
+.s-vermelho .chip{color:var(--vermelho)}.s-amarelo .chip{color:var(--amarelo)}.s-verde .chip{color:var(--verde)}.s-sem_medicao .chip{color:var(--cinza)}
+svg .rot{fill:var(--mut);font-size:12px}
+.barras{list-style:none;margin:10px 0 0;padding:0}.barras li{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 2.5em;gap:8px;align-items:center;margin:6px 0;font-size:.85rem}
+.barras .rot{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--mut)}.trilho-b{height:12px;background:var(--borda);border-radius:3px}.trilho-b span{display:block;height:100%;background:var(--vermelho);border-radius:3px}
+svg .linha{stroke:var(--acento);stroke-width:2.5}svg .ponto{fill:var(--acento)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+footer{color:var(--mut);font-size:.85rem;margin-top:24px}
+</style></head><body>
+<main>
+<h1>Raio-X de Qualidade — Site Michelle Dantas Advocacia</h1>
+<p style="color:var(--mut);margin:4px 0 0">Medido pelo quality gate em 2026-11-10. Clique em cada item para ver os arquivos.</p>
+<div class="topo"><div class="nota n-B" aria-label="Nota geral">B</div>
+<div class="riscos"><b>Nota 89/100.</b> Maiores riscos hoje:<ol><li><b>Código copiado e colado</b> (14.9%) — Cópia esquecida mantém o bug vivo depois da correção.</li></ol></div></div>
+<div class="grid"><div class="card"><h2>Arquivos que mais concentram problemas</h2><p class="vazio">Nenhum arquivo com achado.</p></div>
+<div class="card"><h2>Evolução da nota</h2><p class="vazio">A evolução aparece a partir da segunda medição.</p></div></div>
+<section class="tema"><header><h2>🛡️ Segurança e LGPD</h2><b>100/100</b></header><div class="trilho"><div style="width:100%"></div></div><details class="metrica s-verde"><summary><span class="chip">🟢 ok</span><span class="tit">Dado pessoal aparecendo em log</span><span class="val">0<small> meta ≤ 0</small></span></summary><p class="perg">E-mail, CPF ou senha ficam gravados nos logs?</p><p>Vazamento de dado pessoal é incidente LGPD: notificação à ANPD e risco de multa.</p><p class="vazio">Sem lista de arquivos para esta métrica.</p></details><details class="metrica s-verde"><summary><span class="chip">🟢 ok</span><span class="tit">Ações sem registro de quem fez</span><span class="val">0<small> meta ≤ 0</small></span></summary><p class="perg">Se uma rota do site alterar algum dado, dá para saber quem fez?</p><p>Sem trilha de auditoria não há como investigar fraude, erro de operador ou atender a NORM04.</p><p class="vazio">Sem lista de arquivos para esta métrica.</p></details><details class="metrica s-verde"><summary><span class="chip">🟢 ok</span><span class="tit">Logs fora do padrão (console)</span><span class="val">0<small> meta ≤ 0</small></span></summary><p class="perg">Todos os logs passam pela máscara de dado pessoal?</p><p>Log fora do Logger não é mascarado nem rastreável por requisição.</p><p class="vazio">Sem lista de arquivos para esta métrica.</p></details></section><section class="tema"><header><h2>⚡ Estabilidade</h2><b>—</b></header><div class="trilho"><div style="width:0%"></div></div></section><section class="tema"><header><h2>🧪 Testes</h2><b>—</b></header><div class="trilho"><div style="width:0%"></div></div></section><section class="tema"><header><h2>🔧 Manutenção</h2><b>67/100</b></header><div class="trilho"><div style="width:67%"></div></div><details class="metrica s-verde"><summary><span class="chip">🟢 ok</span><span class="tit">A função mais complicada do sistema</span><span class="val">6<small> meta ≤ 15</small></span></summary><p class="perg">Existe código que ninguém tem coragem de mexer?</p><p>Quanto maior o número, mais caminhos possíveis — e mais caro e arriscado mudar.</p><p class="vazio">Sem lista de arquivos para esta métrica.</p></details><details class="metrica s-verde"><summary><span class="chip">🟢 ok</span><span class="tit">Funções complicadas demais</span><span class="val">0<small> meta ≤ 10</small></span></summary><p class="perg">Quantos trechos são difíceis de entender e testar?</p><p>Cada um é um lugar onde mudança simples vira dia de trabalho e bug novo.</p><p class="vazio">Sem lista de arquivos para esta métrica.</p></details><details class="metrica s-vermelho"><summary><span class="chip">🔴 crítico</span><span class="tit">Código copiado e colado</span><span class="val">14.9%<small> meta ≤ 3%</small></span></summary><p class="perg">Corrigir um bug exige lembrar de corrigir em vários lugares?</p><p>Cópia esquecida mantém o bug vivo depois da correção.</p><p class="vazio">Sem lista de arquivos para esta métrica.</p></details></section><section class="tema"><header><h2>🏛️ Arquitetura</h2><b>—</b></header><div class="trilho"><div style="width:0%"></div></div></section>
+<div class="card"><h2>Contexto</h2><ul></ul></div>
+<footer>🟢 dentro da meta · 🟡 atenção · 🔴 crítico · ⚪ ainda não medido. Os números só podem melhorar: o quality gate reprova qualquer piora.
+Gerado por <code>node scripts/raio-x.cjs</code> — faixas e textos em <code>scripts/raio-x/catalogo.cjs</code>.</footer>
+</main>
+</body></html>

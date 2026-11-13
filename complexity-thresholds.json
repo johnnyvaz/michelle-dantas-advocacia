@@ -1,0 +1,38 @@
+{
+  "updated": "2026-11-10",
+  "limite_ccn": 10,
+  "limite_hard": null,
+  "motor": "auto",
+  "paths": [
+    "app",
+    "components",
+    "lib",
+    "utils",
+    "utlis",
+    "data"
+  ],
+  "exclude": [
+    "*/node_modules/*",
+    "*/.venv/*",
+    "*/venv/*",
+    "*/dist/*",
+    "*/build/*",
+    "*/migrations/*",
+    "*/__pycache__/*",
+    "*/.next/*",
+    "*/coverage/*",
+    "*/tests/*",
+    "*/test/*",
+    "*/e2e/*",
+    "*/__tests__/*",
+    "*/__mocks__/*",
+    "*.test.ts",
+    "*.test.tsx",
+    "*.test.js",
+    "*.spec.ts",
+    "*.spec.tsx",
+    "*_test.go",
+    "*_test.py"
+  ],
+  "ignorar": []
+}

@@ -1,0 +1,5 @@
+# Rótulos de desfecho de eventos de segurança (PRIVADO).
+# Alimenta scripts/recalibrar.py (decaimento temporal: recente > antigo).
+# rotulo: ataque_confirmado | falso_positivo | legitimo | critico
+# Nasce vazio no boilerplate — preencher com desfechos reais por projeto.
+rotulos: []

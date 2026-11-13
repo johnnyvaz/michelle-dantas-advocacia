@@ -1,0 +1,743 @@
+# Catálogo de skills do Loop de Ciclo de Vida PH3A
+# ---------------------------------------------------------------------------
+# FONTE: .claude/skills/ph3a-loop/catalog.yml (as cópias em plugins/ são geradas — não edite lá).
+#
+# Este arquivo é o BACKBONE do loop E a FONTE ÚNICA de membership por grupo. É lido por:
+#   - a skill /ph3a-loop (orquestrador interativo) — usa todos os campos
+#   - init.sh / migrate.sh (bootstrap) — derivam enabledPlugins por modo a partir de `plugin`
+#   - scripts/publicar_skills.py — mapeia cada skill ao plugin em que deve ser publicada
+#   - scripts/semear.py — seleciona, no modo cópia, quais skills o projeto recebe
+#
+# Para ADICIONAR uma skill nova: crie-a em .claude/skills/<skill>/SKILL.md, adicione UMA entrada
+# abaixo com `skill` + `categoria` + `plugin`, e rode `python3 scripts/publicar_skills.py`.
+# Skill sem entrada aqui é acusada como órfã pelo `--check` e não chega a projeto nenhum.
+#
+# Campos por entrada:
+#   skill      (obrigatório) nome da pasta da skill
+#   categoria  (obrigatório) organizacao | padroes | qualidade | seguranca | deploy | gemeo | agentes | tooling
+#   plugin     (obrigatório) ph3a-quality | ph3a-seguranca | ph3a-core | ph3a-speckit | ph3a-gemeo
+#   tipo       installer | scaffold | analyzer
+#   fase       organizar | padroes | qualidade | desenvolver | verificar | deploy
+#   requires   lista de skills que precisam estar instaladas antes desta
+#   ordem      ordem de execução dentro da fase (menor primeiro)
+#   descricao  resumo de uma linha (para o menu do orquestrador)
+#
+# IMPORTANTE: mantenha `skill:` e `categoria:` como as DUAS primeiras linhas de cada entrada
+# (parsing posicional legado). `plugin:` vem logo em seguida.
+#
+# Modos → plugins habilitados (enabledPlugins):
+#   empresa    → ph3a-quality + ph3a-seguranca + ph3a-core + ph3a-speckit + ph3a-gemeo
+#   completo   → ph3a-quality + ph3a-seguranca + ph3a-core + ph3a-speckit
+#   qualidade  → ph3a-quality + ph3a-core
+#   seguranca  → ph3a-seguranca + ph3a-core
+#   gemeo      → ph3a-gemeo + ph3a-core
+
+schema_version: "1.1"
+
+skills:
+
+  # ─── PADRÕES ──────────────────────────────────────────────────────────────
+  - skill: speckit-constitution
+    categoria: padroes
+    plugin: ph3a-speckit
+    tipo: scaffold
+    fase: padroes
+    requires: []
+    ordem: 10
+    descricao: "Define a constituição do projeto a partir do seed PH3A (princípios e governança)"
+
+  # ─── QUALIDADE ────────────────────────────────────────────────────────────
+  - skill: quality-gate
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: installer
+    fase: qualidade
+    requires: []
+    ordem: 10
+    descricao: "Quality gate com ratchet (cobertura/duplicação/erros) — PRÉ-REQUISITO dos guards"
+
+  - skill: quality-check
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: analyzer
+    fase: verificar
+    requires: [quality-gate]
+    ordem: 15
+    descricao: "Executa o ratchet (node scripts/quality-gate.js) e reprova em regressão — enforcement do gate"
+
+  - skill: tdd
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: scaffold
+    fase: qualidade
+    requires: []
+    ordem: 35
+    descricao: "Conduz TDD (red-green-refactor); escreve o teste que falha primeiro — produz os testes do ratchet"
+
+  - skill: contract-first
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: scaffold
+    fase: qualidade
+    requires: []
+    ordem: 40
+    descricao: "Scaffold de contratos .http (httpyac) + E2E externo (@playwright/test) em ambiente isolado; loop interno+externo"
+
+  - skill: arch-guard
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: installer
+    fase: qualidade
+    requires: [quality-gate]
+    ordem: 20
+    descricao: "Fronteiras de arquitetura ao estilo ArchUnit; entra no ratchet via arch_violations"
+
+  - skill: complexity-guard
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: installer
+    fase: qualidade
+    requires: [quality-gate]
+    ordem: 25
+    descricao: "Complexidade ciclomática por função no ratchet (complexity_worst/complexity_over_limit)"
+
+  - skill: io-budget
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: installer
+    fase: qualidade
+    requires: [quality-gate]
+    ordem: 30
+    descricao: "Conta SQL + HTTP por requisição/teste; detecta N+1 (métricas io_sql_worst/io_http_worst)"
+
+  - skill: memory-guard
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: installer
+    fase: qualidade
+    requires: [quality-gate]
+    ordem: 30
+    descricao: "Detecta memory leaks e caches sem TTL (memory_static_findings/memory_alloc_max_kb)"
+
+  - skill: property-race-guard
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: installer
+    fase: qualidade
+    requires: [quality-gate]
+    ordem: 30
+    descricao: "Property-based testing focado em race conditions (property_tests_count)"
+
+  - skill: resilience-guard
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: installer
+    fase: qualidade
+    requires: [quality-gate]
+    ordem: 30
+    descricao: "Circuit breakers, retry/backoff, timeouts, health checks (resilience_missing_*)"
+
+  - skill: observability-guard
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: installer
+    fase: qualidade
+    requires: [quality-gate]
+    ordem: 30
+    descricao: "Logging estruturado, correlation IDs e trilhas de auditoria (NORM04); obs_unstructured_logs/obs_missing_audit"
+
+  - skill: otel-guard
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: analyzer
+    fase: qualidade
+    requires: []
+    ordem: 35
+    descricao: "Telemetria do ciclo agêntico: valida manifestos de rodada, audita emissores de fan-out e mapeia para OTel GenAI (exportador opt-in, Tipo 1)"
+
+  - skill: arch-tradeoff
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: analyzer
+    fase: qualidade
+    requires: []
+    ordem: 40
+    descricao: "Mapeia integrações e tradeoffs arquiteturais; gera ADR (documental, sem ratchet)"
+
+  - skill: raio-x
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: analyzer
+    fase: verificar
+    requires: [quality-gate]
+    ordem: 17
+    descricao: "Traduz o quality gate para leigos (nota A–E, semáforo, onde dói, evolução) e mantém uma tarefa por tema"
+
+  - skill: sonarqube
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 50
+    descricao: "Análise estilo SonarQube (bugs, vulnerabilidades, code smells, duplicações)"
+
+  - skill: sonarqube-review
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 52
+    descricao: "Lê o servidor SonarQube, segmenta apontamentos em lotes e chama sonarqube-open-ticket"
+
+  - skill: sonarqube-open-ticket
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 54
+    descricao: "Abre User Story + Tasks no Azure DevOps por lote de apontamentos (config parametrizável)"
+
+  - skill: analisador-projetos
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 50
+    descricao: "Diagnóstico técnico do projeto: simplificações, riscos, lacunas de teste, próximos passos"
+
+  - skill: ci-pipeline
+    categoria: qualidade
+    plugin: ph3a-quality
+    tipo: installer
+    fase: verificar
+    requires: [quality-gate]
+    ordem: 60
+    descricao: "Gera CI (GitHub Actions/Azure Pipelines) que roda o ratchet + testes + sonar no PR — gate de merge"
+
+  # ─── SEGURANÇA / CONFORMIDADE IA ─────────────────────────────────────────
+  - skill: review-code-ph3a
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 10
+    descricao: "Revisão de segurança: OWASP Top 10, NORM11/PROC09, LGPD, ISO 27001"
+
+  - skill: sca-guard
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: installer
+    fase: verificar
+    requires: []
+    ordem: 15
+    descricao: "Cadeia de suprimentos: audit de dependências + secret scanning + SBOM (NORM15/PROC03)"
+
+  - skill: pentest-dinamico
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 16
+    descricao: "Pentest dinâmico nativo (simulado): findings verificados (CVSS/PoC) + loop red→blue para o agente-soc (spec 005)"
+
+  - skill: prompt-audit
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: analyzer
+    fase: padroes
+    requires: []
+    ordem: 20
+    descricao: "Audita prompts antes do envio à IA (dados pessoais, credenciais, código sensível)"
+
+  - skill: anonymize-data
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: analyzer
+    fase: padroes
+    requires: []
+    ordem: 20
+    descricao: "Gera scripts de anonimização/pseudonimização (NORM10/NORM16/LGPD)"
+
+  - skill: synthetic-data-generator
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: analyzer
+    fase: padroes
+    requires: []
+    ordem: 20
+    descricao: "Gera dados sintéticos comprovadamente fictícios para testes/demos/prompts"
+
+  - skill: ai-tool-request
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: analyzer
+    fase: padroes
+    requires: []
+    ordem: 30
+    descricao: "Formulário de solicitação de uso de IA (Anexo III) com classificação de risco"
+
+  - skill: model-card-generator
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: analyzer
+    fase: padroes
+    requires: []
+    ordem: 30
+    descricao: "Model Card PH3A — obrigatório antes de IA embarcada em produção (Seção 9.4)"
+
+  - skill: ripd-assistant
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: analyzer
+    fase: padroes
+    requires: []
+    ordem: 30
+    descricao: "Relatório de Impacto à Proteção de Dados (RIPD) para IA com dados pessoais"
+
+  - skill: supplier-ai-due-diligence
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: analyzer
+    fase: padroes
+    requires: []
+    ordem: 30
+    descricao: "Due diligence de fornecedor de IA (DPA, não-treinamento, data residency, NORM08)"
+
+  - skill: incident-report-ia
+    categoria: seguranca
+    plugin: ph3a-seguranca
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 40
+    descricao: "Reporte estruturado de incidente de IA no formato NORM09/NORM31"
+
+  # Sandbox de execução. `categoria: tooling` de propósito (não `seguranca`): a skill é sob demanda
+  # e imprime um comando para o humano rodar no terminal — não pode ser auto-invocada pelo loop.
+  - skill: ai-jail
+    categoria: tooling
+    plugin: ph3a-seguranca
+    tipo: scaffold
+    fase: padroes
+    requires: []
+    ordem: 35
+    descricao: "Sandbox de kernel para agentes de IA (bubblewrap + Landlock + seccomp) via CLI ai-jail: diagnóstico, invocação e .ai-jail do projeto"
+
+  # ─── DEPLOY (plugin ph3a-quality) ──────────────────────────────────────────
+  - skill: deploy
+    categoria: deploy
+    plugin: ph3a-quality
+    tipo: scaffold
+    fase: deploy
+    requires: [quality-gate]
+    ordem: 10
+    descricao: "Fluxo de deploy interativo com gate de quality-gate (scaffold-and-gate, parametrizável)"
+
+  # ─── CORE (transversais — plugin ph3a-core) ────────────────────────────────
+  - skill: ph3a-loop
+    categoria: tooling
+    plugin: ph3a-core
+    tipo: scaffold
+    fase: organizar
+    requires: []
+    ordem: 5
+    descricao: "Orquestrador do ciclo de vida PH3A; lê este catálogo e roda as fases na ordem certa"
+
+  - skill: fluxo-git-ph3a
+    categoria: organizacao
+    plugin: ph3a-core
+    tipo: scaffold
+    fase: organizar
+    requires: []
+    ordem: 10
+    descricao: "Fluxo git padrão PH3A (branch/commit/push/PR)"
+
+  - skill: protocolo-aprovacao
+    categoria: organizacao
+    plugin: ph3a-core
+    tipo: scaffold
+    fase: organizar
+    requires: []
+    ordem: 15
+    descricao: "Protocolo de aprovação antes de ação externa/irreversível (PR, deploy, infra)"
+
+  - skill: tasks-obsidian
+    categoria: organizacao
+    plugin: ph3a-core
+    tipo: installer
+    fase: organizar
+    requires: []
+    ordem: 18
+    descricao: "Fila de trabalho tasks/ espelhada no Obsidian (painel por projeto, painel geral, INBOX humano)"
+
+  - skill: telegram
+    categoria: organizacao
+    plugin: ph3a-core
+    tipo: installer
+    fase: organizar
+    requires: []
+    ordem: 19
+    descricao: "Canal Telegram do projeto — alerta sai do repo (notificar.py), decisão volta para tasks/human.md (ponte-telegram.py)"
+
+  # Engenharia reversa enxuta (inspirada no Reversa): o código vira o mapa consultável de
+  # gemeo/07-PRODUTO/mapa/ e alimenta os templates de produto. Roda por último na fase.
+  - skill: mapear-projeto
+    categoria: organizacao
+    plugin: ph3a-core
+    tipo: analyzer
+    fase: organizar
+    requires: []
+    ordem: 20
+    descricao: "Lê o código e escreve o mapa consultável em gemeo/07-PRODUTO/mapa/ (INDEX + módulos, 🟢🟡🔴); refresh incremental por sha"
+
+  - skill: criador-de-prompts
+    categoria: tooling
+    plugin: ph3a-core
+    tipo: analyzer
+    fase: organizar
+    requires: []
+    ordem: 20
+    descricao: "Cria/otimiza/adapta prompts para qualquer finalidade"
+
+  - skill: babysit
+    categoria: tooling
+    plugin: ph3a-core
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 70
+    descricao: "Mantém um PR merge-ready em loop (CI, conflitos, review threads) — GitHub/Azure DevOps"
+
+  - skill: impeccable
+    categoria: tooling
+    plugin: ph3a-core
+    tipo: analyzer
+    fase: desenvolver
+    requires: []
+    ordem: 80
+    descricao: "Design/refino de interfaces frontend (UX, hierarquia, acessibilidade, motion)"
+
+  # ─── SPECKIT (ciclo specify→plan→tasks→implement — plugin ph3a-speckit) ─────
+  - skill: speckit-specify
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: scaffold
+    fase: padroes
+    requires: []
+    ordem: 100
+    descricao: "Cria a especificação da feature (user stories + critérios)"
+
+  - skill: speckit-plan
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: scaffold
+    fase: padroes
+    requires: [speckit-specify]
+    ordem: 101
+    descricao: "Gera o plano de implementação e artefatos de design"
+
+  - skill: speckit-tasks
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: scaffold
+    fase: padroes
+    requires: [speckit-plan]
+    ordem: 102
+    descricao: "Gera tasks.md ordenado por dependência, agrupado por user story"
+
+  - skill: speckit-implement
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: scaffold
+    fase: desenvolver
+    requires: [speckit-tasks]
+    ordem: 103
+    descricao: "Executa as tarefas do tasks.md fase a fase"
+
+  - skill: speckit-clarify
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: padroes
+    requires: [speckit-specify]
+    ordem: 104
+    descricao: "Identifica e resolve ambiguidades da spec (até 5 perguntas)"
+
+  - skill: speckit-analyze
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: padroes
+    requires: [speckit-tasks]
+    ordem: 105
+    descricao: "Análise de consistência cruzada spec↔plan↔tasks (read-only)"
+
+  - skill: speckit-checklist
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: padroes
+    requires: [speckit-specify]
+    ordem: 106
+    descricao: "Gera checklist customizado para a feature"
+
+  - skill: speckit-taskstoissues
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: desenvolver
+    requires: [speckit-tasks]
+    ordem: 107
+    descricao: "Converte tarefas em issues do GitHub (deprecado no Spec Kit 1.1.3)"
+
+  - skill: speckit-agent-context-update
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: padroes
+    requires: []
+    ordem: 108
+    descricao: "Atualiza a seção gerenciada do Spec Kit no arquivo de contexto do agente"
+
+  - skill: speckit-git-commit
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: organizar
+    requires: []
+    ordem: 109
+    descricao: "Auto-commit após um comando Spec Kit completar"
+
+  - skill: speckit-git-feature
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: organizar
+    requires: []
+    ordem: 110
+    descricao: "Cria branch de feature com numeração sequencial/timestamp"
+
+  - skill: speckit-git-initialize
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: organizar
+    requires: []
+    ordem: 111
+    descricao: "Inicializa repositório git com commit inicial"
+
+  - skill: speckit-git-remote
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: organizar
+    requires: []
+    ordem: 112
+    descricao: "Detecta a URL do remote git para integração GitHub"
+
+  - skill: speckit-git-validate
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: organizar
+    requires: []
+    ordem: 113
+    descricao: "Valida que a branch atual segue a convenção de feature branch"
+
+  - skill: speckit-converge
+    categoria: tooling
+    plugin: ph3a-speckit
+    tipo: analyzer
+    fase: desenvolver
+    requires: [speckit-tasks]
+    ordem: 114
+    descricao: "Compara o código com spec/plan/tasks e acrescenta ao tasks.md o que falta construir"
+
+  # ─── GÊMEO DIGITAL (oráculo + corpus — plugin ph3a-gemeo) ───────────────────
+  - skill: montar-gemeo
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: scaffold
+    fase: organizar
+    requires: []
+    ordem: 10
+    descricao: "Monta/preenche o corpus do gêmeo (entrevista guiada + busca automática de dados)"
+
+  - skill: oraculo
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: [montar-gemeo]
+    ordem: 20
+    descricao: "Responde perguntas estratégicas usando o corpus (e-se, pricing, runway, diluição)"
+
+  - skill: atualizar-gemeo
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 30
+    descricao: "Refresh de todas as fontes conectadas (produto/financeiro/analytics/ranking/jira)"
+
+  - skill: atualizar-produto
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 31
+    descricao: "Refresh do STATUS de produto + números reais de clientes/uso (GitHub/Supabase)"
+
+  - skill: atualizar-financeiro
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 32
+    descricao: "Refresh de MRR/ARR/assinaturas/churn (Stripe)"
+
+  - skill: atualizar-analytics
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 33
+    descricao: "Refresh de tráfego/conversões/funil (GA4)"
+
+  - skill: atualizar-ranking
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 34
+    descricao: "Refresh de SEO/ranqueamento (Search Console)"
+
+  - skill: atualizar-jira
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 35
+    descricao: "Refresh de OKRs/sprints/roadmap (Jira/Atlassian)"
+
+  - skill: briefing
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 40
+    descricao: "Briefing executivo de 1 página (o que mudou / travou / 3 prioridades)"
+
+  - skill: analisar-negocio
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 45
+    descricao: "Rodada de analistas por dimensão → propostas em gemeo/PROPOSTAS/"
+
+  - skill: auditar-gemeo
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 50
+    descricao: "Lint do corpus (contrato do canon, drift prosa×canon, consistência, staleness)"
+
+  - skill: demo-sales-meeting
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 55
+    descricao: "Conduz reunião de demonstração / pitch de vendas a partir do corpus"
+
+  - skill: priorizar
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 60
+    descricao: "Ordena a fila de trabalho pela contribuição esperada ao retorno (Bayesiano, spec 003)"
+
+  - skill: datar
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: [priorizar]
+    ordem: 61
+    descricao: "Mapeia compromissos sem prazo e conduz a definição de datas sem inventá-las"
+
+  - skill: google-analytics
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 70
+    descricao: "Consulta GA4 (sessões, conversões, páginas, fontes de tráfego)"
+
+  - skill: meta-ads
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 71
+    descricao: "Consulta Meta Ads (campanhas, ROAS, CPC/CPM, Pixel/CAPI)"
+
+  - skill: search-console
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 72
+    descricao: "Consulta Google Search Console (keywords, cliques, impressões, posição)"
+
+  - skill: sentry
+    categoria: gemeo
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: verificar
+    requires: []
+    ordem: 73
+    descricao: "Consulta Sentry (error tracking & monitoring)"
+
+  # ─── EMPRESA DE AGENTES (plugin ph3a-gemeo) ─────────────────────────────────
+  # Os 10 agentes (.claude/agents/agente-*.md, incl. agente-soc [blue-team] e agente-redteam [red-team, spec 005]) são distribuídos pelo ph3a-gemeo.
+  - skill: orquestrador-empresa
+    categoria: agentes
+    plugin: ph3a-gemeo
+    tipo: scaffold
+    fase: organizar
+    requires: []
+    ordem: 10
+    descricao: "Sala de comando: roteia tarefas às áreas (agentes) e consolida o resultado"
+
+  - skill: reduzir-fila
+    categoria: agentes
+    plugin: ph3a-gemeo
+    tipo: analyzer
+    fase: desenvolver
+    requires: [priorizar, orquestrador-empresa]
+    ordem: 20
+    descricao: "Reduz a fila por prioridade: executa o Tipo 2 em branch, manda o Tipo 1 para human.md (use com /loop)"

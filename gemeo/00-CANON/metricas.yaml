@@ -1,0 +1,166 @@
+# ======================================================================
+# CATÁLOGO DE MÉTRICAS — derivados do canon, definidos UMA vez
+# ======================================================================
+# Cada métrica: formula (sobre paths do canon e/ou outras métricas),
+# campos (inputs do canon), unidade, desambiguacao e, quando o derivado
+# vive no canon, grava_em (path regravado por `calc.py --all --write`).
+#
+# Funções disponíveis nas fórmulas:
+#   soma(lista, chave)      → Σ item[chave] de uma lista do canon
+#   topn_mrr(n) / topn_ids(n) → top-N clientes por MRR (soma / ids)
+#   contar(lista)           → tamanho de uma lista do canon
+# O oráculo NUNCA inventa fórmula: seleciona daqui e roda calc.py.
+# ======================================================================
+
+clientes_total:
+  nome: "Clientes totais"
+  formula: "snapshot.clientes_pagantes + snapshot.clientes_free"
+  campos: [snapshot.clientes_pagantes, snapshot.clientes_free]
+  unidade: contas
+  desambiguacao: "Pagantes + free. Não inclui churned."
+  grava_em: snapshot.clientes_total
+
+arr:
+  nome: "ARR"
+  formula: "snapshot.mrr * 12"
+  campos: [snapshot.mrr]
+  unidade: BRL/ano
+  desambiguacao: "Annual run-rate = MRR × 12 (não soma histórica de 12 meses)."
+  grava_em: snapshot.arr
+
+ticket_medio:
+  nome: "Ticket médio"
+  formula: "snapshot.mrr / snapshot.clientes_pagantes"
+  campos: [snapshot.mrr, snapshot.clientes_pagantes]
+  unidade: BRL/mês
+  desambiguacao: "MRR ÷ contas pagantes. Igual ao ARPA neste modelo."
+  grava_em: snapshot.ticket_medio
+
+arpa:
+  nome: "ARPA"
+  formula: "snapshot.mrr / snapshot.clientes_pagantes"
+  campos: [snapshot.mrr, snapshot.clientes_pagantes]
+  unidade: BRL/mês
+  desambiguacao: "Receita média por conta pagante."
+  grava_em: unit_economics.arpa
+
+burn_bruto_mensal:
+  nome: "Burn bruto"
+  formula: "soma_custos()"
+  campos: [financeiro.custos]
+  unidade: BRL/mês
+  desambiguacao: "Σ de TODAS as categorias de financeiro.custos.* (sem descontar receita)."
+  grava_em: financeiro.burn_bruto_mensal
+
+burn_liquido_mensal:
+  nome: "Burn líquido"
+  formula: "burn_bruto_mensal - snapshot.mrr"
+  campos: [financeiro.custos, snapshot.mrr]
+  unidade: BRL/mês
+  desambiguacao: "Burn bruto − receita recorrente. Negativo = negócio se paga."
+  depende_de: [burn_bruto_mensal]
+  grava_em: financeiro.burn_liquido_mensal
+
+runway_meses:
+  nome: "Runway"
+  formula: "financeiro.caixa_atual / burn_liquido_mensal"
+  campos: [financeiro.caixa_atual, financeiro.custos, snapshot.mrr]
+  unidade: meses
+  desambiguacao: >
+    Usa burn LÍQUIDO (não bruto). Se burn líquido ≤ 0 o negócio se paga:
+    reportar "não queima caixa", não um número negativo.
+  depende_de: [burn_liquido_mensal]
+  grava_em: financeiro.runway_meses
+
+lifetime_meses_estimado:
+  nome: "Lifetime estimado"
+  formula: "100 / crescimento.churn_receita_mensal_pct"
+  campos: [crescimento.churn_receita_mensal_pct]
+  unidade: meses
+  desambiguacao: "1 ÷ churn de RECEITA mensal (não churn de logo)."
+  grava_em: crescimento.lifetime_meses_estimado
+
+ltv:
+  nome: "LTV"
+  formula: "arpa * lifetime_meses_estimado * (financeiro.margem_bruta_pct / 100)"
+  campos: [snapshot.mrr, snapshot.clientes_pagantes, crescimento.churn_receita_mensal_pct, financeiro.margem_bruta_pct]
+  unidade: BRL
+  desambiguacao: "ARPA × lifetime × margem bruta. Early-stage: amostra pequena, tratar como diretriz."
+  depende_de: [arpa, lifetime_meses_estimado]
+  grava_em: unit_economics.ltv
+
+ltv_cac:
+  nome: "LTV/CAC"
+  formula: "ltv / unit_economics.cac"
+  campos: [unit_economics.cac]
+  unidade: x
+  desambiguacao: "Referência de mercado: ≥ 3× saudável. CAC é blended (não por canal)."
+  depende_de: [ltv]
+  grava_em: unit_economics.ltv_cac
+
+payback_cac_meses:
+  nome: "Payback do CAC"
+  formula: "unit_economics.cac / (arpa * (financeiro.margem_bruta_pct / 100))"
+  campos: [unit_economics.cac, snapshot.mrr, snapshot.clientes_pagantes, financeiro.margem_bruta_pct]
+  unidade: meses
+  desambiguacao: "CAC ÷ margem de contribuição mensal por conta. < 12 meses é ótimo em SaaS."
+  depende_de: [arpa]
+  grava_em: unit_economics.payback_cac_meses
+
+top3_mrr:
+  nome: "MRR do top-3"
+  formula: "topn_mrr(3)"
+  campos: [clientes]
+  unidade: BRL/mês
+  desambiguacao: "Σ MRR das 3 maiores contas (empate resolvido por ordem na carteira)."
+  grava_em: concentracao.top3_mrr
+
+top3_pct_do_mrr:
+  nome: "Concentração top-3"
+  formula: "topn_mrr(3) / snapshot.mrr * 100"
+  campos: [clientes, snapshot.mrr]
+  unidade: "%"
+  desambiguacao: ">60% = risco relevante; <20% = pulverizado (régua em 09-CLIENTES/analise-concentracao.md)."
+  grava_em: concentracao.top3_pct_do_mrr
+
+breakeven_mrr:
+  nome: "MRR de break-even"
+  formula: "burn_bruto_mensal"
+  campos: [financeiro.custos]
+  unidade: BRL/mês
+  desambiguacao: "Break-even operacional: MRR = burn bruto (burn líquido zera)."
+  depende_de: [burn_bruto_mensal]
+
+breakeven_contas:
+  nome: "Contas no break-even"
+  formula: "burn_bruto_mensal / (ticket_medio * (financeiro.margem_bruta_pct / 100))"
+  campos: [financeiro.custos, snapshot.mrr, snapshot.clientes_pagantes, financeiro.margem_bruta_pct]
+  unidade: contas
+  desambiguacao: >
+    Fórmula completa: burn ÷ (ticket × margem). Com margem alta (≥80%) aproxima
+    burn ÷ ticket. Assume mix de planos igual ao atual.
+  depende_de: [burn_bruto_mensal, ticket_medio]
+
+gap_breakeven_mrr:
+  nome: "Gap até o break-even"
+  formula: "burn_bruto_mensal - snapshot.mrr"
+  campos: [financeiro.custos, snapshot.mrr]
+  unidade: BRL/mês
+  desambiguacao: "Quanto MRR falta para o break-even operacional."
+  depende_de: [burn_bruto_mensal]
+
+orcamento_agentes_consumido_pct:
+  nome: "Orçamento de agentes consumido"
+  formula: "agentes.consumido_mes_usd / agentes.orcamento_mensal_usd * 100"
+  campos: [agentes.consumido_mes_usd, agentes.orcamento_mensal_usd]
+  unidade: "%"
+  desambiguacao: >
+    Estimativa do cliente Claude Code (total_cost_usd) do mês em agentes.consumido_mes_ref.
+    Em plano de assinatura é preço-sombra, não fatura. O retrato vem de
+    `scripts/custo.py saldo --write`; o valor fresco está no ledger.
+
+orcamento_agentes_saldo_usd:
+  nome: "Saldo do orçamento de agentes"
+  formula: "agentes.orcamento_mensal_usd - agentes.consumido_mes_usd"
+  campos: [agentes.orcamento_mensal_usd, agentes.consumido_mes_usd]
+  unidade: USD

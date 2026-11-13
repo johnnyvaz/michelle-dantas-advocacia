@@ -94,3 +94,15 @@ Se tiver qualquer dúvida, entre em contato com a equipe técnica ou envie um e-
 
 💡 **Nosso objetivo é que você tenha total autonomia para manter o site sempre atualizado com conteúdos relevantes e confiáveis.**
 
+
+<!-- raio-x:inicio -->
+**Qualidade: nota B (89/100)** — medido em 2026-11-10. Detalhe: [docs/QUALIDADE.md](docs/QUALIDADE.md).
+
+| Tema | Nota | Situação |
+|---|---|---|
+| 🛡️ Segurança e LGPD | 100 | 🟢 ok |
+| ⚡ Estabilidade | — | ⚪ sem medição |
+| 🧪 Testes | — | ⚪ sem medição |
+| 🔧 Manutenção | 67 | 🔴 crítico |
+| 🏛️ Arquitetura | — | ⚪ sem medição |
+<!-- raio-x:fim -->

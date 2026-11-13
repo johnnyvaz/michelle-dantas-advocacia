@@ -1,0 +1,703 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gemeo-canon-v0.2",
+  "title": "Contrato de dados do canon do Gêmeo Digital (v0.2)",
+  "description": "Valida TIPOS e FAIXAS PLAUSÍVEIS. null = não preenchido (sempre válido). Obrigatoriedade por nível (star) e consistências agregadas são verificadas por scripts/validar_canon.py, não por este schema. Faixas de incerteza {min,max,provavel} são aceitas onde indicado.",
+  "type": "object",
+  "$defs": {
+    "dinheiro": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "$ref": "#/$defs/faixa"
+        }
+      ]
+    },
+    "numero_pos": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "$ref": "#/$defs/faixa"
+        }
+      ]
+    },
+    "pct": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        {
+          "$ref": "#/$defs/faixa"
+        }
+      ]
+    },
+    "texto": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "data": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "AAAA-MM-DD (YAML pode parsear como date — o validador normaliza)"
+    },
+    "faixa": {
+      "type": "object",
+      "description": "Faixa triangular de incerteza. Regra min<=provavel<=max verificada pelo validador.",
+      "required": [
+        "min",
+        "max",
+        "provavel"
+      ],
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        },
+        "provavel": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "limiar": {
+      "type": "object",
+      "properties": {
+        "minimo": {
+          "type": "number"
+        },
+        "maximo": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "health": {
+      "enum": [
+        "bom",
+        "atencao",
+        "risco",
+        null
+      ]
+    },
+    "usd": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "number",
+          "minimum": 0
+        }
+      ]
+    }
+  },
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "properties": {
+        "versao": {
+          "type": "string"
+        },
+        "data_referencia": {
+          "$ref": "#/$defs/data"
+        },
+        "natureza": {
+          "enum": [
+            "real",
+            "ficticio-mvp",
+            "misto",
+            null
+          ]
+        },
+        "moeda": {
+          "type": "string"
+        },
+        "fonte_da_verdade": {
+          "type": "boolean"
+        },
+        "secoes_removidas": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "observacao": {
+          "$ref": "#/$defs/texto"
+        }
+      }
+    },
+    "empresa": {
+      "type": "object",
+      "properties": {
+        "razao_social": {
+          "$ref": "#/$defs/texto"
+        },
+        "nome_fantasia": {
+          "$ref": "#/$defs/texto"
+        },
+        "cnpj": {
+          "$ref": "#/$defs/texto"
+        },
+        "fundacao": {
+          "$ref": "#/$defs/data"
+        },
+        "estagio": {
+          "$ref": "#/$defs/texto"
+        },
+        "sede": {
+          "$ref": "#/$defs/texto"
+        },
+        "site": {
+          "$ref": "#/$defs/texto"
+        },
+        "fundador": {
+          "$ref": "#/$defs/texto"
+        },
+        "one_liner": {
+          "$ref": "#/$defs/texto"
+        }
+      }
+    },
+    "snapshot": {
+      "type": "object",
+      "properties": {
+        "meses_operacao": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "clientes_pagantes": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "clientes_free": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "clientes_total": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "mrr": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "arr": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "ticket_medio": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "uso_produto": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/numero_pos"
+          }
+        }
+      }
+    },
+    "planos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "preco": {
+            "$ref": "#/$defs/dinheiro"
+          },
+          "limites": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/numero_pos"
+            }
+          },
+          "target": {
+            "$ref": "#/$defs/texto"
+          }
+        }
+      }
+    },
+    "clientes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nome": {
+            "$ref": "#/$defs/texto"
+          },
+          "segmento": {
+            "$ref": "#/$defs/texto"
+          },
+          "plano": {
+            "$ref": "#/$defs/texto"
+          },
+          "mrr": {
+            "$ref": "#/$defs/dinheiro"
+          },
+          "cliente_desde": {
+            "$ref": "#/$defs/texto"
+          },
+          "health": {
+            "$ref": "#/$defs/health"
+          },
+          "obs": {
+            "$ref": "#/$defs/texto"
+          }
+        }
+      }
+    },
+    "concentracao": {
+      "type": "object",
+      "properties": {
+        "top3_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "top3_mrr": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "top3_pct_do_mrr": {
+          "$ref": "#/$defs/pct"
+        },
+        "free_convertiveis_estimados": {
+          "$ref": "#/$defs/numero_pos"
+        }
+      }
+    },
+    "crescimento": {
+      "type": "object",
+      "properties": {
+        "novos_clientes_pagantes_mes": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "novos_free_mes": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "conversao_free_para_pago_pct": {
+          "$ref": "#/$defs/pct"
+        },
+        "ciclo_vendas_dias": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "churn_logo_mensal_pct": {
+          "$ref": "#/$defs/pct"
+        },
+        "churn_receita_mensal_pct": {
+          "$ref": "#/$defs/pct"
+        },
+        "lifetime_meses_estimado": {
+          "$ref": "#/$defs/numero_pos"
+        }
+      }
+    },
+    "financeiro": {
+      "type": "object",
+      "properties": {
+        "caixa_atual": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "burn_bruto_mensal": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "receita_mensal": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "burn_liquido_mensal": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "runway_meses": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "margem_bruta_pct": {
+          "$ref": "#/$defs/pct"
+        },
+        "custo_servico_por_cliente_mes": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "custos": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/dinheiro"
+          }
+        }
+      }
+    },
+    "unit_economics": {
+      "type": "object",
+      "properties": {
+        "cac": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "ltv": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "ltv_cac": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "payback_cac_meses": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "arpa": {
+          "$ref": "#/$defs/dinheiro"
+        }
+      }
+    },
+    "unit_economics_por_plano": {
+      "type": "object"
+    },
+    "time": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "$ref": "#/$defs/texto"
+          },
+          "cargo": {
+            "$ref": "#/$defs/texto"
+          },
+          "custo": {
+            "$ref": "#/$defs/dinheiro"
+          },
+          "decisor": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "perfil_cognitivo": {
+            "$ref": "#/$defs/texto"
+          }
+        }
+      }
+    },
+    "produto": {
+      "type": "object",
+      "properties": {
+        "repos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "implementado": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "em_construcao": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "testes_em": {
+          "$ref": "#/$defs/data"
+        },
+        "testes": {
+          "type": "object"
+        },
+        "leitura": {
+          "$ref": "#/$defs/texto"
+        }
+      }
+    },
+    "mercado": {
+      "type": "object",
+      "properties": {
+        "tam_empresas": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "sam_empresas": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "som_ano1_empresas": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "ancora_de_valor": {
+          "$ref": "#/$defs/texto"
+        }
+      }
+    },
+    "premissas": {
+      "type": "object"
+    },
+    "fundraising": {
+      "type": "object",
+      "properties": {
+        "rodada_atual": {
+          "$ref": "#/$defs/texto"
+        },
+        "buscando": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "valuation_cap": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "ja_aportado": {
+          "$ref": "#/$defs/dinheiro"
+        },
+        "uso_recursos_pct": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/pct"
+          }
+        },
+        "objetivo_pos_rodada": {
+          "$ref": "#/$defs/texto"
+        }
+      }
+    },
+    "cap_table": {
+      "type": "object",
+      "properties": {
+        "atual": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "socio": {
+                "$ref": "#/$defs/texto"
+              },
+              "papel": {
+                "$ref": "#/$defs/texto"
+              },
+              "pct": {
+                "$ref": "#/$defs/pct"
+              },
+              "aporte": {
+                "$ref": "#/$defs/dinheiro"
+              }
+            }
+          }
+        },
+        "esop_alocado_pct": {
+          "$ref": "#/$defs/pct"
+        },
+        "esop_disponivel_pct": {
+          "$ref": "#/$defs/pct"
+        },
+        "conversiveis": {
+          "type": "array"
+        },
+        "simulacoes": {
+          "type": "object"
+        }
+      }
+    },
+    "metas": {
+      "type": "object",
+      "properties": {
+        "m6_meses": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/numero_pos"
+          }
+        },
+        "m12_meses": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/numero_pos"
+          }
+        },
+        "social": {
+          "type": "object",
+          "description": "Metas por rede: { <rede>: { <kpi>: numero } }",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/numero_pos"
+            }
+          }
+        }
+      }
+    },
+    "marca": {
+      "type": "object",
+      "properties": {
+        "redes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "rede"
+            ],
+            "properties": {
+              "rede": {
+                "type": "string"
+              },
+              "handle": {
+                "$ref": "#/$defs/texto"
+              },
+              "seguidores": {
+                "$ref": "#/$defs/numero_pos"
+              },
+              "data_ref": {
+                "$ref": "#/$defs/data"
+              },
+              "fonte": {
+                "$ref": "#/$defs/texto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "dados": {
+      "type": "object",
+      "properties": {
+        "bases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "nome"
+            ],
+            "properties": {
+              "nome": {
+                "$ref": "#/$defs/texto"
+              },
+              "registros": {
+                "$ref": "#/$defs/numero_pos"
+              },
+              "atualizado_em": {
+                "$ref": "#/$defs/data"
+              },
+              "frequencia_dias": {
+                "$ref": "#/$defs/numero_pos"
+              }
+            }
+          }
+        }
+      }
+    },
+    "atendimento": {
+      "type": "object",
+      "properties": {
+        "tickets_mes": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "sla_primeira_resposta_horas": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "sla_resolucao_horas": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "primeira_resposta_real_horas": {
+          "$ref": "#/$defs/numero_pos"
+        },
+        "csat_pct": {
+          "$ref": "#/$defs/pct"
+        },
+        "nps": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number",
+              "minimum": -100,
+              "maximum": 100
+            }
+          ]
+        },
+        "data_ref": {
+          "$ref": "#/$defs/data"
+        }
+      }
+    },
+    "alertas": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/limiar"
+      }
+    },
+    "agentes": {
+      "type": "object",
+      "properties": {
+        "orcamento_mensal_usd": {
+          "$ref": "#/$defs/usd"
+        },
+        "orcamento_por_area_usd": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/usd"
+          }
+        },
+        "teto_por_disparo_usd": {
+          "$ref": "#/$defs/usd"
+        },
+        "politica_custo_desconhecido": {
+          "enum": [
+            "teto",
+            "bloquear",
+            null
+          ]
+        },
+        "consumido_mes_usd": {
+          "$ref": "#/$defs/usd"
+        },
+        "consumido_mes_ref": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^\\\\d{4}-\\\\d{2}$"
+            }
+          ]
+        },
+        "ledger_head": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+# ======================================================================
+# ÁRVORE DE DRIVERS — o que move o quê (dependências causais entre campos)
+# ======================================================================
+# Usada por: sensibilidade.py (ranking de impacto), variancia.py (decompor
+# mudanças por causa) e alertas.py (hipótese de causa).
+# Chave = campo/métrica; drivers = o que a move; relacao = leitura humana.
+# ======================================================================
+
+snapshot.mrr:
+  drivers: [snapshot.clientes_pagantes, snapshot.ticket_medio]
+  relacao: "clientes_pagantes × ticket_medio (e mix de planos)"
+
+snapshot.clientes_pagantes:
+  drivers: [crescimento.novos_clientes_pagantes_mes, crescimento.churn_logo_mensal_pct, crescimento.conversao_free_para_pago_pct]
+  relacao: "entrada (novos + conversão do free) − saída (churn de logo)"
+
+snapshot.clientes_free:
+  drivers: [crescimento.novos_free_mes]
+  relacao: "topo de funil"
+
+financeiro.burn_bruto_mensal:
+  drivers: [financeiro.custos.folha, financeiro.custos.infra, financeiro.custos.apis_terceiros, financeiro.custos.marketing, financeiro.custos.ferramentas_saas, financeiro.custos.contabil_juridico, financeiro.custos.outros]
+  relacao: "Σ categorias de custo — folha costuma dominar"
+
+financeiro.burn_liquido_mensal:
+  drivers: [financeiro.burn_bruto_mensal, snapshot.mrr]
+  relacao: "burn bruto − receita"
+
+financeiro.runway_meses:
+  drivers: [financeiro.caixa_atual, financeiro.burn_liquido_mensal]
+  relacao: "caixa ÷ burn líquido — choques de CUSTO cortam runway direto; choques de RECEITA mexem menos quando o burn é majoritariamente fixo"
+
+crescimento.lifetime_meses_estimado:
+  drivers: [crescimento.churn_receita_mensal_pct]
+  relacao: "1 ÷ churn de receita"
+
+unit_economics.ltv:
+  drivers: [unit_economics.arpa, crescimento.churn_receita_mensal_pct, financeiro.margem_bruta_pct]
+  relacao: "arpa × lifetime × margem"
+
+unit_economics.ltv_cac:
+  drivers: [unit_economics.ltv, unit_economics.cac]
+  relacao: "ltv ÷ cac"
+
+concentracao.top3_pct_do_mrr:
+  drivers: [clientes, snapshot.mrr]
+  relacao: "Σ top-3 ÷ MRR — cada conta nova deve DILUIR, não concentrar"

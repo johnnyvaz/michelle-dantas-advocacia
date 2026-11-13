@@ -1,0 +1,43 @@
+# Arquivos que o kit PH3A semeia no projeto (scripts/semear.py + init.sh): ferramental, não produto.
+# O inventário os deixa fora. Terminado em / = pasta inteira. Mantido em sincronia por
+# tests/test_mapear_projeto.py::test_lista_do_kit_bate_com_o_semear.
+scripts/_gemeo_lib.py
+scripts/alertas.py
+scripts/auditar_memoria.py
+scripts/briefing_diff.py
+scripts/calc.py
+scripts/check_citations.py
+scripts/completude.py
+scripts/consistencia_interna.py
+scripts/custo.py
+scripts/cvss.py
+scripts/delegar.py
+scripts/esqueleto_drift.py
+scripts/exportar_marca.py
+scripts/hooks/guard-command/
+scripts/hooks/posttooluse_canon.py
+scripts/hooks/posttooluse_raio_x.py
+scripts/hooks/pretooluse_bash_guard.py
+scripts/hooks/pretooluse_derivado.py
+scripts/hooks/sessionstart_fila_humana.py
+scripts/hooks/stop_completude.py
+scripts/hooks/userpromptsubmit_secret_guard.py
+scripts/importar-spec.py
+scripts/importar_findings.py
+scripts/migrar-contrato.py
+scripts/migrar-solucao.py
+scripts/migrar-tasks.py
+scripts/montecarlo.py
+scripts/prioridade.py
+scripts/propostas.py
+scripts/recalibrar.py
+scripts/registrar-concluidas.py
+scripts/relatorio.py
+scripts/rodada.py
+scripts/sensibilidade.py
+scripts/serie_temporal.py
+scripts/validar_canon.py
+scripts/verificar_referencias.py
+scripts/variancia.py
+scripts/versao.py
+templates/ph3a-constitution-seed.md

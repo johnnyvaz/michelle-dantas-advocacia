@@ -1,0 +1,42 @@
+import { defineConfig, devices } from '@playwright/test';
+
+/**
+ * playwright.config.ts — perna EXTERNA (E2E browser headless) do loop.
+ * Determinístico e automatizável: é o que roda no test-loop.sh e na CI.
+ * Ajuste baseURL/porta ao web dev server detectado (Passo 1 da skill).
+ *
+ * Para debug interativo de um E2E quebrado, use o `playwright-cli` (skill própria),
+ * não este runner.
+ */
+export default defineConfig({
+  testDir: './e2e',
+  timeout: 30_000,
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : [['list']],
+  use: {
+    // aponte para a stack isolada (web servido apontando à API de teste em :3001)
+    baseURL: process.env.E2E_BASE_URL ?? 'http://localhost:8080',
+    headless: true,
+    trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+  },
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+  ],
+  /**
+   * Sobe o web dev server automaticamente (CI). Em dev local o test-loop.sh já cuida da stack;
+   * deixe reuseExistingServer para não subir duas vezes.
+   */
+  webServer: process.env.E2E_NO_WEBSERVER
+    ? undefined
+    : {
+        // ajuste ao PM detectado (pnpm/npm/yarn) — deve casar com o $PM do test-loop.sh
+        command: process.env.E2E_WEB_CMD ?? 'pnpm dev',
+        url: process.env.E2E_BASE_URL ?? 'http://localhost:8080',
+        reuseExistingServer: !process.env.CI,
+        timeout: 120_000,
+      },
+});

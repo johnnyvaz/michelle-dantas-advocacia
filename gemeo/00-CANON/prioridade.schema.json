@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Modelo de priorização Bayesiana",
+  "type": "object",
+  "required": ["priors", "score_ancoras", "bandas", "objetivos", "lentes"],
+  "properties": {
+    "priors": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          { "type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1 },
+          { "type": "null" }
+        ]
+      }
+    },
+    "score_ancoras": {
+      "type": "object",
+      "required": ["score_prior", "score_meio", "score_forte", "logit_forte_valor"],
+      "properties": {
+        "score_prior": { "type": "number", "minimum": 0, "maximum": 100 },
+        "score_meio": { "type": "number", "minimum": 0, "maximum": 100 },
+        "score_forte": { "type": "number", "minimum": 0, "maximum": 100 },
+        "logit_forte_valor": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "bandas": {
+      "type": "object",
+      "required": ["baixa", "media", "alta"],
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "number" },
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "objetivos": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["ativacao"],
+        "properties": {
+          "fonte": { "type": ["string", "null"] },
+          "ativacao": {
+            "type": "object",
+            "required": ["tipo", "peso"],
+            "properties": {
+              "tipo": { "enum": ["menor_que", "maior_que", "menor_igual", "maior_igual", "sempre"] },
+              "limiar": { "type": "number" },
+              "peso": { "type": "number", "minimum": 0 },
+              "peso_ok": { "type": "number", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "guardas": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "evidencia": { "type": "string" },
+          "fonte": { "type": "string" },
+          "tipo": { "enum": ["menor_que", "maior_que", "menor_igual", "maior_igual"] },
+          "limiar": { "type": "number" }
+        }
+      }
+    },
+    "magnitude": {
+      "type": "object",
+      "properties": {
+        "k": { "type": "number", "minimum": 0 },
+        "w_max": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "decaimento": {
+      "type": "object",
+      "properties": {
+        "meia_vida_dias": { "type": "number", "exclusiveMinimum": 0 },
+        "laplace": { "type": "number", "minimum": 0 }
+      }
+    },
+    "anti_decaimento": {
+      "type": "object",
+      "properties": {
+        "alpha_por_dia": { "type": "number", "minimum": 0 }
+      }
+    },
+    "lentes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["prior_ref", "evidencias"],
+        "properties": {
+          "prior_ref": { "type": "string" },
+          "chave_entidade": { "type": "array", "items": { "type": "string" } },
+          "contribui_para": {
+            "type": "object",
+            "additionalProperties": { "type": "number" }
+          },
+          "evidencias": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": ["lr"],
+              "properties": {
+                "lr": { "type": "number", "exclusiveMinimum": 0 },
+                "magnitude": {
+                  "type": "object",
+                  "required": ["campo", "m_ref"],
+                  "properties": {
+                    "campo": { "type": "string" },
+                    "m_ref": { "type": "number", "exclusiveMinimum": 0 }
+                  }
+                },
+                "funde_com": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

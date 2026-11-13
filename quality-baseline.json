@@ -1,0 +1,10 @@
+{
+  "updated": "2026-11-10",
+  "metrics": {
+    "code_duplicates_pct": 14.9,
+    "complexity_worst": 6,
+    "complexity_over_limit": 0,
+    "obs_unstructured_logs": 0,
+    "obs_missing_audit": 0
+  }
+}

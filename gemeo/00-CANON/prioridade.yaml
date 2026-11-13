@@ -1,0 +1,193 @@
+# ======================================================================
+# MODELO DE PRIORIZAÇÃO — Bayesiano (log-odds) + valor esperado
+# ======================================================================
+# Pesos (priors/LR) são SEMENTE de especialista — calibráveis por
+# scripts/recalibrar.py (como metricas.yaml já vem com fórmulas prontas).
+# O gating "boilerplate seguro" NÃO vem daqui: vem dos `objetivos`, que
+# apontam para o canon — que nasce null. Canon sem objetivo ⇒ o motor
+# recusa priorizar (scripts/prioridade.py), nunca inventa prioridade.
+# Contrato: specs/003-motor-priorizacao/contracts/prioridade-yaml.md
+# ======================================================================
+
+# ── Priors por corpus (taxa-base de "merece ação") ──────────────────
+priors:
+  soc: 0.001           # 10 incidentes reais / 10.000 eventos (AGENTE-SOC.md)
+  backlog: 0.15
+  propostas: 0.20
+  pentest: 0.15        # findings já analisados: base-rate alto de "merece ação" (spec 005)
+  human: 0.35          # item na fila humana já foi triado por um agente E trava trabalho:
+                       # base-rate de "merece ação" é o mais alto do acervo
+
+# ── Mapeamento logit → score 0..100 (afim no log-odds) ──────────────
+# `logit_forte_valor: 2.2` (não 4.0) porque com o prior do backlog (0.15, logit -1.735)
+# as evidências reais de tasks/*.md somam ~1 a ~3 em log-odds; ancorar "forte" em 4.0
+# comprimia TODAS as tarefas na faixa 5–55 e a fila colapsava em poucos valores.
+score_ancoras:
+  score_prior: 5       # score no logit(prior)
+  score_meio: 50       # score em logit 0 (posterior=0.5)
+  score_forte: 95      # score em logit_forte_valor
+  logit_forte_valor: 2.2
+
+# ── Bandas (EXISTENCIAL vem das guardas, não do score) ──────────────
+bandas:
+  baixa: [0, 30]
+  media: [31, 70]
+  alta: [71, 100]
+
+# ── Objetivos do negócio (ativação dinâmica a partir do canon) ──────
+#
+# ATENÇÃO ao ajustar: `impacto` é o MESMO multiplicador para todos os itens da lente
+# (objetivos_ativos lê o canon uma vez; contribui_para é por lente). Mexer num `limiar`
+# aqui reescala a fila inteira de forma uniforme — não desempata e não move fronteira de
+# quadrante. A dispersão vem das evidências (lentes) e da urgência. A função dos objetivos
+# é dizer QUE existe retorno modelado: com nenhuma fonte resolvida o motor recusa priorizar.
+#
+# Os operacionais vêm do próprio sistema (o cofre agrega os _estado.json em _operacao.yaml,
+# passado por --canon). Os financeiros seguem aqui e passam a pesar quando o canon do
+# negócio for preenchido — enquanto null, não ativam.
+objetivos:
+  destravar_decisoes:
+    fonte: operacao.humano_pendentes
+    ativacao: { tipo: maior_que, limiar: 5, peso: 3.0, peso_ok: 0.5 }
+  reduzir_bugs:
+    fonte: operacao.bugs_abertos
+    ativacao: { tipo: maior_que, limiar: 20, peso: 2.5, peso_ok: 0.5 }
+  cumprir_prazos:
+    fonte: operacao.tarefas_atrasadas
+    ativacao: { tipo: maior_que, limiar: 0, peso: 2.0, peso_ok: 0.5 }
+  preservar_caixa:
+    fonte: financeiro.runway_meses
+    ativacao: { tipo: menor_que, limiar: 6, peso: 3.0, peso_ok: 0.5 }
+  reter_clientes:
+    fonte: crescimento.churn_receita_mensal_pct
+    ativacao: { tipo: maior_que, limiar: 5, peso: 2.5, peso_ok: 0.5 }
+  diversificar_carteira:
+    fonte: concentracao.top3_pct_do_mrr
+    ativacao: { tipo: maior_que, limiar: 50, peso: 2.0, peso_ok: 0.5 }
+  conformidade_dados:
+    fonte: null          # sem métrica no canon; ativo por padrão (peso base)
+    ativacao: { tipo: sempre, peso: 1.0, peso_ok: 1.0 }
+
+# ── Guardas existenciais — sempre dominam (banda EXISTENCIAL) ───────
+#
+# INVARIANTE: guarda com `fonte:` lê o CANON, não o item — se disparar, marca TODOS os itens
+# como EXISTENCIAL com ev=+inf e a fila/matriz perde qualquer ordenação. Por isso nenhuma
+# guarda pode apontar para uma fonte `operacao.*` (que é sempre > 0 na prática). Guarda nova
+# deve ser por `evidencia:` do item. Travado em tests/test_prioridade.py.
+guardas:
+  vazamento_dados: { evidencia: vazamento_confirmado }
+  ruptura_legal: { evidencia: nao_conformidade_critica }
+  caixa_zero: { fonte: financeiro.runway_meses, tipo: menor_igual, limiar: 0 }
+
+# ── Parâmetros de magnitude e decaimento ────────────────────────────
+magnitude: { k: 0.5, w_max: 4.0 }          # escala saturante do peso por contagem
+decaimento: { meia_vida_dias: 90, laplace: 1 }
+
+# Urgência sobe enquanto o item está aberto, grave e sem atenção. `bandas` inclui MEDIA
+# porque, com o acervo real, nenhuma tarefa de backlog alcança ALTA — restringir a
+# ALTA/EXISTENCIAL deixaria a urgência travada em 1.0 e os quadrantes Q1/Q3 vazios.
+anti_decaimento: { alpha_por_dia: 0.05, bandas: [MEDIA, ALTA, EXISTENCIAL] }
+
+# Urgência por prazo real (`🎯`), quando existir: domina o anti-decaimento se for maior.
+prazo: { fator_no_prazo: 3.0, horizonte_dias: 14, fator_no_horizonte: 1.2,
+         alpha_atraso_por_dia: 0.1 }
+
+# Teto do fator de urgência. Sem ele, itens de 130+ dias chegam a 7,5 e a idade engole o
+# score — o eixo "importante" para de existir na prática.
+urgencia: { fator_max: 4.0 }
+
+# Divisor do EV. Tag `#esforco/p|m|g` na linha; sem tag = `m` (nenhuma tarefa do
+# acervo precisa ser retaggeada para o motor funcionar).
+esforco_escala: { p: 0.5, m: 1.0, g: 3.0 }
+
+# ── Matriz Eisenhower ───────────────────────────────────────────────
+# Importância = score · Urgência = fator de urgencia().
+#   Q1 fazer agora · Q2 agendar · Q3 delegar/rápido · Q4 descartar
+# CUIDADO: se `limiar_importancia_score` cruzar o piso de `bandas.media` (31), Q3 fica
+# estruturalmente vazio sem erro nenhum. Travado em tests/test_prioridade.py.
+eisenhower:
+  limiar_importancia_score: 60
+  limiar_urgencia_fator: 2.0
+  override_tag: "#eis/q1..q4"    # documental: o parser está em prioridade.py (EIS_RE)
+
+# ── Lentes plugáveis ────────────────────────────────────────────────
+lentes:
+  soc:
+    prior_ref: soc
+    chave_entidade: [ip, usuario, token, asn, janela]
+    contribui_para: { conformidade_dados: 2.0 }
+    evidencias:
+      ip_blacklist: { lr: 12.0 }
+      forca_bruta: { lr: 8.0, magnitude: { campo: tentativas, m_ref: 100 } }
+      acesso_admin: { lr: 10.0 }
+      uso_tor: { lr: 3.0 }
+      geo_incomum: { lr: 2.5 }
+      user_agent_suspeito: { lr: 2.0 }
+      erro_auth_isolado: { lr: 1.2 }
+      navegador_conhecido: { lr: 0.4 }       # reduz risco
+
+  # Evidências derivadas do que a linha da tarefa JÁ carrega (parse_tasks) — sem elas o
+  # motor só via `severidade_p1` e a fila inteira colapsava em dois valores de score.
+  backlog:
+    prior_ref: backlog
+    contribui_para: { destravar_decisoes: 0.5, reduzir_bugs: 1.0, cumprir_prazos: 1.0,
+                      preservar_caixa: 1.0, reter_clientes: 1.0, conformidade_dados: 0.5 }
+    evidencias:
+      metrica_em_alerta: { lr: 6.0 }        # só via --in (não há sinal disso na linha)
+      severidade_p1: { lr: 9.0 }            # 🔺
+      severidade_p2: { lr: 2.0 }            # 🔼
+      severidade_p3: { lr: 0.5 }            # 🔽 — reduz
+      prazo_vencido: { lr: 7.0 }            # 🎯 no passado
+      area_sensivel: { lr: 4.0 }            # #area/seguranca
+      tipo_bug: { lr: 2.5 }                 # veio de bugs.md
+      reincidente: { lr: 3.0 }              # título já fechado em concluidas.md
+      stale: { lr: 2.0 }                    # mais velho que meia_vida_dias
+      quick_win: { lr: 1.5 }                # #esforco/p
+
+  # Fila humana (tasks/human.md) — o que só o dono pode decidir. Cada item aqui bloqueia
+  # trabalho do agente, daí o prior mais alto do acervo. Nunca recebe marcador `[prio:]`.
+  human:
+    prior_ref: human
+    # Uma decisão pendente bloqueia trabalho do agente desde que é registrada: é urgente
+    # por natureza, independentemente da idade. Sem este piso as decisões caíam em Q2
+    # ("agendar") — medido: "rotacionar chave commitada" classificada como não urgente,
+    # porque human.md é reescrito a cada registro e o git blame da linha nunca envelhece.
+    piso_urgencia: 2.0
+    contribui_para: { destravar_decisoes: 2.0, conformidade_dados: 1.0,
+                      preservar_caixa: 0.5 }
+    evidencias:
+      aguardando_decisao: { lr: 2.0 }       # ainda sem resposta do dono
+      # O dono escreveu `**Solução:**` no próprio bloco: destravado, e é a instrução mais
+      # fresca que existe no sistema — vale mais que a espera (2.0) e menos que um risco que
+      # piora sozinho (6.0). Excludente de `aguardando_decisao`, nunca somam.
+      respondido_executar: { lr: 4.0 }
+      risco_ativo: { lr: 6.0 }              # seção 🚨 / "risco ativo": piora com o tempo
+      irreversivel: { lr: 3.0 }             # rotação de chave, exclusão, ação Tipo 1
+      severidade_p1: { lr: 5.0 }
+      severidade_p2: { lr: 1.5 }
+      area_sensivel: { lr: 4.0 }
+      prazo_vencido: { lr: 7.0 }
+      stale: { lr: 2.5 }                    # decisão parada há mais que meia_vida_dias
+
+  propostas:
+    prior_ref: propostas
+    contribui_para: { preservar_caixa: 1.0, reter_clientes: 1.0 }
+    evidencias:
+      metrica_em_alerta: { lr: 4.0 }
+      reincidente: { lr: 2.0 }
+
+  # Pentest (spec 005) — findings verificados do /pentest-dinamico via `prioridade.py all`.
+  # Prior próprio (0.15) porque findings já analisados têm base-rate alto de "merece ação"
+  # — o prior do `soc` (0.001, eventos de auth) NÃO escala findings (research 005 D5).
+  # Exploitabilidade confirmada domina severidade teórica. LRs recalibráveis por recalibrar.py.
+  pentest:
+    prior_ref: pentest
+    chave_entidade: [endpoint, ip]
+    contribui_para: { conformidade_dados: 2.0 }
+    evidencias:
+      cvss_critico: { lr: 12.0 }
+      cvss_alto: { lr: 8.0 }
+      cvss_medio: { lr: 3.0 }
+      cvss_baixo: { lr: 1.2 }
+      exploit_confirmado: { lr: 15.0 }   # confirma exploração real (modo probe)
+      poc_apenas: { lr: 2.0 }            # hipótese/análise: corrobora, não decide

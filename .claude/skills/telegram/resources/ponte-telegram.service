@@ -1,0 +1,28 @@
+# Unidade systemd de USUÁRIO para o modo `servir`.
+#
+#   mkdir -p ~/.config/systemd/user
+#   sed 's|__RAIZ__|/caminho/do/projeto|' ponte-telegram.service \
+#     > ~/.config/systemd/user/ponte-telegram.service
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now ponte-telegram
+#   journalctl --user -u ponte-telegram -f
+#
+# `loginctl enable-linger $USER` se quiser que sobreviva ao logout.
+# Em WSL sem systemd, use no lugar:  nohup python3 scripts/ponte-telegram.py servir &
+[Unit]
+Description=Ponte Telegram — fila humana (tasks/human.md)
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=__RAIZ__
+ExecStart=/usr/bin/env python3 __RAIZ__/scripts/ponte-telegram.py servir
+Restart=always
+RestartSec=15
+# O segredo vem do arquivo, não da unidade: unidade vive em ~/.config e acaba num backup.
+EnvironmentFile=__RAIZ__/.env.local
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

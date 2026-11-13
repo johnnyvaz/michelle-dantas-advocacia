@@ -1,0 +1,19 @@
+# ============================================================================
+# ROE — Regras de Engajamento do pentest dinâmico (modo probe ativo)
+# ============================================================================
+# NASCE VAZIO. Só alvos listados aqui podem sofrer probe ativo (modo probe do
+# /pentest-dinamico). Instrução livre do usuário NÃO expande este escopo.
+# Cadastrar um alvo é decisão do dono; o probe ainda exige aprovação em
+# tasks/human.md (ação Tipo 1 — ver _FRAMEWORK/allowlist.md).
+# É estado sensível do projeto: não sai do repositório (guarda bash_guard) e
+# nunca é sobrescrito por atualização de plugin (spec 005, FR-016).
+# Contrato: specs/005-pentest-dinamico-nativo/contracts/escopo-autorizado-schema.md
+# ============================================================================
+
+alvos: []
+#  - alvo: "https://staging.exemplo.interno"   # obrigatório
+#    tipo: url                                  # url | host | repo | arquivo
+#    janela: "2026-07-01..2026-07-31"           # opcional — janela autorizada
+#    exclusoes: ["/admin/*", "/pagamentos/*"]   # opcional — caminhos proibidos mesmo no alvo
+#    aprovado_por: "<nome>"                      # quem autorizou o escopo
+#    data: "2026-07-01"

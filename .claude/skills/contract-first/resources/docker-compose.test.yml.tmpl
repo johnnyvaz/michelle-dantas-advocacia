@@ -1,0 +1,58 @@
+# docker-compose.test.yml — STACK DE TESTE TOTALMENTE ISOLADA (efêmera).
+# Objetivo: cada rodada não toca prod/dev, com estado reproduzível (seed fresco).
+# Adapte os serviços à stack detectada no Passo 1 da skill. NÃO reutilize portas/volumes de prod.
+#
+# Princípios:
+#  - DB em tmpfs (RAM) → some no down, sem volume persistente.
+#  - Portas distintas das de dev (aqui 55432 / 3001) para não colidir.
+#  - Externos (gateway de pagamento, warehouse, etc.) → mock (wiremock/mockserver), nunca o real.
+#  - NENHUM segredo real: use valores de teste; injete via .env.test (que também é fictício).
+
+services:
+  db-test:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: app_test
+    tmpfs:
+      - /var/lib/postgresql/data   # efêmero: zera a cada up
+    ports:
+      - "55432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U test -d app_test"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  # Mock dos serviços externos (pagamento/warehouse/etc.). Stubs em ./contract-first/mocks/.
+  mocks:
+    image: wiremock/wiremock:3.9.1
+    command: ["--global-response-templating", "--disable-banner"]
+    ports:
+      - "8089:8080"
+    volumes:
+      - ./contract-first/mocks:/home/wiremock:ro
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile          # ajuste se a API tiver Dockerfile próprio (ex.: api/Dockerfile)
+    environment:
+      NODE_ENV: test
+      PORT: "3001"
+      DATABASE_URL: "postgres://test:test@db-test:5432/app_test"
+      # aponte os SDKs externos para o mock:
+      EXTERNAL_API_BASE_URL: "http://mocks:8080"
+    depends_on:
+      db-test:
+        condition: service_healthy
+      mocks:
+        condition: service_started
+    ports:
+      - "3001:3001"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3001/health || exit 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 20

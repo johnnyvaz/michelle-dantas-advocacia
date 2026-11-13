@@ -1,0 +1,33 @@
+{
+  "updated": "{{HOJE}}",
+  "limite_ccn": 10,
+  "limite_hard": null,
+  "paths": [
+    "backend/src",
+    "frontend/src"
+  ],
+  "exclude": [
+    "*/node_modules/*",
+    "*/.venv/*",
+    "*/venv/*",
+    "*/dist/*",
+    "*/build/*",
+    "*/migrations/*",
+    "*/__pycache__/*",
+    "*/.next/*",
+    "*/coverage/*",
+    "*/tests/*",
+    "*/test/*",
+    "*/e2e/*",
+    "*/__tests__/*",
+    "*/__mocks__/*",
+    "*.test.ts",
+    "*.test.tsx",
+    "*.test.js",
+    "*.spec.ts",
+    "*.spec.tsx",
+    "*_test.go",
+    "*_test.py"
+  ],
+  "ignorar": []
+}

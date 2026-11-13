@@ -1,0 +1,118 @@
+### Contract — __Entity__ (CRUD)
+### Exemplo de contrato executável com asserções (??). Cobre happy path + sad paths.
+###
+### DOIS TIPOS DE PLACEHOLDER:
+###   __Entity__ / __entity__ / __path__  → placeholders de SCAFFOLD: substitua ao criar o arquivo
+###                                          (ex.: __entity__ → empresa, __path__ → empresas).
+###   {{baseUrl}} / {{authToken}}          → variáveis httpyac de RUNTIME: NÃO substitua
+###                                          (resolvidas pelo env / capturadas no setup.http).
+### Requer que setup.http já tenha capturado {{authToken}}. Use dados sintéticos (LGPD).
+
+@baseUrl = {{baseUrl}}
+@path = __path__
+
+### =========================================================================
+### CREATE — cria __entity__ (payload válido)
+### =========================================================================
+# @name create___entity__
+POST {{baseUrl}}/{{path}}
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nome": "__entity__ de teste",
+  "descricao": "payload sintético — nunca dados reais (LGPD)"
+}
+
+?? status == 201
+?? body success == true
+?? body data.id exists
+
+### guarda o id criado para os próximos testes (var de runtime __entity__Id → {{__entity__Id}})
+{%
+  if (response.parsedBody && response.parsedBody.data && response.parsedBody.data.id) {
+    setEnvVar('__entity__Id', response.parsedBody.data.id);
+  }
+%}
+
+### =========================================================================
+### CREATE (sad) — campo obrigatório ausente → 400
+### =========================================================================
+# @name create___entity___invalid
+POST {{baseUrl}}/{{path}}
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "descricao": "sem o campo obrigatório 'nome'"
+}
+
+?? status == 400
+?? body success == false
+
+### =========================================================================
+### READ — lista __entity__ (autenticado)
+### =========================================================================
+# @name list___entity__
+GET {{baseUrl}}/{{path}}
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+?? status == 200
+?? body data isArray
+
+### =========================================================================
+### READ — busca por id
+### =========================================================================
+# @name get___entity__
+GET {{baseUrl}}/{{path}}/{{__entity__Id}}
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+?? status == 200
+?? body data.id == {{__entity__Id}}
+
+### =========================================================================
+### READ (sad) — id inexistente → 404
+### =========================================================================
+# @name get___entity___not_found
+GET {{baseUrl}}/{{path}}/00000000-0000-0000-0000-000000000000
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+?? status == 404
+
+### =========================================================================
+### AUTH (sad) — sem token → 401
+### =========================================================================
+# @name list___entity___unauthorized
+GET {{baseUrl}}/{{path}}
+Accept: application/json
+
+?? status == 401
+
+### =========================================================================
+### UPDATE — atualização parcial
+### =========================================================================
+# @name update___entity__
+PUT {{baseUrl}}/{{path}}/{{__entity__Id}}
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "nome": "__entity__ atualizado"
+}
+
+?? status == 200
+?? body data.nome == __entity__ atualizado
+
+### =========================================================================
+### DELETE — remove __entity__
+### =========================================================================
+# @name delete___entity__
+DELETE {{baseUrl}}/{{path}}/{{__entity__Id}}
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+?? status == 200

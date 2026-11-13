@@ -1,0 +1,239 @@
+# ======================================================================
+# CANON — MODELO NUMÉRICO CANÔNICO  (FONTE ÚNICA DA VERDADE)
+# ======================================================================
+# Substrato computável do Gêmeo Digital deste negócio.
+# TODO documento de prosa nas demais pastas (01..12) deve DERIVAR daqui
+# e nunca contradizer estes números. O oráculo lê este YAML para simular
+# cenários — se um número não está aqui, o oráculo NÃO deve inventá-lo.
+#
+# Preenchimento guiado: rode a skill `/montar-gemeo`.
+#
+# Convenções:
+#   - null              → dado ainda não preenchido (oráculo: "não tenho esse dado")
+#   - # via <fonte> em <AAAA-MM-DD> → anote a origem de cada valor atualizado
+#   - (derivado)        → regravado por `scripts/calc.py --all --write` (fórmulas
+#                         em metricas.yaml), NUNCA editado à mão
+#   - listas []/mapas {} vazios → seção aplicável mas não preenchida
+#   - seção não aplicável ao negócio → remova e registre em _meta.secoes_removidas
+#   - FAIXA DE INCERTEZA: drivers podem ser {min: X, max: Y, provavel: Z}
+#     (distribuição triangular) em vez de um número — habilita respostas
+#     probabilísticas P10/P50/P90 via scripts/montecarlo.py.
+#     Ex.: churn_receita_mensal_pct: {min: 2.0, max: 5.0, provavel: 3.0}
+#
+# Contrato de dados: canon.schema.json (validado por scripts/validar_canon.py,
+# automaticamente a cada edição via hook).
+# ======================================================================
+
+_meta:
+  versao: "0.2"
+  data_referencia: "2026-11-10"      # AAAA-MM-DD da última atualização
+  natureza: real                     # real | ficticio-mvp | misto
+  moeda: BRL
+  fonte_da_verdade: true
+  secoes_removidas: [planos, unit_economics_por_plano, fundraising, cap_table]  # decisão do dono (Johnny) via /montar-gemeo em 2026-11-10: escritório de advocacia não capta, não tem cap table a modelar nem tabela de planos (receita por honorários)
+  observacao: null
+
+# ----------------------------------------------------------------------
+empresa:
+  razao_social: null
+  nome_fantasia: "Michelle Dantas Advocacia"   # via app/metadata.js em 2026-11-10
+  cnpj: null
+  fundacao: null                     # AAAA-MM-DD
+  estagio: null                      # ex.: "pre-seed / validação" | "bootstrap rentável"
+  sede: null
+  site: null
+  fundador: "Michelle Dantas"        # via data/team.js ("Advogada e Proprietária") em 2026-11-10
+  one_liner: null                    # o negócio em 1 frase: o que faz, para quem, por quê agora
+
+# ----------------------------------------------------------------------
+snapshot:
+  # Foto da empresa na data de referência
+  meses_operacao: null
+  clientes_pagantes: null
+  clientes_free: null
+  clientes_total: null               # (derivado) pagantes + free
+  mrr: null                          # R$/mês — via Stripe (atualizar-financeiro) ou controle interno
+  arr: null                          # (derivado) mrr × 12
+  ticket_medio: null                 # (derivado) mrr ÷ clientes_pagantes
+  uso_produto:
+    # As 2–4 métricas de uso que melhor medem ESTE produto.
+    # Ex.: transacoes_mes, itens_cadastrados, usuarios_ativos_mes, latencia_p95_ms.
+    # Cada chave criada aqui deve ganhar um mapeamento em atualizar-produto.
+    {}
+
+# ----------------------------------------------------------------------
+# Carteira pagante. 'mrr' em R$/mês. health: bom | atencao | risco
+clientes: []
+  # - id: C001
+  #   nome: null
+  #   segmento: null
+  #   plano: null
+  #   mrr: null
+  #   cliente_desde: "AAAA-MM"
+  #   health: null
+  #   obs: null
+
+# ----------------------------------------------------------------------
+# Concentração de receita (derivada de clientes[] — NÃO editar à mão)
+concentracao:
+  top3_ids: []                       # (derivado)
+  top3_mrr: null                     # (derivado)
+  top3_pct_do_mrr: null              # (derivado) >60%: risco de concentração relevante
+  free_convertiveis_estimados: null
+
+# ----------------------------------------------------------------------
+crescimento:
+  novos_clientes_pagantes_mes: null  # média móvel últimos 3 meses
+  novos_free_mes: null
+  conversao_free_para_pago_pct: null
+  ciclo_vendas_dias: null
+  churn_logo_mensal_pct: null        # cancelamentos de contas/mês
+  churn_receita_mensal_pct: null     # perda de MRR/mês
+  lifetime_meses_estimado: null      # (derivado) 1 ÷ churn_receita
+
+# ----------------------------------------------------------------------
+financeiro:
+  caixa_atual: null                  # controle interno — NUNCA vem de MCP
+  burn_bruto_mensal: null            # (derivado) soma de custos.*
+  receita_mensal: null               # = mrr (+ receitas não recorrentes, se houver)
+  burn_liquido_mensal: null          # (derivado) burn_bruto − receita
+  runway_meses: null                 # (derivado) caixa ÷ burn_liquido
+  margem_bruta_pct: null
+  custo_servico_por_cliente_mes: null
+  custos:
+    folha: null                      # deve fechar com a soma de time[].custo
+    infra: null
+    apis_terceiros: null
+    marketing: null
+    ferramentas_saas: null
+    contabil_juridico: null
+    outros: null
+
+# ----------------------------------------------------------------------
+unit_economics:
+  cac: null
+  ltv: null                          # (derivado) arpa × lifetime × margem_bruta
+  ltv_cac: null                      # (derivado)
+  payback_cac_meses: null            # (derivado) cac ÷ margem de contribuição
+  arpa: null                         # (derivado) mrr ÷ clientes_pagantes
+
+# ----------------------------------------------------------------------
+# custo = salário/pró-labore mensal bruto (R$). decisor=true entra no
+# cálculo de adesão (ver 08-PESSOAS/Team e a matriz de adesão).
+time: []
+  # - nome: null
+  #   cargo: null
+  #   custo: null
+  #   decisor: false
+  #   perfil_cognitivo: null          # slug do perfil em 08-PESSOAS/Team/
+
+# ----------------------------------------------------------------------
+produto:
+  # Status do CÓDIGO real — detalhe em 07-PRODUTO/STATUS.md.
+  repos: []                          # repos que compõem o produto (fonte do atualizar-produto)
+  implementado: []                   # 1 linha por módulo/feature funcionando
+  em_construcao: []                  # 1 linha por módulo/feature stub ou parcial
+  testes_em: null                    # AAAA-MM-DD da última verificação
+  testes: {}                         # ex.: { unit: "9/9 passam", build: "ok", e2e: "1/6" }
+  leitura: null                      # 1–2 frases honestas: o que existe vs. o que falta
+
+# ----------------------------------------------------------------------
+mercado:
+  tam_empresas: null                 # universo total endereçável (declarar critério no comentário)
+  sam_empresas: null                 # parcela alcançável pelo modelo atual
+  som_ano1_empresas: null            # meta realista 12 meses
+  ancora_de_valor: null              # custo/alternativa que o ICP já paga e que ancora o preço
+
+premissas:
+  # Hipóteses EXPLÍCITAS que o oráculo usa em simulações — separadas dos fatos.
+  gatilho_demanda:
+    descricao: null                  # o evento/dor que gera urgência de compra
+    peso_na_demanda_pct: null        # % da demanda que depende desse gatilho
+    data_prevista: null
+    cenario_sem_gatilho:
+      queda_demanda_pct: null
+      aumento_ciclo_vendas_pct: null
+      demanda_residual_pct: null
+  elasticidade_preco:
+    # variação % na retenção por +1% de preço (negativa = perde cliente).
+    # Uma chave por planos[].id. Sem medição → estimativa marcada como premissa.
+    {}
+
+# ----------------------------------------------------------------------
+agentes:
+  # Orçamento da empresa de agentes, em USD. É ESTIMATIVA do cliente Claude Code
+  # (total_cost_usd), não fatura; em plano de assinatura, leia como preço-sombra.
+  # Registro append-only em gemeo/12-AGENTES/_custo/ — veja scripts/custo.py.
+  orcamento_mensal_usd: null        # teto do mês somando todos os agentes
+  orcamento_por_area_usd: {}        # opcional: { marketing: 20 } — soma <= mensal
+  teto_por_disparo_usd: null        # --max-budget-usd de cada execução headless
+  politica_custo_desconhecido: null # teto | bloquear — o que fazer quando o custo não é medível
+  consumido_mes_usd: null           # (derivado) gravado por `custo.py saldo --write`
+  consumido_mes_ref: null           # AAAA-MM a que consumido_mes_usd se refere
+  ledger_head: null                 # último event_hash visto — detecta ledger truncado
+
+# ----------------------------------------------------------------------
+metas:
+  # Metas numéricas dos horizontes. Chaves de uso espelham snapshot.uso_produto.
+  m6_meses: {}
+  # ex.: { clientes_pagantes: 50, mrr: 5000 }
+  m12_meses: {}
+  social: {}
+  # Metas de redes por rede — chave = nome da rede em marca.redes[].rede.
+  # ex.: { linkedin: { seguidores: 5000, sessoes_site_mes: 400 } }
+
+# ----------------------------------------------------------------------
+marca:
+  # Só o que é NÚMERO ou dado estruturado da marca. A identidade (tese, voz, visual)
+  # é prosa e vive em gemeo/14-MARCA/; a operação de redes em gemeo/06-MARKETING/redes/.
+  redes:
+    - rede: instagram
+      handle: michelledantasadvocacia
+      seguidores: null
+      data_ref: "2026-11-10"
+      fonte: "link no site (components/) — seguidores não coletados"
+    - rede: facebook
+      handle: mdantasadvocacia
+      seguidores: null
+      data_ref: "2026-11-10"
+      fonte: "link no site (components/) — seguidores não coletados"
+    - rede: linkedin
+      handle: company/michelledantasadvocacia
+      seguidores: null
+      data_ref: "2026-11-10"
+      fonte: "link no site (components/) — seguidores não coletados"
+  # - rede: linkedin                 # linkedin | instagram | youtube | tiktok | x | ...
+  #   handle: null
+  #   seguidores: null
+  #   data_ref: null                 # AAAA-MM-DD da coleta (dado-datado)
+  #   fonte: null                    # insights da rede | meta-ads | manual
+
+# ----------------------------------------------------------------------
+dados:
+  # Ativos de dados (descrição, licença e linhagem em gemeo/15-DADOS/).
+  # `nome` é a chave que liga a linha de catalogo-de-bases.md.
+  bases: []
+  # - nome: null
+  #   registros: null                # volume na última carga
+  #   atualizado_em: null            # AAAA-MM-DD da última carga
+  #   frequencia_dias: null          # frequência PROMETIDA de atualização, em dias
+
+# ----------------------------------------------------------------------
+atendimento:
+  # Suporte e CS (canais, níveis e motivos em gemeo/09-CLIENTES/atendimento-e-suporte.md).
+  tickets_mes: null
+  sla_primeira_resposta_horas: null  # meta (contratual ou interna — dizer qual na prosa)
+  sla_resolucao_horas: null
+  primeira_resposta_real_horas: null # medido no período de data_ref
+  csat_pct: null
+  nps: null                          # -100 a 100
+  data_ref: null                     # AAAA-MM-DD do período medido
+
+# ----------------------------------------------------------------------
+alertas:
+  # Limiares declarados pelo dono do negócio — checados por scripts/alertas.py
+  # após cada atualização. Chave = nome de métrica (metricas.yaml) ou campo.
+  {}
+  # runway_meses: { minimo: 9 }
+  # churn_receita_mensal_pct: { maximo: 4 }
+  # top3_pct_do_mrr: { maximo: 50 }

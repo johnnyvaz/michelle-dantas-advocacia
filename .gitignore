@@ -34,3 +34,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Quality Gate
+.jscpd-report/
+.sonar-token
+.sonar-user-token
+.complexity-venv/
+.complexity-report.json
+.observability-report.json
+.pnpm-store/

@@ -1,0 +1,29 @@
+{
+  "//": "RESOURCE — TEMPLATE. tsconfig dedicado à análise de arquitetura, na RAIZ do projeto.",
+  "//1": "Os labels do ArchUnitTS são relativos ao diretório DESTE arquivo — por isso fica na raiz.",
+  "//2": "Em MONOREPO o bloco `paths` é OBRIGATÓRIO: sem ele, imports por nome de workspace",
+  "//3": "(ex.: @org/core) resolvem como 'external' e as regras inter-pacote passam vazias (teatro).",
+  "//4": "Valide com um probe invertido: uma dependência que EXISTE deve gerar violação > 0.",
+  "//6": "Os `baseUrl`/`paths` abaixo são EXEMPLO: copie os do tsconfig real do projeto. Alias perdido (@/*, @app/*) = import 'external' = regra vazia. Ajuste também `include`.",
+  "//5": "Autossuficiente de propósito: NÃO estende ./tsconfig.base.json (a maioria dos projetos não tem esse arquivo e o extends apontaria para o vazio). Se o projeto tem uma base, troque pelo caminho real.",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": [],
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@org/core": ["packages/core/src/index.ts"],
+      "@org/core/*": ["packages/core/src/*"],
+      "@org/app": ["packages/app/src/index.ts"],
+      "@org/app/*": ["packages/app/src/*"]
+    }
+  },
+  "include": ["packages/*/src/**/*.ts"],
+  "exclude": ["**/node_modules/**", "**/*.test.ts", "**/*.d.ts"]
+}

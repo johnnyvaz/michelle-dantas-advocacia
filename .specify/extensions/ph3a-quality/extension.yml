@@ -1,0 +1,55 @@
+schema_version: "1.0"
+
+extension:
+  id: ph3a-quality
+  name: "PH3A Quality Loop"
+  version: "1.0.0"
+  description: "Dispara o ciclo contínuo de qualidade PH3A (quality-gate, review-code-ph3a, arch-guard) nos hooks do ciclo speckit"
+  author: ph3a-tecnologia
+  license: MIT
+
+requires:
+  speckit_version: ">=0.7.2"
+  tools:
+    - name: node
+      required: false
+
+# Esta extension NÃO fornece comandos próprios. Ela encadeia skills do Claude Code
+# que já existem no projeto (instaladas pelo BoilerplateIA / pela skill /ph3a-loop):
+#   command: quality-gate      -> /quality-gate      (INSTALA o gate)
+#   command: quality-check     -> /quality-check     (EXECUTA o ratchet e reprova em regressão)
+#   command: review-code-ph3a  -> /review-code-ph3a
+#   command: arch-guard        -> /arch-guard
+# O executor de hooks do speckit monta o slash command por ponto->hífen; como esses
+# nomes não têm pontos, o mapeamento é direto.
+provides:
+  commands: []
+
+hooks:
+  before_implement:
+    command: quality-gate
+    optional: true
+    prompt: "Garantir que o quality-gate PH3A está instalado antes de implementar?"
+    description: "Garante o quality-gate (ratchet) instalado antes da implementação"
+  after_plan:
+    command: arch-guard
+    optional: true
+    prompt: "Verificar fronteiras de arquitetura (arch-guard) após o plano?"
+    description: "Checagem de fronteiras de arquitetura PH3A após o planejamento"
+  after_implement:
+    command: quality-check
+    optional: false
+    prompt: "Rodar o quality check (ratchet) após a implementação?"
+    description: "Executa node scripts/quality-gate.js após a implementação — bloqueia regressões"
+
+tags:
+  - "ph3a"
+  - "quality"
+  - "ratchet"
+  - "security"
+
+config:
+  defaults:
+    # Defaults ajustáveis após o merge em .specify/extensions.yml.
+    # after_implement.quality-gate é mandatório (optional:false) para auto-disparar o gate.
+    run_review_after_implement: true

@@ -1,0 +1,61 @@
+### Setup — Contract-First Testing
+### Fluxo de bootstrap: registra admin → faz login → captura o token para as próximas requests.
+### Tudo em {{...}} é variável httpyac de RUNTIME resolvida pelo http-client.env.json
+### (baseUrl/email/password/cnpj/empresa/deviceId/smokeResource) — preencha o ENV, não este arquivo.
+### {{authToken}} é capturado em runtime no bloco {% %}. NUNCA cole tokens reais aqui.
+
+@baseUrl = {{baseUrl}}
+
+### POST /auth/register — cria usuário admin (idempotente: 201 novo ou 409 já existe)
+# @name register_admin
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}",
+  "cnpj": "{{cnpj}}",
+  "empresa": "{{empresa}}"
+}
+
+?? status >= 200
+?? status < 500
+
+### POST /auth/login — autentica e obtém o token
+# @name login_admin
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}",
+  "device_id": "{{deviceId}}",
+  "device_fingerprint": "httpyac-test-fingerprint",
+  "client_type": "web"
+}
+
+?? status == 200
+?? body token exists
+
+### captura o token em runtime e grava para as próximas requests (httpyac)
+{%
+  if (response.statusCode === 200 && response.parsedBody.token) {
+    const token = response.parsedBody.token;
+    setEnvVar('authToken', token);
+    if (typeof setGlobalVariable === 'function') {
+      setGlobalVariable('authToken', token);
+    }
+    // não logar o token inteiro (LGPD/secret-guard): só um prefixo curto
+    console.log('authToken capturado:', token.substring(0, 12) + '…');
+  }
+%}
+
+### GET /<recurso-protegido> — valida que o token capturado autentica
+# @name smoke_authenticated
+GET {{baseUrl}}/{{smokeResource}}
+Accept: application/json
+Authorization: Bearer {{authToken}}
+
+?? status == 200

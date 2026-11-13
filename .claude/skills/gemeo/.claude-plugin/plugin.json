@@ -1,0 +1,20 @@
+{
+  "name": "gemeo",
+  "version": "0.1.0",
+  "description": "Gêmeo Digital no Claude Code: a jornada de 5 etapas, a fila humana (tasks/human.md) e a fila de tarefas do projeto atual num painel só",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "intervaloSegundos": {
+      "type": "number",
+      "title": "Releitura (segundos)",
+      "description": "De quanto em quanto tempo o gêmeo e as filas de tasks/ do projeto são relidos",
+      "default": 60
+    },
+    "lote": {
+      "type": "number",
+      "title": "Itens em \"Despachar os primeiros\"",
+      "description": "Quantos itens do topo da fila de tarefas o botão despacha de uma vez (1 a 10)",
+      "default": 3
+    }
+  }
+}

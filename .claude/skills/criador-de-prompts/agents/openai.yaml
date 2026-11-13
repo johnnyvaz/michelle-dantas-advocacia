@@ -1,0 +1,5 @@
+interface:
+  display_name: Criador de Prompts
+  short_description: Cria, melhora e adapta prompts para qualquer IA ou objetivo.
+  icon: "🧠"
+  color: "#FF6B00"

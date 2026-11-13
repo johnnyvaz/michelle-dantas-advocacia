@@ -1,0 +1,45 @@
+import { test, expect } from '@playwright/test';
+
+/**
+ * e2e/<fluxo>.spec.ts — exemplo de teste EXTERNO (fluxo real do usuário no browser).
+ * Complementa o contrato .http (interno): aqui valida-se o que o usuário VÊ, ponta a ponta.
+ * Use dados sintéticos/fictícios — nunca PII de produção (LGPD).
+ */
+
+// Credenciais fictícias de teste (mesmas do http-client.env.json / .env.test).
+const EMAIL = process.env.E2E_EMAIL ?? 'qa+contract@example.test';
+const PASSWORD = process.env.E2E_PASSWORD ?? 'senha-de-teste-123';
+
+test.describe('Autenticação (E2E externo)', () => {
+  test('login válido leva ao dashboard', async ({ page }) => {
+    await page.goto('/login');
+
+    await page.getByLabel(/e-?mail/i).fill(EMAIL);
+    await page.getByLabel(/senha|password/i).fill(PASSWORD);
+    await page.getByRole('button', { name: /entrar|login/i }).click();
+
+    // asserção visível ao usuário: chegou numa área autenticada
+    await expect(page).toHaveURL(/dashboard|home/);
+    await expect(page.getByRole('heading')).toBeVisible();
+  });
+
+  test('login inválido mostra erro', async ({ page }) => {
+    await page.goto('/login');
+
+    await page.getByLabel(/e-?mail/i).fill(EMAIL);
+    await page.getByLabel(/senha|password/i).fill('senha-errada');
+    await page.getByRole('button', { name: /entrar|login/i }).click();
+
+    await expect(page.getByText(/inválid|incorret|erro/i)).toBeVisible();
+  });
+});
+
+/**
+ * Mock de chamada externa no plano do browser (quando não há stack Docker):
+ *
+ *   await page.route('**\/api\/v1\/pagamentos\/**', route =>
+ *     route.fulfill({ status: 200, json: { success: true, data: { status: 'CONFIRMED' } } }),
+ *   );
+ *
+ * Ver references/httpyac-cheatsheet.md (seção "Isolamento sem Docker").
+ */

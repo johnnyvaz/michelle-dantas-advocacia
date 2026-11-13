@@ -1,0 +1,11 @@
+{
+  "$comment": "contract-first/.httpyac.json — ambientes do httpyac. baseUrl aponta para a STACK ISOLADA de teste. Ajuste as portas ao Passo 1 da skill. NÃO coloque tokens/segredos aqui (são capturados em runtime pelo setup.http).",
+  "environments": {
+    "test": {
+      "baseUrl": "http://localhost:3001/api/v1"
+    },
+    "local": {
+      "baseUrl": "http://localhost:3000/api/v1"
+    }
+  }
+}
