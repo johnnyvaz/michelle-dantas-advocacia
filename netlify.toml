@@ -1,0 +1,8 @@
+# Hospedagem no Netlify (confirmada pelo dono em 2026-11-13). O runtime de Next.js do
+# Netlify é detectado sozinho; aqui só ficam o build e a pasta publicada.
+# A pasta netlify/edge-functions/ (registro de robôs e visitas do Sextante) é publicada
+# junto, sem configuração extra.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
