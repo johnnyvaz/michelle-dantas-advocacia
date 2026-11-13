@@ -11,7 +11,7 @@ export default function DownloadApp() {
       <div className="dowload-wrap space-top fix">
         <div className="shape1_1 d-xl-block d-none">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/downloadShape1_1.png"
             width="188"
             height="275"
@@ -19,7 +19,7 @@ export default function DownloadApp() {
         </div>
         <div className="shape1_2 d-xl-block d-none">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/downloadShape1_2.png"
             width="217"
             height="213"
@@ -30,7 +30,7 @@ export default function DownloadApp() {
           data-wow-delay=".7s"
         >
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/downloadShape1_3.png"
             width="575"
             height="721"
@@ -47,7 +47,7 @@ export default function DownloadApp() {
                   {" "}
                   <span>
                     <Image
-                      alt="icon"
+                      alt=""
                       src="/assets/img/icon/titleIcon.png"
                       width="28"
                       height="12"
@@ -56,7 +56,7 @@ export default function DownloadApp() {
                   Download APP{" "}
                   <span>
                     <Image
-                      alt="icon"
+                      alt=""
                       src="/assets/img/icon/titleIcon.png"
                       width="28"
                       height="12"
@@ -77,7 +77,7 @@ export default function DownloadApp() {
                   <div className="fancy-box style3">
                     <div className="fancy-box_icon">
                       <Image
-                        alt="icon"
+                        alt=""
                         src="/assets/img/icon/appleIcon.png"
                         width="26"
                         height="32"
@@ -93,7 +93,7 @@ export default function DownloadApp() {
                   <div className="fancy-box style4">
                     <div className="fancy-box_icon">
                       <Image
-                        alt="icon"
+                        alt=""
                         src="/assets/img/icon/playStoreIcon.png"
                         width="28"
                         height="31"
@@ -113,7 +113,7 @@ export default function DownloadApp() {
             >
               <div className="shape1_4 jump">
                 <Image
-                  alt="shape"
+                  alt=""
                   src="/assets/img/shape/downloadShape1_4.png"
                   width="34"
                   height="31"
@@ -121,7 +121,7 @@ export default function DownloadApp() {
               </div>
               <div className="shape1_5 ripple-animation">
                 <Image
-                  alt="shape"
+                  alt=""
                   src="/assets/img/shape/downloadShape1_5.png"
                   width="505"
                   height="335"

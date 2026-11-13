@@ -60,7 +60,7 @@ export default function Sidebar() {
                   <ul>
                     <li>
                       <Image
-                        alt="icon"
+                        alt=""
                         src="/assets/img/icon/calendarIcon.png"
                         width="20"
                         height="20"

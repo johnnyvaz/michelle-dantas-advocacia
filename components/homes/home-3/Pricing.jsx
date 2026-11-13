@@ -9,7 +9,7 @@ export default function Pricing() {
       <div className="pricing-wrap style3">
         <div className="shape3_1 spin-slow d-none d-xl-block">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/pricingShape3_1.png"
             width="134"
             height="135"
@@ -17,7 +17,7 @@ export default function Pricing() {
         </div>
         <div className="shape3_2">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/pricingShape3_2.png"
             width="323"
             height="646"
@@ -29,7 +29,7 @@ export default function Pricing() {
               {" "}
               <span className="me-2">
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -38,7 +38,7 @@ export default function Pricing() {
               Our pricing{" "}
               <span className="ms-2">
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -72,7 +72,7 @@ export default function Pricing() {
                     <ul key={featureIndex}>
                       <li>
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/signIcon.png"
                           width="16"
                           height="16"

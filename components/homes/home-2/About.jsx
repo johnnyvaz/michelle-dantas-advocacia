@@ -16,7 +16,7 @@ export default function About() {
         >
           <div className="shape1_1 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/aboutShape1_1.png"
               width="270"
               height="733"
@@ -24,7 +24,7 @@ export default function About() {
           </div>
           <div className="shape1_2 movingX d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/aboutShape1_2.png"
               width="188"
               height="275"
@@ -60,7 +60,7 @@ export default function About() {
                   <h5 className="subtitle text-start">
                     <span>
                       <Image
-                        alt="icon"
+                        alt=""
                         src="/assets/img/icon/titleIcon.png"
                         width="28"
                         height="12"
@@ -69,7 +69,7 @@ export default function About() {
                     About us Techbe{' '}
                     <span>
                       <Image
-                        alt="icon"
+                        alt=""
                         src="/assets/img/icon/titleIcon.png"
                         width="28"
                         height="12"
@@ -91,7 +91,7 @@ export default function About() {
                       <ul className="ps-0">
                         <li>
                           <Image
-                            alt="icon"
+                            alt=""
                             src="/assets/img/icon/signIcon.png"
                             width="16"
                             height="16"
@@ -102,7 +102,7 @@ export default function About() {
                       <ul className="ps-0">
                         <li>
                           <Image
-                            alt="icon"
+                            alt=""
                             src="/assets/img/icon/signIcon.png"
                             width="16"
                             height="16"
@@ -113,7 +113,7 @@ export default function About() {
                       <ul className="ps-0">
                         <li>
                           <Image
-                            alt="icon"
+                            alt=""
                             src="/assets/img/icon/signIcon.png"
                             width="16"
                             height="16"
@@ -127,7 +127,7 @@ export default function About() {
                     <div className="counter-box style1">
                       <div className="counter-box_icon">
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/aboutIcon1_1.png"
                           width="52"
                           height="52"

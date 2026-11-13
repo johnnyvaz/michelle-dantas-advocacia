@@ -35,7 +35,7 @@ export default function Hero() {
                           src={slide.titleIconSrc}
                           width={28}
                           height={12}
-                          alt="icon"
+                          alt=""
                         />
                         {slide.subtitle}
                       </h6>

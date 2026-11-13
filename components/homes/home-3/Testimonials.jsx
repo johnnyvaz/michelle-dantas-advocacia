@@ -29,7 +29,7 @@ export default function Testimonials() {
               {" "}
               <span className="me-2">
                 <Image
-                  alt="icon"
+                  alt=""
                   width="28"
                   height="12"
                   src="/assets/img/icon/titleIcon.png"
@@ -38,7 +38,7 @@ export default function Testimonials() {
               Testimonials{" "}
               <span className="ms-2">
                 <Image
-                  alt="icon"
+                  alt=""
                   width="28"
                   height="12"
                   src="/assets/img/icon/titleIcon.png"
@@ -67,7 +67,7 @@ export default function Testimonials() {
                         <li key={`star-${index}-${i}`}>
                           <Image
                             src={"/assets/img/icon/starIcon2.png"}
-                            alt="icon"
+                            alt=""
                             width={22}
                             height={22}
                           />
@@ -76,7 +76,7 @@ export default function Testimonials() {
                       <li>
                         <Image
                           src={"/assets/img/icon/starIconRegular.png"}
-                          alt="icon"
+                          alt=""
                           width={22}
                           height={22}
                         />
@@ -102,14 +102,14 @@ export default function Testimonials() {
                     <div className="quote">
                       <Image
                         className="darkQuote"
-                        alt="icon"
+                        alt=""
                         width="45"
                         height="45"
                         src="/assets/img/icon/quoteIconDark.png"
                       />
                       <Image
                         className="whiteQuote"
-                        alt="icon"
+                        alt=""
                         width="45"
                         height="39"
                         src="/assets/img/icon/quoteIconWhite.png"
@@ -117,7 +117,7 @@ export default function Testimonials() {
                     </div>
                     <div className="shape3_1">
                       <Image
-                        alt="shape"
+                        alt=""
                         width="268"
                         height="247"
                         src="/assets/img/shape/testimonialShape3_1.png"

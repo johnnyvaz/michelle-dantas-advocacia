@@ -9,7 +9,7 @@ export default function Blog() {
       <div className="blog-wrap style2 space-top pb-390 fix">
         <div className="shape2_1 d-none d-xl-block">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/blogShape2_1.png"
             width="225"
             height="466"
@@ -17,7 +17,7 @@ export default function Blog() {
         </div>
         <div className="shape2_2 d-none d-xl-block">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/blogShape2_2.png"
             width="343"
             height="393"
@@ -31,7 +31,7 @@ export default function Blog() {
             >
               <span>
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -40,7 +40,7 @@ export default function Blog() {
               News &amp; Article{' '}
               <span>
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -74,7 +74,7 @@ export default function Blog() {
                     <div className="meta">
                       <span className="icon">
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/tagIcon.png"
                           width="20"
                           height="20"
@@ -85,7 +85,7 @@ export default function Blog() {
                     <div className="meta">
                       <span className="icon">
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/commentIcon.png"
                           width="20"
                           height="20"
@@ -153,7 +153,7 @@ export default function Blog() {
                       <div className="meta">
                         <span className="icon">
                           <Image
-                            alt="icon"
+                            alt=""
                             src="/assets/img/icon/tagIcon.png"
                             width="20"
                             height="20"
@@ -164,7 +164,7 @@ export default function Blog() {
                       <div className="meta">
                         <span className="icon">
                           <Image
-                            alt="icon"
+                            alt=""
                             src="/assets/img/icon/commentIcon.png"
                             width="20"
                             height="20"

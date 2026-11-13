@@ -15,7 +15,7 @@ export default function Facts() {
               key={index}
             >
               <div className="counter-box_icon mb-4">
-                <Image src={box.icon} width={60} height={60} alt="icon" />
+                <Image src={box.icon} width={60} height={60} alt="" />
               </div>
               <div className="counter-box_counter">
                 <div className="text-3xl md:text-4xl font-bold mx-auto">

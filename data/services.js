@@ -46,6 +46,7 @@ export const services = [
 export const services2 = [
   {
     id: 9,
+    href: "/service/direito-civel",
     icon: "/assets/img/icon/serviceIcon1_1.png",
     title: "Assessoria Cível",
     description: "Protegendo interesses em litígios cíveis.",
@@ -54,6 +55,7 @@ export const services2 = [
   },
   {
     id: 10,
+    href: "/service/direito-trabalhista",
     icon: "/assets/img/icon/serviceIcon1_2.png",
     title: "Direito Trabalhista",
     description: "Defesa eficaz em direito trabalhista.",
@@ -62,6 +64,7 @@ export const services2 = [
   },
   {
     id: 11,
+    href: "/service/direito-civel",
     icon: "/assets/img/icon/serviceIcon1_3.png",
     title: "Plano de Saúde",
     description: "Acesso e proteção em planos de saúde.",
@@ -70,6 +73,7 @@ export const services2 = [
   },
   {
     id: 13,
+    href: "/service/direito-digital",
     icon: "/assets/img/icon/serviceIcon1_1.png",
     title: "Recuperação de Redes Sociais",
     description: "Recuperação segura de contas em redes sociais.",
@@ -81,6 +85,7 @@ export const services2 = [
 export const servicesStyle2 = [
   {
     id: 14,
+    href: "/service/direito-civel",
     thumb: "/assets/img/service/serviceThumb2_1.png",
     title: "Consultoria Jurídica",
     description:
@@ -91,6 +96,7 @@ export const servicesStyle2 = [
   },
   {
     id: 15,
+    href: "/service/direito-trabalhista",
     thumb: "/assets/img/service/serviceThumb2_2.png",
     title: "Defesa Trabalhista",
     description:
@@ -101,6 +107,7 @@ export const servicesStyle2 = [
   },
   {
     id: 16,
+    href: "/service/direito-digital",
     thumb: "/assets/img/service/serviceThumb2_3.png",
     title: "Direito Digital",
     description:
@@ -111,6 +118,7 @@ export const servicesStyle2 = [
   },
   {
     id: 17,
+    href: "/service/direito-civel",
     thumb: "/assets/img/service/serviceThumb2_4.png",
     title: "Planos de Saúde",
     description:

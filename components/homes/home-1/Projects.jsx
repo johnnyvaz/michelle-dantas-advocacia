@@ -38,7 +38,7 @@ export default function Projects() {
               >
                 <span className="me-1">
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/titleIconWhite.png"
                     width="28"
                     height="12"
@@ -47,7 +47,7 @@ export default function Projects() {
                 Recently Work
                 <span className="ms-1">
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/titleIconWhite.png"
                     width="28"
                     height="12"

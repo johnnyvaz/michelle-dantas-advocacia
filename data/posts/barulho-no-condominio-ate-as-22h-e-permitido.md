@@ -4,7 +4,7 @@ slug: barulho-no-condominio-ate-as-22h-e-permitido
 title: "Barulho no condomínio: até as 22h é permitido?"
 author: Michelle Dantas
 date: 2026-06-08
-category: Direito Civil
+category: Direito Cível
 tags:
   - Condomínio
   - Direito de Vizinhança

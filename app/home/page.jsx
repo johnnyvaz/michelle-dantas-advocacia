@@ -8,10 +8,6 @@ import Services from "@/components/homes/home-1/Services";
 import Services2 from "@/components/homes/home-1/Services2";
 import Team from "@/components/homes/home-1/Team";
 import Depoimentos from "@/components/homes/home-1/Depoimentos";
-export const metadata = {
-  title: "Michelle Dantas Advocacia",
-  description: "",
-};
 export default function Home1() {
   return (
     <>

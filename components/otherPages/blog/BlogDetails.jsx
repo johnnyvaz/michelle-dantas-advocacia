@@ -45,7 +45,7 @@ export default function BlogDetails({ blogItem }) {
                       </li>
                       <li>
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/tagIcon.png"
                           width="20"
                           height="20"

@@ -32,7 +32,7 @@ export default function Team1() {
                   <div className="text">{member.position}</div>
                 </div>
                 <div className="bg">
-                  <Image src={member.bgSrc} width={370} height={343} alt="bg" />
+                  <Image src={member.bgSrc} width={370} height={343} alt="" />
                 </div>
               </div>
             ))}
@@ -65,7 +65,7 @@ export default function Team1() {
                   <div className="text">{member.position}</div>
                 </div>
                 <div className="bg">
-                  <Image src={member.bgSrc} width={370} height={343} alt="bg" />
+                  <Image src={member.bgSrc} width={370} height={343} alt="" />
                 </div>
               </div>
             ))}

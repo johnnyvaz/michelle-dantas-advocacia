@@ -13,7 +13,7 @@ export default function Skills() {
       >
         <div className="shape1_1 d-none d-xl-block">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/skillShape1_1.png"
             width="96"
             height="34"
@@ -21,7 +21,7 @@ export default function Skills() {
         </div>
         <div className="shape1_2 d-none d-xl-block">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/skillShape1_2.png"
             width="288"
             height="383"
@@ -40,7 +40,7 @@ export default function Skills() {
                 >
                   <span>
                     <Image
-                      alt="icon"
+                      alt=""
                       src="/assets/img/icon/titleIcon.png"
                       width="28"
                       height="12"
@@ -49,7 +49,7 @@ export default function Skills() {
                   Our It Skill{' '}
                   <span>
                     <Image
-                      alt="icon"
+                      alt=""
                       src="/assets/img/icon/titleIcon.png"
                       width="28"
                       height="12"
@@ -77,7 +77,7 @@ export default function Skills() {
                     <ul className="ps-0 ms-0">
                       <li>
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/signIcon.png"
                           width="16"
                           height="16"
@@ -88,7 +88,7 @@ export default function Skills() {
                     <ul className="ps-0 ms-0">
                       <li>
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/signIcon.png"
                           width="16"
                           height="16"
@@ -103,7 +103,7 @@ export default function Skills() {
                     <ul className="ps-0 ms-0">
                       <li>
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/signIcon.png"
                           width="16"
                           height="16"
@@ -114,7 +114,7 @@ export default function Skills() {
                     <ul className="ps-0 ms-0">
                       <li>
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/signIcon.png"
                           width="16"
                           height="16"
@@ -148,7 +148,7 @@ export default function Skills() {
               <div className="shape1_3">
                 <Image
                   className="rotate360"
-                  alt="shape"
+                  alt=""
                   src="/assets/img/shape/skillShape1_3.png"
                   width="138"
                   height="138"
@@ -156,7 +156,7 @@ export default function Skills() {
               </div>
               <div className="shape1_4 d-none d-xl-block">
                 <Image
-                  alt="shape"
+                  alt=""
                   src="/assets/img/shape/skillShape1_4.png"
                   width="247"
                   height="257"

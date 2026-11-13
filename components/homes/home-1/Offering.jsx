@@ -39,7 +39,7 @@ export default function Offering() {
                   </h3>
                 </div>
                 <div className="icon">
-                  <Image src={box.icon} width={36} height={36} alt="icon" />
+                  <Image src={box.icon} width={36} height={36} alt="" />
                 </div>
               </div>
             ))}

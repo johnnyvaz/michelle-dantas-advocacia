@@ -20,7 +20,7 @@ export default function Services() {
                 className={`service-card style3 ${index === 7 ? "mb-0" : ""}`}
               >
                 <div className="card_icon">
-                  <Image src={item.imgSrc} width={40} height={40} alt="icon" />
+                  <Image src={item.imgSrc} width={40} height={40} alt="" />
                 </div>
                 <div className="card_content">
                   <h3>

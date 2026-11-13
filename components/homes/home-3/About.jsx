@@ -7,7 +7,7 @@ export default function About() {
     <section className="about-area fix position-relative">
       <div className="shape3_1 d-none d-xl-block">
         <Image
-          alt="shape"
+          alt=""
           src="/assets/img/shape/aboutShape2_1.png"
           width="251"
           height="486"
@@ -15,7 +15,7 @@ export default function About() {
       </div>
       <div className="shape3_2 d-none d-xl-block">
         <Image
-          alt="shape"
+          alt=""
           src="/assets/img/shape/aboutShape2_2.png"
           width="188"
           height="275"
@@ -28,7 +28,7 @@ export default function About() {
               <Image
                 data-tilt=""
                 data-tilt-max={10}
-                alt="bg"
+                alt=""
                 src="/assets/img/bg/aboutBg3_1.png"
                 width="465"
                 height="350"
@@ -107,7 +107,7 @@ export default function About() {
                 {" "}
                 <span>
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/titleIcon.png"
                     width="28"
                     height="12"
@@ -116,7 +116,7 @@ export default function About() {
                 About our APP{" "}
                 <span>
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/titleIcon.png"
                     width="28"
                     height="12"
@@ -138,7 +138,7 @@ export default function About() {
               <div className="fancy-box style1">
                 <div className="fancy-box_icon">
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/aboutIcon1_2.png"
                     width="44"
                     height="44"
@@ -151,7 +151,7 @@ export default function About() {
               <div className="fancy-box style1">
                 <div className="fancy-box_icon">
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/aboutIcon1_3.png"
                     width="44"
                     height="44"

@@ -12,7 +12,7 @@ export default function Cta() {
         <div className="cta-wrap style2">
           <div className="shape1_2 d-none d-xl-block">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/ctaShape1_2.png"
               width="119"
               height="200"
@@ -20,7 +20,7 @@ export default function Cta() {
           </div>
           <div className="shape1_3 d-none d-xl-block">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/ctaShape1_3.png"
               width="85"
               height="144"
@@ -28,7 +28,7 @@ export default function Cta() {
           </div>
           <div className="shape1_4 d-none d-xl-block">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/ctaShape1_4.png"
               width="14"
               height="90"

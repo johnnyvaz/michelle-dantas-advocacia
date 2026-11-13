@@ -6,10 +6,8 @@ import Cta from "@/components/common/Cta";
 import NotFound from "@/components/otherPages/NotFound";
 import Link from "next/link";
 export const metadata = {
-  title:
-    "Michelle Dantas",
-  description: "Escritório de Advocacia",
-  keywords: "advocacia, direito, escritório de advocacia, Michelle Dantas",
+  title: "Página não encontrada",
+  robots: { index: false },
 };
 export default function Page() {
   return (

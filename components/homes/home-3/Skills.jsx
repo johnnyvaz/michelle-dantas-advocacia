@@ -15,7 +15,7 @@ export default function Skills() {
                   {" "}
                   <span>
                     <Image
-                      alt="icon"
+                      alt=""
                       src="/assets/img/icon/titleIcon.png"
                       width="28"
                       height="12"
@@ -24,7 +24,7 @@ export default function Skills() {
                   What We Do{" "}
                   <span>
                     <Image
-                      alt="icon"
+                      alt=""
                       src="/assets/img/icon/titleIcon.png"
                       width="28"
                       height="12"
@@ -101,7 +101,7 @@ export default function Skills() {
               </div>
               <div className="about-thumb-box icon jump">
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/bubbleIcon.png"
                   width="73"
                   height="68"
@@ -109,7 +109,7 @@ export default function Skills() {
               </div>
               <div className="about-thumb-box icon2 spin">
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/starIcon3_1.png"
                   width="34"
                   height="34"
@@ -117,7 +117,7 @@ export default function Skills() {
               </div>
               <div className="about-thumb-box icon3 rotate360">
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/starIcon3_2.png"
                   width="24"
                   height="24"

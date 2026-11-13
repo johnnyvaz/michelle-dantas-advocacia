@@ -1,7 +1,6 @@
 "use client";
 import { teamMembers2, teamMembers2b } from "@/data/team";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Team() {
@@ -11,7 +10,7 @@ export default function Team() {
       <div className="team-wrap style2 space fix">
         <div className="shape1_1">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/teamShape2_1.png"
             width="645"
             height="395"
@@ -19,7 +18,7 @@ export default function Team() {
         </div>
         <div className="shape1_2 movingX d-xl-block d-none">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/teamShape2_2.png"
             width="248"
             height="321"
@@ -33,7 +32,7 @@ export default function Team() {
             >
               <span>
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -42,7 +41,7 @@ export default function Team() {
               NOSSA EQUIPE{' '}
               <span>
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -77,40 +76,11 @@ export default function Team() {
                         src={member.imgSrc}
                         width={246}
                         height={241}
-                        alt="team-img"
+                        alt={`${member.name}, ${member.role}`}
                       />
-                      <div className="social-profile">
-                        <span className="plus-btn">
-                          <i className="fas fa-share-alt" />
-                        </span>
-                        <ul>
-                          <li>
-                            <a href="https://www.facebook.com/">
-                              <i className="fab fa-facebook-f" />
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://www.twitter.com/">
-                              <i className="fab fa-twitter" />
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://www.linkedin.com/">
-                              <i className="fa-brands fa-linkedin-in" />
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
                     </div>
                     <div className="team-content text-center">
-                      <h3>
-                        <Link
-                          scroll={false}
-                          href={`/team-details/${member.id}`}
-                        >
-                          {member.name}
-                        </Link>
-                      </h3>
+                      <h3>{member.name}</h3>
                       <p>{member.role}</p>
                     </div>
                   </div>

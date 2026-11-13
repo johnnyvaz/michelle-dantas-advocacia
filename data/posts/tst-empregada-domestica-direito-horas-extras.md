@@ -4,7 +4,7 @@ slug: tst-empregada-domestica-direito-horas-extras
 title: "TST reconhece: empregada doméstica tem direito a horas extras se não houver controle de jornada!"
 author: Michelle Dantas
 date: 2024-04-09
-category: Direito Trabalhista
+category: Direito do Trabalho
 tags:
   - Empregada Doméstica
   - Horas Extras

@@ -14,7 +14,7 @@ export default function Contact() {
           data-wow-delay=".3s"
         >
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/contactShape1_1.png"
             width="252"
             height="279"
@@ -25,7 +25,7 @@ export default function Contact() {
           data-wow-delay=".6s"
         >
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/contactShape1_2.png"
             width="325"
             height="554"

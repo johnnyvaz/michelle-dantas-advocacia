@@ -25,7 +25,7 @@ export default function Blogs1() {
                         src={card.userIconSrc}
                         width={20}
                         height={20}
-                        alt="icon"
+                        alt=""
                       />
                     </span>
                     <span className="text">{card.userName}</span>
@@ -36,7 +36,7 @@ export default function Blogs1() {
                         src={card.tagIconSrc}
                         width={20}
                         height={20}
-                        alt="icon"
+                        alt=""
                       />
                     </span>
                     <span className="text">{card.category}</span>
@@ -51,7 +51,7 @@ export default function Blogs1() {
                   <Link scroll={false} href={`/blog-details/${card.id}`}>
                     Read More
                     <Image
-                      alt="icon"
+                      alt=""
                       src="/assets/img/icon/arrowIconDark.png"
                       width="16"
                       height="16"
@@ -84,7 +84,7 @@ export default function Blogs1() {
                         src={card.userIconSrc}
                         width={20}
                         height={20}
-                        alt="icon"
+                        alt=""
                       />
                     </span>
                     <span className="text">{card.userName}</span>
@@ -95,7 +95,7 @@ export default function Blogs1() {
                         src={card.tagIconSrc}
                         width={20}
                         height={20}
-                        alt="icon"
+                        alt=""
                       />
                     </span>
                     <span className="text">{card.category}</span>
@@ -110,7 +110,7 @@ export default function Blogs1() {
                   <Link scroll={false} href={`/blog-details${card.id}`}>
                     Read More
                     <Image
-                      alt="icon"
+                      alt=""
                       src="/assets/img/icon/arrowIconDark.png"
                       width="16"
                       height="16"

@@ -40,7 +40,7 @@ export default function Services2() {
                 </Link>
               </div>
               <div className="service-icon">
-                <Image src={item.iconSrc} width={40} height={40} alt="icon" />
+                <Image src={item.iconSrc} width={40} height={40} alt="" />
               </div>
               <div
                 className={`service-icon_two ${item.hasRipple ? "ripple" : ""}`}
@@ -49,7 +49,7 @@ export default function Services2() {
                   src={item.iconTwoSrc}
                   width={50}
                   height={50}
-                  alt="icon"
+                  alt=""
                 />
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function Services2() {
                 </Link>
               </div>
               <div className="service-icon">
-                <Image src={item.iconSrc} width={40} height={40} alt="icon" />
+                <Image src={item.iconSrc} width={40} height={40} alt="" />
               </div>
               <div
                 className={`service-icon_two ${item.hasRipple ? "ripple" : ""}`}
@@ -97,7 +97,7 @@ export default function Services2() {
                   src={item.iconTwoSrc}
                   width={50}
                   height={50}
-                  alt="icon"
+                  alt=""
                 />
               </div>
             </div>

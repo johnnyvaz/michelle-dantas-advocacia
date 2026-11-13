@@ -1,53 +1,36 @@
-"use client";
 import MobileNav from "@/components/headers/MobileNav";
 import "../public/assets/scss/styles.scss";
 import "react-modal-video/css/modal-video.css";
-import { useEffect } from "react";
 import SiteMenu from "@/components/headers/SiteMenu";
 import ScrollTop from "@/components/common/ScrollTop";
 import CursorFollor from "@/components/common/CursorFollor";
-import { usePathname } from "next/navigation";
+import ClientEffects from "@/components/common/ClientEffects";
 import { ToastContainer } from "react-toastify";
 import PopupSearch from "@/components/headers/PopupSearch";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import { ESCRITORIO, SITE_URL, legalServiceJsonLd } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Advogada em Americana/SP | Michelle Dantas Advocacia",
+    template: "%s | Michelle Dantas Advocacia",
+  },
+  description:
+    "Escritório em Americana/SP com atuação em Direito Cível, Trabalhista, de Família, Digital e ações contra planos de saúde.",
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: ESCRITORIO.nome,
+    images: [{ url: "/assets/img/logo-dark.png" }],
+  },
+};
+
 export default function RootLayout({ children }) {
-  const path = usePathname();
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      import("bootstrap/dist/js/bootstrap.esm");
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", function () {
-      const topPos = window.scrollY || document.documentElement.scrollTop;
-      const stickyWrapper = document.querySelector(".sticky-wrapper");
-
-      if (topPos > 500) {
-        stickyWrapper?.classList.add("sticky");
-      } else {
-        stickyWrapper?.classList.remove("sticky");
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  
-    import("wowjs").then((module) => {
-      const WOW = module.default;
-      const wow = new WOW({ mobile: false, live: false });
-      wow.init();
-    });
-  }, [path]);
-  
-
   return (
     <html lang="pt-BR" className="bg-white">
       <head>
@@ -60,6 +43,10 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/assets/css/animate.css" />
         <link rel="stylesheet" href="/assets/css/magnific-popup.min.css" />
         <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceJsonLd()) }}
+        />
 
         {/* Script do Chatwoot */}
         <Script id="chatwoot" strategy="afterInteractive">
@@ -80,11 +67,10 @@ export default function RootLayout({ children }) {
             })(document,"script");
           `}
         </Script>
-
-
       </head>
 
       <body className={inter.className}>
+        <ClientEffects />
         <SiteMenu />
         <MobileNav />
         <PopupSearch />
@@ -102,8 +88,6 @@ export default function RootLayout({ children }) {
         {children}
         <CursorFollor />
         <ScrollTop />
-
-
       </body>
     </html>
   );

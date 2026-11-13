@@ -35,7 +35,7 @@ export default function Hero() {
                   data-ani-delay="0.9s"
                 >
                   <Image
-                    alt="shape"
+                    alt=""
                     src="/assets/img/shape/heroShape2_1.png"
                     width="207"
                     height="423"
@@ -47,7 +47,7 @@ export default function Hero() {
                   data-ani-delay="0.6s"
                 >
                   <Image
-                    alt="shape"
+                    alt=""
                     src="/assets/img/shape/heroShape2_2.png"
                     width="561"
                     height="826"
@@ -59,7 +59,7 @@ export default function Hero() {
                   data-ani-delay="0.3s"
                 >
                   <Image
-                    alt="shape"
+                    alt=""
                     src="/assets/img/shape/heroShape2_3.png"
                     width="605"
                     height="933"
@@ -71,7 +71,7 @@ export default function Hero() {
                   data-ani-delay="0.9s"
                 >
                   <Image
-                    alt="shape"
+                    alt=""
                     src="/assets/img/shape/heroShape2_4.png"
                     width="632"
                     height="681"
@@ -83,7 +83,7 @@ export default function Hero() {
                   data-ani-delay="0.6s"
                 >
                   <Image
-                    alt="shape"
+                    alt=""
                     src="/assets/img/shape/heroShape2_5.png"
                     width="672"
                     height="760"
@@ -95,7 +95,7 @@ export default function Hero() {
                   data-ani-delay="0.3s"
                 >
                   <Image
-                    alt="shape"
+                    alt=""
                     src="/assets/img/shape/heroShape2_6.png"
                     width="195"
                     height="332"
@@ -112,7 +112,7 @@ export default function Hero() {
                         >
                           <span className="me-1">
                             <Image
-                              alt="icon"
+                              alt=""
                               src="/assets/img/icon/titleIconWhite.png"
                               width="28"
                               height="12"
@@ -121,7 +121,7 @@ export default function Hero() {
                           BEST IT SOLUTION PROVIDER
                           <span className="ms-1">
                             <Image
-                              alt="icon"
+                              alt=""
                               src="/assets/img/icon/titleIconWhite.png"
                               width="28"
                               height="12"

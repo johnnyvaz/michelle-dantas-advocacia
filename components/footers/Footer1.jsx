@@ -56,7 +56,7 @@ export default function Footer1() {
             src="/assets/img/shape/footerShape1_1.png"
             width={361}
             height={372}
-            alt="shape"
+            alt=""
           />
         </div>
         <div className="shape2_2">
@@ -64,7 +64,7 @@ export default function Footer1() {
             src="/assets/img/shape/footerShape2_2.png"
             width={288}
             height={383}
-            alt="shape"
+            alt=""
           />
         </div>
         <div className="container">

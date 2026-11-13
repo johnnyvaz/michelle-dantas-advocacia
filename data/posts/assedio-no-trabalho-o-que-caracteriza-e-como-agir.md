@@ -4,7 +4,7 @@ slug: assedio-no-trabalho-o-que-caracteriza-e-como-agir
 title: "Assédio no trabalho: o que caracteriza e como agir"
 author: Michelle Dantas
 date: 2024-04-09
-category: Direito Trabalhista
+category: Direito do Trabalho
 tags:
   - Assédio Moral
   - Assédio Sexual

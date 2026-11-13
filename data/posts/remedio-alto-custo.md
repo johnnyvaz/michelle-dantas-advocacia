@@ -4,7 +4,7 @@ slug: remedio-alto-custo
 title: "Remédio de Alto Custo: Como Conseguir pela Justiça"
 author: Michelle Dantas
 date: 2024-04-15
-category: Direito à Saúde
+category: Direito da Saúde
 tags:
   - Medicamentos
   - SUS

@@ -1,7 +1,7 @@
 ---
 slug: direito-civel
 title: Assessoria Jurídica Cível
-description: Atuamos na prevenção e resolução de conflitos cíveis, oferecendo soluções eficazes em contratos, indenizações e responsabilidade civil.
+description: Prevenção e resolução de conflitos cíveis em Americana/SP — contratos, indenizações e responsabilidade civil.
 image: /assets/img/service/serviceThumb3_1.png
 videoThumb: /assets/img/service/serviceThumb3_2.png
 benefits:

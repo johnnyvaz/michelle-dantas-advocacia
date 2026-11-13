@@ -12,7 +12,7 @@ export default function Features() {
       >
         <div className="shape1_1 d-none d-xl-block">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/wcuShape1_1.png"
             width="270"
             height="733"
@@ -20,7 +20,7 @@ export default function Features() {
         </div>
         <div className="shape1_2 d-none d-xl-block">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/wcuShape1_2.png"
             width="248"
             height="321"
@@ -33,7 +33,7 @@ export default function Features() {
                 {" "}
                 <span className="me-2">
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/titleIcon.png"
                     width="28"
                     height="12"
@@ -42,7 +42,7 @@ export default function Features() {
                 wHy choose Us App{" "}
                 <span className="ms-2">
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/titleIcon.png"
                     width="28"
                     height="12"
@@ -76,7 +76,7 @@ export default function Features() {
                         aria-selected="true"
                       >
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/wcuIcon1_1.png"
                           width="50"
                           height="50"
@@ -96,7 +96,7 @@ export default function Features() {
                         aria-selected="false"
                       >
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/wcuIcon1_2.png"
                           width="50"
                           height="50"
@@ -116,7 +116,7 @@ export default function Features() {
                         aria-selected="false"
                       >
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/wcuIcon1_3.png"
                           width="50"
                           height="50"
@@ -136,7 +136,7 @@ export default function Features() {
                         aria-selected="false"
                       >
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/wcuIcon1_4.png"
                           width="50"
                           height="50"
@@ -160,7 +160,7 @@ export default function Features() {
                       <div className="wcu-tab-content">
                         <div className="shape d-none d-xl-block">
                           <Image
-                            alt="shape"
+                            alt=""
                             src="/assets/img/wcu/wcuShape1.png"
                             width="396"
                             height="269"
@@ -185,7 +185,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -196,7 +196,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -207,7 +207,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -236,7 +236,7 @@ export default function Features() {
                       <div className="wcu-tab-content">
                         <div className="shape d-none d-xl-block">
                           <Image
-                            alt="shape"
+                            alt=""
                             src="/assets/img/wcu/wcuShape1.png"
                             width="396"
                             height="269"
@@ -261,7 +261,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -272,7 +272,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -283,7 +283,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -312,7 +312,7 @@ export default function Features() {
                       <div className="wcu-tab-content">
                         <div className="shape d-none d-xl-block">
                           <Image
-                            alt="shape"
+                            alt=""
                             src="/assets/img/wcu/wcuShape1.png"
                             width="396"
                             height="269"
@@ -337,7 +337,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -348,7 +348,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -359,7 +359,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -388,7 +388,7 @@ export default function Features() {
                       <div className="wcu-tab-content">
                         <div className="shape d-none d-xl-block">
                           <Image
-                            alt="shape"
+                            alt=""
                             src="/assets/img/wcu/wcuShape1.png"
                             width="396"
                             height="269"
@@ -413,7 +413,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -424,7 +424,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"
@@ -435,7 +435,7 @@ export default function Features() {
                             <ul className="ps-0">
                               <li>
                                 <Image
-                                  alt="icon"
+                                  alt=""
                                   src="/assets/img/icon/signIcon2.png"
                                   width="20"
                                   height="20"

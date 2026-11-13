@@ -52,15 +52,15 @@ export default function Footer2() {
       <div className="widget-area style2  pt-0 pb-90">
         <div className="shape2_1 d-none d-xl-block">
           {" "}
-          <Image   alt="shape"    src="/assets/img/shape/footerShape2_1.png" width="384" height="441" />{" "}
+          <Image   alt=""    src="/assets/img/shape/footerShape2_1.png" width="384" height="441" />{" "}
         </div>
         <div className="shape2_2">
           {" "}
-          <Image   alt="shape"    src="/assets/img/shape/footerShape2_2.png" width="288" height="383" />{" "}
+          <Image   alt=""    src="/assets/img/shape/footerShape2_2.png" width="288" height="383" />{" "}
         </div>
         <div className="shape2_3">
           {" "}
-          <Image   alt="shape"    src="/assets/img/shape/footerShape1_1.png" width="361" height="372" />{" "}
+          <Image   alt=""    src="/assets/img/shape/footerShape1_1.png" width="361" height="372" />{" "}
         </div>
         <div className="container">
           <div className="footer-layout style2">

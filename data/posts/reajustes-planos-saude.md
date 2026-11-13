@@ -4,7 +4,7 @@ slug: reajustes-planos-saude
 title: "Entendendo os Reajustes dos Planos de Saúde: O Que Mudou Recentemente?"
 author: Michelle Dantas
 date: 2024-04-08
-category: Direito à Saúde
+category: Direito da Saúde
 tags:
   - Planos de Saúde
   - Reajustes

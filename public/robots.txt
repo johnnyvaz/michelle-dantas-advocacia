@@ -1,0 +1,6 @@
+# Todos os robôs, de busca e de IA, podem ler o site inteiro.
+# Nomes de robôs listados aqui precisam existir em src/lib/seo/crawlers.ts (teste em tests/unit/seo).
+User-agent: *
+Allow: /
+
+Sitemap: https://mdantas.adv.br/sitemap.xml

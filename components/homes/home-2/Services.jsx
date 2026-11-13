@@ -21,7 +21,7 @@ export default function Services() {
       <div className="service-wrap style3 space-bottom pt-226 fix">
         <div className="shape3_1">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/aboutShape3_1.png"
             width="645"
             height="395"
@@ -36,7 +36,7 @@ export default function Services() {
               >
                 <span>
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/titleIcon.png"
                     width="28"
                     height="12"
@@ -45,7 +45,7 @@ export default function Services() {
                 Our Feathered Services{' '}
                 <span>
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/titleIcon.png"
                     width="28"
                     height="12"
@@ -87,7 +87,7 @@ export default function Services() {
                         src={service.imageSrc}
                         width={40}
                         height={40}
-                        alt="icon"
+                        alt=""
                       />
                     </div>
                     <div className="card_content">

@@ -7,8 +7,10 @@ import Contact from "@/components/otherPages/contact/Contact";
 import Map from "@/components/otherPages/contact/Map";
 import Link from "next/link";
 export const metadata = {
-  title: "Michelle Dantas Advocacia",
-  description: "",
+  title: "Contato, Americana/SP",
+  description:
+    "Agende atendimento na R. Uruguai, 853, Americana/SP, ou fale pelo WhatsApp (19) 99284-5413 e pelo e-mail contato@mdantas.adv.br.",
+  alternates: { canonical: "/contato" },
 };
 export default function Page() {
   return (

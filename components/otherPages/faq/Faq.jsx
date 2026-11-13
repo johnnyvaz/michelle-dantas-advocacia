@@ -11,7 +11,7 @@ export default function Faq() {
           <h5 className="subtitle text-center">
             <span className="me-2">
               <Image
-                alt="icon"
+                alt=""
                 src="/assets/img/icon/titleIcon.png"
                 width="28"
                 height="12"
@@ -20,7 +20,7 @@ export default function Faq() {
             Faq{' '}
             <span className="ms-2">
               <Image
-                alt="icon"
+                alt=""
                 src="/assets/img/icon/titleIcon.png"
                 width="28"
                 height="12"

@@ -6,8 +6,10 @@ import { getAllMarkdownPosts } from "@/utils/blogMarkdown";
 import BlogCardStandard from "@/components/otherPages/blog/BlogCardStandard";
 
 export const metadata = {
-  title: "Blog || Michelle Dantas Advocacia",
-  description: "Artigos jurídicos e informações relevantes sobre seus direitos.",
+  title: "Blog jurídico",
+  description:
+    "Artigos sobre direitos do consumidor, do trabalhador, saúde e direito digital, escritos pela equipe da Michelle Dantas Advocacia.",
+  alternates: { canonical: "/blog-standard" },
 };
 
 export default function Page() {

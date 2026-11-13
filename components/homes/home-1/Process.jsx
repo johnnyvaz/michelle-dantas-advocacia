@@ -8,7 +8,7 @@ export default function Process() {
       <div className="work-process-wrap style1">
         <div className="shape1_1 moving d-xl-block d-none">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/workProcessShape1_1.png"
             width="293"
             height="553"
@@ -16,7 +16,7 @@ export default function Process() {
         </div>
         <div className="shape1_2 jump d-xl-block d-none">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/workProcessShape1_2.png"
             width="188"
             height="275"
@@ -30,7 +30,7 @@ export default function Process() {
             >
               <span>
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -39,7 +39,7 @@ export default function Process() {
               Work Process{' '}
               <span>
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -71,7 +71,7 @@ export default function Process() {
                       src={step.iconSrc}
                       width={48}
                       height={48}
-                      alt="icon"
+                      alt=""
                     />
                   </div>
                 </div>

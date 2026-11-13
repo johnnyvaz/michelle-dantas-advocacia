@@ -13,7 +13,7 @@ export default async function Blog() {
       >
         <div className="shape1_1 movingX d-xl-block d-none">
           <Image
-            alt="shape"
+            alt=""
             width={358}
             height={393}
             src="/assets/img/bg/testimonialBg1_1.png"

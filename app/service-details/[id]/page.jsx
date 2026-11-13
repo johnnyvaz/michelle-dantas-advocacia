@@ -6,10 +6,11 @@ import Cta from "@/components/common/Cta";
 import ServiceDetails from "@/components/otherPages/service/ServiceDetails";
 import Link from "next/link";
 import { allService } from "@/data/services";
+// Rota legada do template: o mesmo texto para todo id. Fica no ar para não quebrar
+// links antigos, mas fora do índice; as páginas de verdade estão em /service/*.
 export const metadata = {
-  title:
-    "Service Details|| Techbe-IT Solution & Technology Service Nextjs Template",
-  description: "Techbe-IT Solution & Technology Service Nextjs Template",
+  title: "Áreas de atuação",
+  robots: { index: false, follow: true },
 };
 export default function Page({ params }) {
   const serviceItem =

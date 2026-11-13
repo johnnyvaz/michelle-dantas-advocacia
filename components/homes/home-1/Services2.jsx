@@ -40,26 +40,26 @@ export default function Services2() {
                   src={service.thumb}
                   width={270}
                   height={160}
-                  alt="thumb"
+                  alt={service.title}
                 />
               </div>
               <div className="service-content">
                 <h3 className="service-content_title">
-                  <Link scroll={false} href={`/service-details/${service.id}`}>
+                  <Link scroll={false} href={service.href}>
                     {service.title}
                   </Link>
                 </h3>
                 <p className="service-content_text">{service.description}</p>
               </div>
               <div className="service-icon">
-                <Image src={service.icon} width={40} height={40} alt="icon" />
+                <Image src={service.icon} width={40} height={40} alt="" />
               </div>
               <div className="service-icon_two">
                 <Image
                   src={service.iconTwo}
                   width={50}
                   height={50}
-                  alt="icon"
+                  alt=""
                 />
               </div>
             </div>

@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="hero-inner style3 img-shine">
           <div className="shape3_1 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_1.png"
               width="1920"
               height="890"
@@ -30,7 +30,7 @@ export default function Hero() {
           </div>
           <div className="shape3_2 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_2.png"
               width="100"
               height="100"
@@ -38,7 +38,7 @@ export default function Hero() {
           </div>
           <div className="shape3_3 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_3.png"
               width="100"
               height="100"
@@ -46,7 +46,7 @@ export default function Hero() {
           </div>
           <div className="shape3_4 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_4.png"
               width="100"
               height="100"
@@ -54,7 +54,7 @@ export default function Hero() {
           </div>
           <div className="shape3_5 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_5.png"
               width="100"
               height="88"
@@ -62,7 +62,7 @@ export default function Hero() {
           </div>
           <div className="shape3_6 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_6.png"
               width="100"
               height="100"
@@ -70,7 +70,7 @@ export default function Hero() {
           </div>
           <div className="shape3_7">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_7.png"
               width="940"
               height="885"
@@ -78,7 +78,7 @@ export default function Hero() {
           </div>
           <div className="shape3_8">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_8.png"
               width="761"
               height="1283"
@@ -86,7 +86,7 @@ export default function Hero() {
           </div>
           <div className="shape3_9 spin d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_9.png"
               width="26"
               height="37"
@@ -94,7 +94,7 @@ export default function Hero() {
           </div>
           <div className="shape3_10 moveAround d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_10.png"
               width="13"
               height="16"
@@ -102,7 +102,7 @@ export default function Hero() {
           </div>
           <div className="shape3_10 moveAround2 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_10.png"
               width="13"
               height="16"
@@ -110,7 +110,7 @@ export default function Hero() {
           </div>
           <div className="shape3_10 moveAround3 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_10.png"
               width="13"
               height="16"
@@ -118,7 +118,7 @@ export default function Hero() {
           </div>
           <div className="shape3_10 moveAround4 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_10.png"
               width="13"
               height="16"
@@ -126,7 +126,7 @@ export default function Hero() {
           </div>
           <div className="shape3_10 d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_10.png"
               width="13"
               height="16"
@@ -134,7 +134,7 @@ export default function Hero() {
           </div>
           <div className="shape3_11 spin d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_11.png"
               width="26"
               height="37"
@@ -142,7 +142,7 @@ export default function Hero() {
           </div>
           <div className="shape3_12 pulse d-xl-block d-none">
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_12.png"
               width="13"
               height="16"
@@ -155,7 +155,7 @@ export default function Hero() {
             data-tilt-max={10}
           >
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_13.png"
               width="606"
               height="606"
@@ -168,7 +168,7 @@ export default function Hero() {
             data-tilt-max={10}
           >
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/shape/heroShape3_14.png"
               width="606"
               height="606"
@@ -181,7 +181,7 @@ export default function Hero() {
             data-tilt-max={20}
           >
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/hero/heroThumb3_1.png"
               width="277"
               height="471"
@@ -194,7 +194,7 @@ export default function Hero() {
             data-tilt-max={17}
           >
             <Image
-              alt="shape"
+              alt=""
               src="/assets/img/hero/heroThumb3_2.png"
               width="277"
               height="470"
@@ -210,7 +210,7 @@ export default function Hero() {
                   >
                     <span className="me-1">
                       <Image
-                        alt="icon"
+                        alt=""
                         src="/assets/img/icon/titleIconWhite.png"
                         width="28"
                         height="12"
@@ -219,7 +219,7 @@ export default function Hero() {
                     MOST POPULAR MOBILE APP
                     <span className="ms-1">
                       <Image
-                        alt="icon"
+                        alt=""
                         src="/assets/img/icon/titleIconWhite.png"
                         width="28"
                         height="12"
@@ -241,7 +241,7 @@ export default function Hero() {
                     <ul className="ps-0">
                       <li>
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/signIconWhite.png"
                           width="17"
                           height="20"
@@ -254,7 +254,7 @@ export default function Hero() {
                     <ul className="ps-0">
                       <li>
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/signIconWhite.png"
                           width="17"
                           height="20"
@@ -284,7 +284,7 @@ export default function Hero() {
                         className="play-btn popup-video"
                       >
                         <Image
-                          alt="icon"
+                          alt=""
                           src="/assets/img/icon/playerIcon.png"
                           width="48"
                           height="48"

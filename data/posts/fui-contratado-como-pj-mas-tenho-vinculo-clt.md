@@ -4,7 +4,7 @@ slug: fui-contratado-como-pj-mas-tenho-vinculo-clt
 title: "Fui contratado como PJ, mas tenho vínculo de CLT. Posso entrar na Justiça?"
 author: Michelle Dantas
 date: 2024-04-09
-category: Direito Trabalhista
+category: Direito do Trabalho
 tags:
   - PJ
   - Vínculo Empregatício

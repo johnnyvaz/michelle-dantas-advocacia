@@ -18,7 +18,7 @@ export default function AboutCta() {
             >
               <span>
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -27,7 +27,7 @@ export default function AboutCta() {
               Contact Us NOW{' '}
               <span>
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"

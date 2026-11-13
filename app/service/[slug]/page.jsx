@@ -1,15 +1,18 @@
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { getAllServices, getServiceBySlug } from "@/lib/services";
 import Cta from "@/components/common/Cta";
 import Header1 from "@/components/headers/Header1";
 import Footer1 from "@/components/footers/Footer1";
 
-// SEO dinâmico opcional
 export async function generateMetadata({ params }) {
-    const service = getServiceBySlug(params.slug);
+    const { slug } = await params;
+    const service = getServiceBySlug(slug);
+    if (!service) return {};
     return {
-        title: `${service.title} | Michelle Dantas Advocacia`,
-        description: service.excerpt || "",
+        title: service.title,
+        description: service.description || "",
+        alternates: { canonical: `/service/${slug}` },
     };
 }
 
@@ -19,11 +22,12 @@ export async function generateStaticParams() {
     return services.map((s) => ({ slug: s.slug }));
 }
 
-export default function ServicePage({ params }) {
-    const service = getServiceBySlug(params.slug);
+export default async function ServicePage({ params }) {
+    const { slug } = await params;
+    const service = getServiceBySlug(slug);
     const services = getAllServices();
 
-    if (!service) return <div>Serviço não encontrado.</div>;
+    if (!service) notFound();
 
     return (
         <>

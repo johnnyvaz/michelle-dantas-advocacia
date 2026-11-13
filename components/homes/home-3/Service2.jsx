@@ -69,7 +69,7 @@ export default function Service2() {
                 {" "}
                 <span>
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/titleIcon.png"
                     width="28"
                     height="12"
@@ -78,7 +78,7 @@ export default function Service2() {
                 What We Do{" "}
                 <span>
                   <Image
-                    alt="icon"
+                    alt=""
                     src="/assets/img/icon/titleIcon.png"
                     width="28"
                     height="12"
@@ -102,7 +102,7 @@ export default function Service2() {
                       src={feature.icon}
                       width={20}
                       height={20}
-                      alt="icon"
+                      alt=""
                     />
                   </li>
                   <li>{feature.description}</li>

@@ -16,13 +16,13 @@ export default function Services() {
                 key={index}
               >
                 {/* <div className="card_icon">
-                  <Image src={service.icon} width={40} height={40} alt="icon" />
+                  <Image src={service.icon} width={40} height={40} alt="" />
                 </div> */}
                 <div className="card_content">
                   <h3>
                     <Link
                       scroll={false}
-                      href={`/service-details/${service.id}`}
+                      href={service.href}
                       className="title"
                     >
                       {service.title}
@@ -31,7 +31,7 @@ export default function Services() {
                   <p className="text">{service.description}</p>
                 </div>
                 <div className="link-btn">
-                  <Link scroll={false} href={`/service-details/${service.id}`}>
+                  <Link scroll={false} href={service.href}>
                     <i className="fa-sharp fa-regular fa-arrow-right-long" />
                   </Link>
                 </div>
@@ -40,7 +40,7 @@ export default function Services() {
                     src={service.bgImage}
                     width={280}
                     height={284}
-                    alt="bg"
+                    alt=""
                   />
                 </div>
               </div>

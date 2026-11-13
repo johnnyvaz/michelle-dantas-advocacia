@@ -15,7 +15,7 @@ export default function Facts() {
               data-wow-delay={elm.delay}
             >
               <div className="counter-box_icon">
-                <Image src={elm.icon} width={60} height={60} alt="icon" />
+                <Image src={elm.icon} width={60} height={60} alt="" />
               </div>
               <div className="counter-box_counter">
                 <div>

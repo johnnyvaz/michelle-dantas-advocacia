@@ -15,7 +15,7 @@ export default function Services() {
               key={index}
             >
               <div className="service-icon">
-                <Image src={service.icon} width={70} height={70} alt="icon" />
+                <Image src={service.icon} width={70} height={70} alt="" />
               </div>
               <h3 className="service-title">
                 <Link scroll={false} href={`/service-1`}>

@@ -11,7 +11,7 @@ export default function Team() {
       <div className="team-wrap style1">
         <div className="shape1_2 movingX d-xl-block d-none">
           <Image
-            alt="shape"
+            alt=""
             src="/assets/img/shape/teamShape1_2.png"
             width="248"
             height="272"
@@ -25,7 +25,7 @@ export default function Team() {
             >
               <span>
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -34,7 +34,7 @@ export default function Team() {
               Nosso Time{' '}
               <span>
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIcon.png"
                   width="28"
                   height="12"
@@ -76,7 +76,7 @@ export default function Team() {
                     src={member.bgImage}
                     width={275}
                     height={449}
-                    alt="bg"
+                    alt=""
                   />
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function Team() {
                     src={member.bgImage}
                     width={275}
                     height={449}
-                    alt="bg"
+                    alt=""
                   />
                 </div>
               </div>

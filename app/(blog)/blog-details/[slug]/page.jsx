@@ -5,13 +5,44 @@ import Footer1 from "@/components/footers/Footer1";
 import Cta from "@/components/common/Cta";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ESCRITORIO, SITE_URL, areaDoPost } from "@/lib/site";
+
+const dataPorExtenso = (d) =>
+  new Date(d).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
+  if (!post) return {};
   return {
-    title: `${post?.title || "Post"} | Michelle Dantas`,
-    description: post?.excerpt || "",
+    title: post.title,
+    description: post.excerpt || "",
+    alternates: { canonical: `/blog-details/${slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt || "",
+      publishedTime: post.date ? new Date(post.date).toISOString() : undefined,
+      authors: [post.author || ESCRITORIO.advogadaResponsavel],
+      images: post.cover ? [{ url: post.cover }] : undefined,
+    },
+  };
+}
+
+function articleJsonLd(post) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt || undefined,
+    image: post.cover ? `${SITE_URL}${post.cover}` : undefined,
+    datePublished: post.date ? new Date(post.date).toISOString().slice(0, 10) : undefined,
+    author: { "@type": "Person", name: post.author || ESCRITORIO.advogadaResponsavel },
+    publisher: { "@id": `${SITE_URL}/#escritorio` },
+    mainEntityOfPage: `${SITE_URL}/blog-details/${post.slug}`,
+    articleSection: post.category || undefined,
+    keywords: Array.isArray(post.tags) ? post.tags.join(", ") : undefined,
   };
 }
 
@@ -19,10 +50,15 @@ export default async function Page({ params }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
-  if (!post) return <div>Post não encontrado.</div>;
+  if (!post) notFound();
+  const area = areaDoPost(post.category);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd(post)) }}
+      />
       <Header1 />
       <main className="main position-relative" id="mains">
         <div className="breadcrumb-wrapper">
@@ -47,7 +83,9 @@ export default async function Page({ params }) {
                   <li>
                     <i className="fas fa-chevrons-right" />
                   </li>
-                  <li>Blog</li>
+                  <li>
+                    <Link href="/blog-standard">Blog</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -74,6 +112,18 @@ export default async function Page({ params }) {
                       color: "#333",
                     }}
                   >
+                    <p className="post-meta" style={{ fontSize: "16px", color: "#555", marginBottom: "1.5rem" }}>
+                      Por <strong>{post.author || ESCRITORIO.advogadaResponsavel}</strong>
+                      {post.date && (
+                        <>
+                          {" · "}
+                          <time dateTime={new Date(post.date).toISOString().slice(0, 10)}>
+                            {dataPorExtenso(post.date)}
+                          </time>
+                        </>
+                      )}
+                      {post.category && <>{" · "}{post.category}</>}
+                    </p>
                     <div className="post-body typography-blog">
                       <ReactMarkdown
                         components={{
@@ -132,6 +182,23 @@ export default async function Page({ params }) {
                         {post.content}
                       </ReactMarkdown>
                     </div>
+                    <aside
+                      style={{
+                        marginTop: "2rem",
+                        padding: "1.25rem 1.5rem",
+                        borderLeft: "4px solid #4c2b87",
+                        backgroundColor: "#f9f9f9",
+                        fontSize: "18px",
+                      }}
+                    >
+                      Precisa de orientação sobre este assunto?{" "}
+                      {area && (
+                        <>
+                          Conheça nossa atuação em <Link href={area.href}>{area.nome}</Link> ou{" "}
+                        </>
+                      )}
+                      <Link href="/contato">fale com o escritório</Link>.
+                    </aside>
                   </div>
                 </div>
               </div>

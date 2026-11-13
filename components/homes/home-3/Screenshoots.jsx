@@ -43,7 +43,7 @@ export default function Screenshoots() {
               {" "}
               <span className="me-2">
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIconWhite.png"
                   width="28"
                   height="12"
@@ -52,7 +52,7 @@ export default function Screenshoots() {
               OUR APP SCREENSHOTS
               <span className="ms-2">
                 <Image
-                  alt="icon"
+                  alt=""
                   src="/assets/img/icon/titleIconWhite.png"
                   width="28"
                   height="12"
