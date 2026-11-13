@@ -42,7 +42,7 @@ describe("crawler-log (borda)", () => {
   it("visita humana com UTM incrementa o contador sem gravar UA, IP nem query string", async () => {
     const origin = html();
     const { calls, context, settle } = setup(origin);
-    const request = new Request("https://cursos.johnnyvaz.com.br/palestras?utm_source=instagram&utm_medium=social&fbclid=xyz", {
+    const request = new Request("https://mdantas.adv.br/palestras?utm_source=instagram&utm_medium=social&fbclid=xyz", {
       headers: { ...HUMAN, referer: "https://l.instagram.com/?u=abc" },
     });
 
@@ -55,7 +55,7 @@ describe("crawler-log (borda)", () => {
     expect((calls[0].init.headers as Record<string, string>)["Content-Profile"]).toBe("mdantas");
     const payload = body(calls[0]);
     expect(payload).toMatchObject({
-      p_host: "cursos.johnnyvaz.com.br",
+      p_host: "mdantas.adv.br",
       p_path: "/palestras",
       p_kind: "human",
       p_referrer_host: "l.instagram.com",
@@ -68,7 +68,7 @@ describe("crawler-log (borda)", () => {
 
   it("Googlebot grava crawler_hits com status, seção, verificação e deploy", async () => {
     const { calls, context, settle } = setup(html());
-    const request = new Request("https://cursos.johnnyvaz.com.br/blog/post", {
+    const request = new Request("https://mdantas.adv.br/blog/post", {
       headers: { "user-agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" },
     });
 
@@ -79,7 +79,7 @@ describe("crawler-log (borda)", () => {
     expect(body(hit!)).toEqual({
       bot: "Googlebot",
       category: "search",
-      host: "cursos.johnnyvaz.com.br",
+      host: "mdantas.adv.br",
       path: "/blog/post",
       section: "blog",
       status: 200,
@@ -93,7 +93,7 @@ describe("crawler-log (borda)", () => {
 
   it("robô lendo robots.txt grava o acesso, mas não conta visualização", async () => {
     const { calls, context, settle } = setup(new Response("User-agent: *", { headers: { "content-type": "text/plain" } }));
-    const request = new Request("https://cursos.johnnyvaz.com.br/robots.txt", { headers: { "user-agent": "ClaudeBot/1.0" } });
+    const request = new Request("https://mdantas.adv.br/robots.txt", { headers: { "user-agent": "ClaudeBot/1.0" } });
 
     await crawlerLog(request, context);
     await settle();
@@ -108,7 +108,7 @@ describe("crawler-log (borda)", () => {
       [html(), { ...HUMAN, "sec-purpose": "prefetch" }],
     ] as const) {
       const { calls, context, settle } = setup(origin);
-      await crawlerLog(new Request("https://cursos.johnnyvaz.com.br/x", { headers }), context);
+      await crawlerLog(new Request("https://mdantas.adv.br/x", { headers }), context);
       await settle();
       expect(calls).toEqual([]);
     }
@@ -118,7 +118,7 @@ describe("crawler-log (borda)", () => {
     const { context } = setup(html());
     const next = vi.spyOn(context, "next");
     expect(await crawlerLog(new Request("https://deploy-preview-3--mdantas.netlify.app/", { headers: HUMAN }), context)).toBeUndefined();
-    expect(await crawlerLog(new Request("https://cursos.johnnyvaz.com.br/", { method: "POST" }), context)).toBeUndefined();
+    expect(await crawlerLog(new Request("https://mdantas.adv.br/", { method: "POST" }), context)).toBeUndefined();
     expect(next).not.toHaveBeenCalled();
   });
 
@@ -127,7 +127,7 @@ describe("crawler-log (borda)", () => {
     const { context, settle } = setup(origin);
     vi.stubGlobal("fetch", vi.fn(async () => new Response(null, { status: 500 })));
 
-    const response = await crawlerLog(new Request("https://cursos.johnnyvaz.com.br/", { headers: HUMAN }), context);
+    const response = await crawlerLog(new Request("https://mdantas.adv.br/", { headers: HUMAN }), context);
     await settle();
 
     expect(response).toBe(origin);
@@ -136,7 +136,7 @@ describe("crawler-log (borda)", () => {
   });
   describe("beacon /_pv (navegação da SPA)", () => {
     const beacon = (p: string, headers: Record<string, string> = {}, init: RequestInit = { method: "POST" }) =>
-      new Request(`https://cursos.johnnyvaz.com.br/_pv?p=${encodeURIComponent(p)}`, {
+      new Request(`https://mdantas.adv.br/_pv?p=${encodeURIComponent(p)}`, {
         ...init,
         headers: { ...HUMAN, "sec-fetch-mode": "no-cors", "sec-fetch-site": "same-origin", ...headers },
       });
@@ -145,7 +145,7 @@ describe("crawler-log (borda)", () => {
       const { calls, context, settle } = setup(html());
       const next = vi.spyOn(context, "next");
 
-      const response = await crawlerLog(beacon("/palestras", { referer: "https://cursos.johnnyvaz.com.br/" }), context);
+      const response = await crawlerLog(beacon("/palestras", { referer: "https://mdantas.adv.br/" }), context);
       await settle();
 
       expect(response?.status).toBe(204);
@@ -154,7 +154,7 @@ describe("crawler-log (borda)", () => {
       expect(body(calls[0])).toEqual({
         p_day: expect.any(String),
         p_hour: expect.any(Number),
-        p_host: "cursos.johnnyvaz.com.br",
+        p_host: "mdantas.adv.br",
         p_path: "/palestras",
         p_kind: "human",
         p_source: "spa",

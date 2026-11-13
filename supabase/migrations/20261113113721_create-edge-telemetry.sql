@@ -1,4 +1,4 @@
--- Telemetria de borda do cursos.johnnyvaz.com.br (netlify/edge-functions/crawler-log.ts).
+-- Telemetria de borda do mdantas.adv.br (netlify/edge-functions/crawler-log.ts).
 -- Modelo do Sextante (templates/adaptadores/netlify), portado do SITE-JOHNNY-VAZ em 2026-11-13,
 -- que por sua vez veio da PLATAFORMA-CURSOS sem multi-tenant, painel de releases nem IndexNow.
 --

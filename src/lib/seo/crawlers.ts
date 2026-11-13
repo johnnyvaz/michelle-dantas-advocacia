@@ -1,5 +1,5 @@
 /**
- * Fonte única da política de robôs do cursos.johnnyvaz.com.br.
+ * Fonte única da política de robôs do mdantas.adv.br.
  *
  * Duas coisas leem daqui: o registro de borda (`netlify/edge-functions/crawler-log.ts`),
  * que só reconhece robô listado, e o teste de contrato que confere `public/robots.txt`

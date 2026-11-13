@@ -87,14 +87,14 @@ describe("helpers de borda", () => {
     expect(extractReferrerHost("não é url")).toBeNull();
   });
   it("referrer do próprio site (com ou sem www) não é origem", () => {
-    expect(extractReferrerHost("https://cursos.johnnyvaz.com.br/about", "cursos.johnnyvaz.com.br")).toBeNull();
-    expect(extractReferrerHost("https://www.cursos.johnnyvaz.com.br/", "cursos.johnnyvaz.com.br")).toBeNull();
-    expect(extractReferrerHost("https://outro-site.example/", "cursos.johnnyvaz.com.br")).toBe("outro-site.example");
+    expect(extractReferrerHost("https://mdantas.adv.br/about", "mdantas.adv.br")).toBeNull();
+    expect(extractReferrerHost("https://www.mdantas.adv.br/", "mdantas.adv.br")).toBeNull();
+    expect(extractReferrerHost("https://outro-site.example/", "mdantas.adv.br")).toBe("outro-site.example");
   });
   it("preview, alias netlify e localhost não são audiência", () => {
     expect(isEnvironmentHost("deploy-preview-12--mdantas.netlify.app")).toBe(true);
     expect(isEnvironmentHost("localhost:8888")).toBe(true);
-    expect(isEnvironmentHost("cursos.johnnyvaz.com.br")).toBe(false);
+    expect(isEnvironmentHost("mdantas.adv.br")).toBe(false);
   });
   it("prefetch é reconhecido pelos três headers", () => {
     expect(isPrefetchRequest(new Headers({ "sec-purpose": "prefetch;prerender" }))).toBe(true);
