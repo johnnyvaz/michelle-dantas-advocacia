@@ -265,7 +265,7 @@ def run_tests():
         ('AWS_SECRET_ACCESS_KEY = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY', "CRITICO"),
         ('Authorization: Bearer eyJhbGciOiJIUzI1Ni00abcdefghijklmnop', "CRITICO"),
         ('-----BEGIN OPENSSH PRIVATE KEY-----\nb3Bl...', "CRITICO"),
-        ('export GITHUB_TOKEN=ghp_0123456789abcdefghijklmnopqrstuvwxyzAB', "CRITICO"),
+        ('export GITHUB_TOKEN=ghp_' + '0123456789abcdefghijklmnopqrstuvwxyzAB', "CRITICO"),
         ('senha: trocar123', "CRITICO"),
         ('DATABASE_URL=postgresql://admin:s3nh4@db.prod:5432/app', "CRITICO"),
         ('o slack token xoxb-123456789012-abcdefghijkl', "CRITICO"),
