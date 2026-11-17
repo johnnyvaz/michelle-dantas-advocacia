@@ -4,6 +4,7 @@ import Image from "next/image";
 import { recentPosts } from "@/data/blogs";
 import { socialLinks2 } from "@/data/socials";
 import { footerLinks } from "@/data/footer";
+import { DESENVOLVEDOR } from "@/lib/site";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -219,10 +220,11 @@ export default function Footer1() {
             </div>
             <div className="layout-link wow fadeInUp" data-wow-delay=".6s" style={{ pointerEvents: 'auto' }}>
               <div className="link-wrapper" style={{ position: 'relative', zIndex: 10 }}>
-                <a 
-                  href="https://johnnyvaz.com.br" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                {/* Crédito do desenvolvedor: âncora de marca, sem nofollow (ver lib/site.js → DESENVOLVEDOR). */}
+                <a
+                  href={DESENVOLVEDOR.url}
+                  target="_blank"
+                  rel="noopener"
                   className="external-link"
                   style={{ 
                     pointerEvents: 'auto',
@@ -231,7 +233,7 @@ export default function Footer1() {
                     position: 'relative'
                   }}
                 >
-                  Desenvolvido por Johnny Vaz
+                  Desenvolvido por {DESENVOLVEDOR.nome}
                 </a>
               </div>
             </div>

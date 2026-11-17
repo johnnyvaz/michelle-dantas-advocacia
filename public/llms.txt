@@ -23,3 +23,7 @@
 - [Sobre o escritório](https://mdantas.adv.br/sobre)
 - [Blog](https://mdantas.adv.br/blog-standard): artigos sobre direitos do consumidor, do trabalhador, saúde e direito digital
 - [Contato](https://mdantas.adv.br/contato)
+
+## Sobre o site
+
+- Site desenvolvido e mantido por Johnny Vaz, engenheiro de software: https://johnnyvaz.com.br/

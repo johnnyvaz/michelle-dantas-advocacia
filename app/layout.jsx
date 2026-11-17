@@ -10,7 +10,7 @@ import PopupSearch from "@/components/headers/PopupSearch";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import { ESCRITORIO, SITE_URL, legalServiceJsonLd } from "@/lib/site";
+import { ESCRITORIO, SITE_URL, legalServiceJsonLd, websiteJsonLd } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +46,10 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceJsonLd()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
         />
 
         {/* Script do Chatwoot */}
